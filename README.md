@@ -1,4 +1,4 @@
-<img href="https://github.com/catherineisonline/edgy/blob/main/public/project-preview.png?raw=true"></img>
+<img src="https://github.com/catherineisonline/edgy/blob/main/public/project-preview.png?raw=true"></img>
 
 # Edgy - #1 Instagram Growth Agency
 
