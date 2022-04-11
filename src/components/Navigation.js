@@ -1,4 +1,5 @@
 import EdgyIcon from "../images/edgy-icon.png";
+import { NavLink } from "react-router-dom";
 
 const links = [
   { name: "About", href: "/edgy/about" },
@@ -20,13 +21,13 @@ export default function Navigation() {
             </a>
             <section className="hidden ml-10 space-x-8 lg:block">
               {links.map((link) => (
-                <a
+                <NavLink
                   key={link.name}
-                  href={link.href}
+                  to={link.href}
                   className="text-base font-medium text-white hover:text-indigo-50"
                 >
                   {link.name}
-                </a>
+                </NavLink>
               ))}
             </section>
           </section>
