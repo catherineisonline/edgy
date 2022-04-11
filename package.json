@@ -21,7 +21,7 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build -r https://github.com/catherineisonline/edgy-instagram-growth-service"
+    "deploy": "gh-pages -d build -r https://github.com/catherineisonline/edgy"
   },
   "eslintConfig": {
     "extends": [
