@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/catherineisonline/edgy/static/css/main.7d40ad7c.css",
-    "main.js": "/catherineisonline/edgy/static/js/main.45522004.js",
+    "main.js": "/catherineisonline/edgy/static/js/main.37b0792a.js",
     "static/js/787.5cb614d8.chunk.js": "/catherineisonline/edgy/static/js/787.5cb614d8.chunk.js",
     "static/media/instagram-preview.jpg": "/catherineisonline/edgy/static/media/instagram-preview.e85e9672354d849253cb.jpg",
     "static/media/instagram-icon-cover.png": "/catherineisonline/edgy/static/media/instagram-icon-cover.1d83a7d65799a7007f62.png",
     "index.html": "/catherineisonline/edgy/index.html",
     "main.7d40ad7c.css.map": "/catherineisonline/edgy/static/css/main.7d40ad7c.css.map",
-    "main.45522004.js.map": "/catherineisonline/edgy/static/js/main.45522004.js.map",
+    "main.37b0792a.js.map": "/catherineisonline/edgy/static/js/main.37b0792a.js.map",
     "787.5cb614d8.chunk.js.map": "/catherineisonline/edgy/static/js/787.5cb614d8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7d40ad7c.css",
-    "static/js/main.45522004.js"
+    "static/js/main.37b0792a.js"
   ]
 }
