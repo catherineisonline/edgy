@@ -1,5 +1,5 @@
 import EdgyIcon from "../images/edgy-icon.png";
-import { Link } from "react-router-dom";
+import { Link, BrowserRouter } from "react-router-dom";
 
 const links = [
   { name: "About", href: "/edgy/about" },
@@ -29,6 +29,7 @@ export default function Navigation() {
                   {link.name}
                 </NavLink> */}
               {links.map((link) => (
+            
                   <Link
                     key={link.name}
                     to={link.href}
@@ -36,6 +37,7 @@ export default function Navigation() {
                   >
                     {link.name}
                   </Link>
+            
               ))}
             </section>
           </section>

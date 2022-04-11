@@ -15,7 +15,7 @@
     "tailwind-forms": "^1.0.6",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://github.com/catherineisonline/edgy",
+  "homepage": "/edgy",
   "scripts": {
     "start": "craco start",
     "build": "craco build",

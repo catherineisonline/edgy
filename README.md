@@ -1,4 +1,5 @@
-# Getting Started with Create React App
+<img href=""></img>
+# Edgy - #1 Instagram Growth Agency
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
