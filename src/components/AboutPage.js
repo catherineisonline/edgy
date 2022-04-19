@@ -284,7 +284,7 @@ export default function AboutPage() {
               </section>
               <section className="mt-8 inline-flex rounded-md shadow">
                 <a
-                  href="/edgy/contact"
+                  href="/contact"
                   className="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
                 >
                   Contact us

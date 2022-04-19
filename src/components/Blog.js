@@ -1,7 +1,7 @@
 const posts = [
   {
     title: "How to Start an Instagram Blog",
-    href: "/edgy/blog/how-to-start-an-instagram-blog",
+    href: "/blog/how-to-start-an-instagram-blog",
 
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.",
@@ -18,7 +18,7 @@ const posts = [
   },
   {
     title: "What to Post on Instagram",
-    href: "/edgy/blog/what-to-post-on-instagram",
+    href: "/blog/what-to-post-on-instagram",
 
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.",
@@ -35,7 +35,7 @@ const posts = [
   },
   {
     title: "Everything You Need To Know About Instagram Creator Studio",
-    href: "/edgy/blog/wverything-you-need-to-know-about-instagram-creator-studio",
+    href: "/blog/wverything-you-need-to-know-about-instagram-creator-studio",
 
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.",
@@ -52,7 +52,7 @@ const posts = [
   },
   {
     title: "20 Tactful Instagram Tips",
-    href: "/edgy/blog/20-tactful-instagram-tips",
+    href: "/blog/20-tactful-instagram-tips",
 
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.",
@@ -69,7 +69,7 @@ const posts = [
   },
   {
     title: "Instagram Marketing Resources for Businesses",
-    href: "/edgy/blog/instagram-marketing-resources-for-businesses",
+    href: "/blog/instagram-marketing-resources-for-businesses",
 
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.",
@@ -86,7 +86,7 @@ const posts = [
   },
   {
     title: "How to run an Instagram Contest?",
-    href: "/edgy/blog/how-to-run-an-instagram-contest",
+    href: "/blog/how-to-run-an-instagram-contest",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.",
     date: "Mar 10, 2022",
@@ -102,7 +102,7 @@ const posts = [
   },
   {
     title: "How to Get Followers on Instagram",
-    href: "/edgy/blog/get-more-instagram-followers",
+    href: "/blog/get-more-instagram-followers",
 
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.",
@@ -119,7 +119,7 @@ const posts = [
   },
   {
     title: "How to Promote Your eCommerce Store on Instagram",
-    href: "/edgy/blog/how-to-promote-your-ecommerce-store-on-instagram",
+    href: "/blog/how-to-promote-your-ecommerce-store-on-instagram",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.",
     date: "Mar 10, 2022",
@@ -135,7 +135,7 @@ const posts = [
   },
   {
     title: "A Beginner’s Guide to Instagram for Businesses",
-    href: "/edgy/blog/how-to-use-instagram-for-business-a-beginners-guide/",
+    href: "/blog/how-to-use-instagram-for-business-a-beginners-guide/",
 
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.",
@@ -152,7 +152,7 @@ const posts = [
   },
   {
     title: "How to Start an Instagram Blog",
-    href: "/edgy/blog/how-to-start-an-instagram-blog",
+    href: "/blog/how-to-start-an-instagram-blog",
 
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.",
@@ -169,7 +169,7 @@ const posts = [
   },
   {
     title: "What to Post on Instagram",
-    href: "/edgy/blog/what-to-post-on-instagram",
+    href: "/blog/what-to-post-on-instagram",
 
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.",
@@ -186,7 +186,7 @@ const posts = [
   },
   {
     title: "Everything You Need To Know About Instagram Creator Studio",
-    href: "/edgy/blog/wverything-you-need-to-know-about-instagram-creator-studio",
+    href: "/blog/wverything-you-need-to-know-about-instagram-creator-studio",
 
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.",
@@ -203,7 +203,7 @@ const posts = [
   },
   {
     title: "20 Tactful Instagram Tips",
-    href: "/edgy/blog/20-tactful-instagram-tips",
+    href: "/blog/20-tactful-instagram-tips",
 
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.",
@@ -220,7 +220,7 @@ const posts = [
   },
   {
     title: "Instagram Marketing Resources for Businesses",
-    href: "/edgy/blog/instagram-marketing-resources-for-businesses",
+    href: "/blog/instagram-marketing-resources-for-businesses",
 
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.",
@@ -237,7 +237,7 @@ const posts = [
   },
   {
     title: "How to run an Instagram Contest?",
-    href: "/edgy/blog/how-to-run-an-instagram-contest",
+    href: "/blog/how-to-run-an-instagram-contest",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.",
     date: "Mar 10, 2022",
@@ -253,7 +253,7 @@ const posts = [
   },
   {
     title: "How to Get Followers on Instagram",
-    href: "/edgy/blog/get-more-instagram-followers",
+    href: "/blog/get-more-instagram-followers",
 
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.",
@@ -270,7 +270,7 @@ const posts = [
   },
   {
     title: "How to Promote Your eCommerce Store on Instagram",
-    href: "/edgy/blog/how-to-promote-your-ecommerce-store-on-instagram",
+    href: "/blog/how-to-promote-your-ecommerce-store-on-instagram",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.",
     date: "Mar 10, 2022",
@@ -286,7 +286,7 @@ const posts = [
   },
   {
     title: "A Beginner’s Guide to Instagram for Businesses",
-    href: "/edgy/blog/how-to-use-instagram-for-business-a-beginners-guide/",
+    href: "/blog/how-to-use-instagram-for-business-a-beginners-guide/",
 
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.",
@@ -303,7 +303,7 @@ const posts = [
   },
   {
     title: "How to Start an Instagram Blog",
-    href: "/edgy/blog/how-to-start-an-instagram-blog",
+    href: "/blog/how-to-start-an-instagram-blog",
 
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.",
@@ -320,7 +320,7 @@ const posts = [
   },
   {
     title: "What to Post on Instagram",
-    href: "/edgy/blog/what-to-post-on-instagram",
+    href: "/blog/what-to-post-on-instagram",
 
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.",
@@ -337,7 +337,7 @@ const posts = [
   },
   {
     title: "Everything You Need To Know About Instagram Creator Studio",
-    href: "/edgy/blog/wverything-you-need-to-know-about-instagram-creator-studio",
+    href: "/blog/wverything-you-need-to-know-about-instagram-creator-studio",
 
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.",
@@ -354,7 +354,7 @@ const posts = [
   },
   {
     title: "20 Tactful Instagram Tips",
-    href: "/edgy/blog/20-tactful-instagram-tips",
+    href: "/blog/20-tactful-instagram-tips",
 
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.",
@@ -371,7 +371,7 @@ const posts = [
   },
   {
     title: "Instagram Marketing Resources for Businesses",
-    href: "/edgy/blog/instagram-marketing-resources-for-businesses",
+    href: "/blog/instagram-marketing-resources-for-businesses",
 
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.",
@@ -388,7 +388,7 @@ const posts = [
   },
   {
     title: "How to run an Instagram Contest?",
-    href: "/edgy/blog/how-to-run-an-instagram-contest",
+    href: "/blog/how-to-run-an-instagram-contest",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.",
     date: "Mar 10, 2022",
@@ -404,7 +404,7 @@ const posts = [
   },
   {
     title: "How to Get Followers on Instagram",
-    href: "/edgy/blog/get-more-instagram-followers",
+    href: "/blog/get-more-instagram-followers",
 
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.",
@@ -421,7 +421,7 @@ const posts = [
   },
   {
     title: "How to Promote Your eCommerce Store on Instagram",
-    href: "/edgy/blog/how-to-promote-your-ecommerce-store-on-instagram",
+    href: "/blog/how-to-promote-your-ecommerce-store-on-instagram",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.",
     date: "Mar 10, 2022",
@@ -437,7 +437,7 @@ const posts = [
   },
   {
     title: "A Beginner’s Guide to Instagram for Businesses",
-    href: "/edgy/blog/how-to-use-instagram-for-business-a-beginners-guide/",
+    href: "/blog/how-to-use-instagram-for-business-a-beginners-guide/",
 
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.",

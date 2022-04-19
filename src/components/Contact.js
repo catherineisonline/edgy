@@ -184,7 +184,7 @@ export default function Contact() {
             <span className="block text-indigo-600">We’re hiring.</span>
           </h2>
           <a
-            href="/edgy/jobs"
+            href="/jobs"
             className="mt-8 w-full inline-flex items-center justify-center py-3 px-5 bg-white border border-transparent rounded-md shadow-md text-base font-medium text-grape-600 hover:bg-grape-50 sm:w-auto"
           >
             See open positions

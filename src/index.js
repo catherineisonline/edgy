@@ -1,7 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 //Styles
 
 import "./index.css";
@@ -24,22 +23,22 @@ const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(
   <React.StrictMode>
-    <Router>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Navigation />
       <Routes>
-        <Route direct path="/edgy" element={<Landing />} />
-        <Route direct path="/edgy/contact" element={<Contact />} />
-        <Route direct path="/edgy/pricing" element={<PricingPage />} />
-        <Route direct path="/edgy/faq" element={<FaqPage />} />
-        <Route direct path="/edgy/blog" element={<Blog />} />
-        <Route direct path="/edgy/about" element={<AboutPage />} />
-        <Route path="/edgy/terms" element={<Terms />} />
-        <Route path="/edgy/refunds" element={<Refunds />} />
-        <Route path="/edgy/privacy" element={<Privacy />} />
-        <Route path="/edgy/jobs" element={<Jobs />} />
+        <Route direct path="/" element={<Landing />} />
+        <Route direct path="/contact" element={<Contact />} />
+        <Route direct path="/pricing" element={<PricingPage />} />
+        <Route direct path="/faq" element={<FaqPage />} />
+        <Route direct path="/blog" element={<Blog />} />
+        <Route direct path="/about" element={<AboutPage />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/refunds" element={<Refunds />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/jobs" element={<Jobs />} />
       </Routes>
       <Footer />
-    </Router>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

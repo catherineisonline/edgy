@@ -1,12 +1,12 @@
 import EdgyIcon from "../images/edgy-icon.png";
-import { Link, BrowserRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const links = [
-  { name: "About", href: "/edgy/about" },
-  { name: "Pricing", href: "/edgy/pricing" },
-  { name: "Blog", href: "/edgy/blog" },
-  { name: "FAQ", href: "/edgy/faq" },
-  { name: "Contact", href: "/edgy/contact" },
+  { name: "About", href: "/about" },
+  { name: "Pricing", href: "/pricing" },
+  { name: "Blog", href: "/blog" },
+  { name: "FAQ", href: "/faq" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function Navigation() {
@@ -20,14 +20,6 @@ export default function Navigation() {
               <img className="h-10 w-auto" src={EdgyIcon} alt="Edgy" />
             </a>
             <section className="hidden ml-10 space-x-8 lg:block">
-              {/* {links.map((link) => ( */}
-              {/* <NavLink
-                  key={link.name}
-                  to={link.href}
-                  className="text-base font-medium text-white hover:text-indigo-50"
-                >
-                  {link.name}
-                </NavLink> */}
               {links.map((link) => (
             
                   <Link
