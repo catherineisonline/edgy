@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/edgy/static/css/main.7d40ad7c.css",
-    "main.js": "/edgy/static/js/main.c4e9363f.js",
+    "main.js": "/edgy/static/js/main.66b947a1.js",
     "static/js/787.5cb614d8.chunk.js": "/edgy/static/js/787.5cb614d8.chunk.js",
     "static/media/instagram-preview.jpg": "/edgy/static/media/instagram-preview.e85e9672354d849253cb.jpg",
     "static/media/instagram-icon-cover.png": "/edgy/static/media/instagram-icon-cover.e4eb84c880af538e9761.png",
     "index.html": "/edgy/index.html",
     "main.7d40ad7c.css.map": "/edgy/static/css/main.7d40ad7c.css.map",
-    "main.c4e9363f.js.map": "/edgy/static/js/main.c4e9363f.js.map",
+    "main.66b947a1.js.map": "/edgy/static/js/main.66b947a1.js.map",
     "787.5cb614d8.chunk.js.map": "/edgy/static/js/787.5cb614d8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7d40ad7c.css",
-    "static/js/main.c4e9363f.js"
+    "static/js/main.66b947a1.js"
   ]
 }
