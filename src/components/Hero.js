@@ -45,7 +45,7 @@ export default function Hero() {
                   <p className="mt-3 text-sm text-gray-300 sm:mt-4">
                     Start your free 14-day trial, no credit card necessary. By
                     providing your email, you agree to our{" "}
-                    <a href="/edgy/terms" className="font-medium text-white">
+                    <a href="/terms" className="font-medium text-white">
                       terms of service
                     </a>
                     .

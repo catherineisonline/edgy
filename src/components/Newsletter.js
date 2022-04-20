@@ -40,7 +40,7 @@ export default function Newsletter() {
           </form>
           <p className="mt-3 text-sm text-gray-300">
             We care about the protection of your data. Read our{" "}
-            <a href="/edgy/privacy" className="text-white font-medium underline">
+            <a href="/privacy" className="text-white font-medium underline">
               Privacy Policy.
             </a>
           </p>

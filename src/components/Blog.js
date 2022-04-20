@@ -468,9 +468,9 @@ export default function Blog() {
           </p>
         </section>
         <section className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none ">
-          {posts.map((post) => (
+          {posts.map((post, index) => (
             <section
-              key={post.title}
+              key={index}
               className="flex flex-col rounded-lg shadow-lg overflow-hidden "
             >
               <section className="flex-shrink-0">

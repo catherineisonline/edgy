@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const navigation = {
   solutions: [
     { name: "+1 202 555 0186", href: "tel:+1-202-555-0186" },
@@ -72,6 +74,8 @@ const navigation = {
 };
 
 export default function Footer() {
+  const ResetLocation = () => window.scrollTo(0, 0);
+
   return (
     <footer className="bg-gray-900" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
@@ -88,12 +92,13 @@ export default function Footer() {
                 <ul className="mt-4 space-y-4">
                   {navigation.solutions.map((item) => (
                     <li key={item.name}>
-                      <a
-                        href={item.href}
+                      <NavLink
+                        onClick={ResetLocation}
+                        to={item.href}
                         className="text-base text-gray-300 hover:text-white"
                       >
                         {item.name}
-                      </a>
+                      </NavLink>
                     </li>
                   ))}
                 </ul>
@@ -105,12 +110,13 @@ export default function Footer() {
                 <ul className="mt-4 space-y-4">
                   {navigation.support.map((item) => (
                     <li key={item.name}>
-                      <a
-                        href={item.href}
+                      <NavLink
+                        onClick={ResetLocation}
+                        to={item.href}
                         className="text-base text-gray-300 hover:text-white"
                       >
                         {item.name}
-                      </a>
+                      </NavLink>
                     </li>
                   ))}
                 </ul>
@@ -124,12 +130,13 @@ export default function Footer() {
                 <ul className="mt-4 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
-                      <a
-                        href={item.href}
+                      <NavLink
+                        onClick={ResetLocation}
+                        to={item.href}
                         className="text-base text-gray-300 hover:text-white"
                       >
                         {item.name}
-                      </a>
+                      </NavLink>
                     </li>
                   ))}
                 </ul>
@@ -141,12 +148,13 @@ export default function Footer() {
                 <ul className="mt-4 space-y-4">
                   {navigation.legal.map((item) => (
                     <li key={item.name}>
-                      <a
-                        href={item.href}
+                      <NavLink
+                        onClick={ResetLocation}
+                        to={item.href}
                         className="text-base text-gray-300 hover:text-white"
                       >
                         {item.name}
-                      </a>
+                      </NavLink>
                     </li>
                   ))}
                 </ul>

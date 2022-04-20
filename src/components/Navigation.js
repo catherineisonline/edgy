@@ -1,12 +1,12 @@
 import EdgyIcon from "../images/edgy-icon.png";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const links = [
-  { name: "About", href: "/about" },
-  { name: "Pricing", href: "/pricing" },
-  { name: "Blog", href: "/blog" },
-  { name: "FAQ", href: "/faq" },
-  { name: "Contact", href: "/contact" },
+  { name: "About", href: "/edgy/about" },
+  { name: "Pricing", href: "/edgy/pricing" },
+  { name: "Blog", href: "/edgy/blog" },
+  { name: "FAQ", href: "/edgy/faq" },
+  { name: "Contact", href: "/edgy/contact" },
 ];
 
 export default function Navigation() {
@@ -21,42 +21,34 @@ export default function Navigation() {
             </a>
             <section className="hidden ml-10 space-x-8 lg:block">
               {links.map((link) => (
-            
-                  <Link
-                    key={link.name}
-                    to={link.href}
-                    className="text-base font-medium text-white hover:text-indigo-50"
-                  >
-                    {link.name}
-                  </Link>
-            
+                <NavLink
+                  key={link.name}
+                  to={link.href}
+                  className="text-base font-medium text-white hover:text-indigo-50"
+                >
+                  {link.name}
+                </NavLink>
               ))}
             </section>
           </section>
           <section className="ml-10 space-x-4">
-            <a
-              href="/"
-              className="inline-block bg-indigo-500 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75"
-            >
+            <button className="inline-block bg-indigo-500 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75">
               Sign in
-            </a>
-            <a
-              href="/"
-              className="inline-block bg-white py-2 px-4 border border-transparent rounded-md text-base font-medium text-indigo-600 hover:bg-indigo-50"
-            >
+            </button>
+            <button className="inline-block bg-white py-2 px-4 border border-transparent rounded-md text-base font-medium text-indigo-600 hover:bg-indigo-50">
               Sign up
-            </a>
+            </button>
           </section>
         </section>
         <section className="py-4 flex flex-wrap justify-center space-x-6 lg:hidden">
           {links.map((link) => (
-            <a
+            <NavLink
               key={link.name}
-              href={link.href}
+              to={link.href}
               className="text-base font-medium text-white hover:text-indigo-50"
             >
               {link.name}
-            </a>
+            </NavLink>
           ))}
         </section>
       </nav>
