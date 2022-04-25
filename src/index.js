@@ -17,6 +17,8 @@ import Terms from "./components/Terms";
 import Refunds from "./components/Refunds";
 import Privacy from "./components/Privacy";
 import Jobs from "./components/Jobs";
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
 import reportWebVitals from "./reportWebVitals";
 
 const container = document.getElementById("root");
@@ -36,6 +38,8 @@ root.render(
         <Route path="/edgy/refunds" element={<Refunds />} />
         <Route path="/edgy/privacy" element={<Privacy />} />
         <Route path="/edgy/jobs" element={<Jobs />} />
+        <Route path="/edgy/sign-in" element={<SignIn />} />
+        <Route path="/edgy/sign-up" element={<SignUp />} />
       </Routes>
       <Footer />
     </Router>

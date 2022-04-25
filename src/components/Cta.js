@@ -11,7 +11,7 @@ export default function Cta() {
         <section className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
           <section className="inline-flex rounded-md shadow">
             <a
-              href="/"
+              href="/edgy/sign-up"
               className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
             >
               Get started
