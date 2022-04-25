@@ -1,5 +1,6 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { CheckIcon } from "@heroicons/react/outline";
+import { Link } from "react-router-dom";
 
 const StandardFeatures = [
   "Pariatur quod similique",
@@ -84,13 +85,13 @@ export default function Pricing() {
                       </ul>
                       <section className="mt-8">
                         <section className="rounded-lg shadow-md">
-                          <a
-                            href="/"
+                          <Link
+                            to="/edgy/sign-up"
                             className="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-indigo-600 hover:bg-gray-50"
                             aria-describedby="tier-hobby"
                           >
                             Get Started
-                          </a>
+                          </Link>
                         </section>
                       </section>
                     </section>
@@ -149,13 +150,13 @@ export default function Pricing() {
                     </ul>
                     <section className="mt-10">
                       <section className="rounded-lg shadow-md">
-                        <a
-                          href="/"
+                        <Link
+                          to="/edgy/sign-up"
                           className="block w-full text-center rounded-lg border border-transparent bg-indigo-600 px-6 py-4 text-xl leading-6 font-medium text-white hover:bg-indigo-700"
                           aria-describedby="tier-growth"
                         >
                           Get Started
-                        </a>
+                        </Link>
                       </section>
                     </section>
                   </section>
@@ -203,13 +204,13 @@ export default function Pricing() {
                       </ul>
                       <section className="mt-8">
                         <section className="rounded-lg shadow-md">
-                          <a
-                            href="/"
+                          <Link
+                            to="/edgy/sign-up"
                             className="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-indigo-600 hover:bg-gray-50"
                             aria-describedby="tier-scale"
                           >
                             Get Started
-                          </a>
+                          </Link>
                         </section>
                       </section>
                     </section>

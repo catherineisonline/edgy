@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export default function Cta() {
   return (
     <article className="bg-gray-900">
@@ -10,12 +11,12 @@ export default function Cta() {
         </h2>
         <section className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
           <section className="inline-flex rounded-md shadow">
-            <a
-              href="/edgy/sign-up"
+            <Link
+              to="/edgy/sign-up"
               className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
             >
               Get started
-            </a>
+            </Link>
           </section>
         </section>
       </section>
