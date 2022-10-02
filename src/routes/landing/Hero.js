@@ -1,4 +1,4 @@
-import InstagramCover from "../images/instagram-icon-cover.png";
+import InstagramCover from "../../assets/images/instagram-icon-cover.png";
 
 export default function Hero() {
   return (

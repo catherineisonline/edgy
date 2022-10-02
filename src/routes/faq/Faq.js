@@ -1,6 +1,6 @@
 import { Disclosure } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/outline";
-import Cta from "./Cta";
+import Cta from "../../components/cta/Cta";
 
 const faqs = [
   {

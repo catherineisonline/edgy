@@ -1,4 +1,4 @@
-import EdgyIcon from "../images/edgy-icon.png";
+import EdgyIcon from "../../assets/images/edgy-icon.png";
 import { LockClosedIcon } from "@heroicons/react/solid";
 
 import { Link } from "react-router-dom";

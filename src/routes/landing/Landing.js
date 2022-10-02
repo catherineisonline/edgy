@@ -1,11 +1,11 @@
 import Hero from "./Hero";
 import Logocloud from "./Logocloud";
 import Feature from "./Feature";
-import Cta from "./Cta";
+import Cta from "../../components/cta/Cta";
 import Stats from "./Stats";
 import Pricing from "./Pricing";
 import Testimonials from "./Testimonials";
-import Team from "./Team";
+import Team from "../../components/team/Team";
 import Comparison from "./Comparison";
 import Newsletter from "./Newsletter";
 

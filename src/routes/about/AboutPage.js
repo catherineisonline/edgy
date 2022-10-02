@@ -1,6 +1,6 @@
-import EdgyIcon from "../images/edgy-icon.png";
-import Team from "./Team";
-import Cta from "./Cta";
+import EdgyIcon from "../../assets/images/edgy-icon.png";
+import Team from "../../components/team/Team";
+import Cta from "../../components/cta/Cta";
 const stats = [
   { label: "Founded", value: "2022" },
   { label: "Employees", value: "200" },

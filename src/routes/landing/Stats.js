@@ -1,4 +1,4 @@
-import StatsCover from "../images/instagram-preview.jpg";
+import StatsCover from "../../assets/images/instagram-preview.jpg";
 
 const stats = [
   {

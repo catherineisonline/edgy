@@ -1,4 +1,4 @@
-import EdgyIcon from "../images/edgy-icon.png";
+import EdgyIcon from "../../assets/images/edgy-icon.png";
 import { Link, NavLink } from "react-router-dom";
 
 const links = [

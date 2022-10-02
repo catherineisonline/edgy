@@ -1,9 +1,9 @@
-import PhoneIcon from "../images/customer-support.png";
-import SecurityIcon from "../images/security.png";
-import FollowerIcon from "../images/followers.png";
-import ContentIcon from "../images/content-management.png";
-import TargetIcon from "../images/target-audience.png";
-import PlanIcon from "../images/payment-plan.png";
+import PhoneIcon from "../../assets/images/customer-support.png";
+import SecurityIcon from "../../assets/images/security.png";
+import FollowerIcon from "../../assets/images/followers.png";
+import ContentIcon from "../../assets/images/content-management.png";
+import TargetIcon from "../../assets/images/target-audience.png";
+import PlanIcon from "../../assets/images/payment-plan.png";
 
 const features = [
   {
