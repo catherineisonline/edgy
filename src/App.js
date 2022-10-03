@@ -5,10 +5,10 @@ import Navigation from "./components/navigation/Navigation";
 import Landing from "./routes/landing/Landing";
 import Footer from "./components/footer/Footer";
 import Contact from "./routes/contact/Contact";
-import PricingPage from "./routes/pricing/PricingPage";
+import Pricing from "./routes/pricing/Pricing";
 import Faq from "./routes/faq/Faq";
 import Blog from "./routes/blog/Blog";
-import AboutPage from "./routes/about/AboutPage";
+import About from "./routes/about/About";
 import Terms from "./routes/terms/Terms";
 import Refunds from "./routes/refunds/Refunds";
 import Privacy from "./routes/privacy/Privacy";
@@ -27,10 +27,10 @@ export default function App() {
         <Routes>
           <Route path="/edgy" element={<Landing />} />
           <Route path="/edgy/contact" element={<Contact />} />
-          <Route path="/edgy/pricing" element={<PricingPage />} />
+          <Route path="/edgy/pricing" element={<Pricing />} />
           <Route path="/edgy/faq" element={<Faq />} />
           <Route path="/edgy/blog" element={<Blog />} />
-          <Route path="/edgy/about" element={<AboutPage />} />
+          <Route path="/edgy/about" element={<About />} />
           <Route path="/edgy/terms" element={<Terms />} />
           <Route path="/edgy/refunds" element={<Refunds />} />
           <Route path="/edgy/privacy" element={<Privacy />} />
