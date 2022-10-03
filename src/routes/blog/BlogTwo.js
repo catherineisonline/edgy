@@ -1,4 +1,17 @@
+import { useState } from "react";
+
 export default function BlogTwo() {
+  const [emailError, setEmailError] = useState(true);
+  const [emailInput, setEmailInput] = useState("");
+  const [submitClicked, setSubmitClicked] = useState(false);
+  function SubmitEmail() {
+    const emailValidation = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+    if(emailInput.length === 0) {
+      return;
+    }
+    emailValidation.test(emailInput) ? setEmailError(false) : setEmailError(true);
+    setSubmitClicked(true);
+  }
     return(
         <article className="relative sm:py-16">
         <section aria-hidden="true" className="hidden sm:block">
@@ -70,27 +83,31 @@ export default function BlogTwo() {
                   Dictum urna sed consectetur neque tristique pellentesque.
                 </p>
               </section>
-              <form action="#" className="mt-12 sm:mx-auto sm:max-w-lg sm:flex">
+              <form  className="mt-12 sm:mx-auto sm:max-w-lg sm:flex">
                 <section className="min-w-0 flex-1">
                   <label htmlFor="cta-email" className="sr-only">
                     Email address
                   </label>
                   <input
                     id="cta-email"
-                    type="email"
+                    onChange={(e) => setEmailInput(e.target.value)}
+                    type="text"
                     className="block w-full border border-transparent rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600"
                     placeholder="Enter your email"
                   />
                 </section>
                 <section className="mt-4 sm:mt-0 sm:ml-3">
                   <button
-                    type="submit"
+           type="button"
+                       onClick={SubmitEmail}
                     className="block w-full rounded-md border border-transparent px-5 py-3 bg-indigo-500 text-base font-medium text-white shadow hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600 sm:px-10"
                   >
                     Notify me
                   </button>
                 </section>
+               
               </form>
+              {submitClicked ?  !emailError ?  <p className="py-3 text-green-500 text-center">You have successfully subscribed to our blog!</p> :  <p className="py-3 text-red-800 text-center">Invalid email. Try again!</p> : null}
             </section>
           </section>
         </section>
