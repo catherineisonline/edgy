@@ -1,7 +1,19 @@
 import { Link } from "react-router-dom";
 import InstagramCover from "../../assets/images/instagram-icon-cover.png";
+import { useState } from "react";
 
 export default function Hero() {
+  const [emailError, setEmailError] = useState(true);
+  const [emailInput, setEmailInput] = useState("");
+  const [submitClicked, setSubmitClicked] = useState(false);
+  function SubmitEmail() {
+    const emailValidation = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+    if(emailInput.length === 0) {
+      return;
+    }
+    emailValidation.test(emailInput) ? setEmailError(false) : setEmailError(true);
+    setSubmitClicked(true);
+  }
   return (
     <article className="pt-10 bg-gray-900 sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden">
       <section className="mx-auto max-w-7xl lg:px-8">
@@ -29,20 +41,23 @@ export default function Hero() {
                       </label>
                       <input
                         id="email"
-                        type="email"
+                        type="text"
+                        onChange={(e) => setEmailInput(e.target.value)}
                         placeholder="Enter your email"
                         className="block w-full px-4 py-3 rounded-md border-0 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 focus:ring-offset-gray-900"
                       />
                     </section>
                     <section className="mt-3 sm:mt-0 sm:ml-3">
                       <button
-                        type="submit"
+                      type="button"
+                       onClick={SubmitEmail}
                         className="block w-full py-3 px-4 rounded-md shadow bg-indigo-500 text-white font-medium hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 focus:ring-offset-gray-900"
                       >
                         Start free trial
                       </button>
                     </section>
                   </section>
+                  {submitClicked ?  !emailError ?  <p className="py-3 text-green-500">You have successfully applied for free trial! Please check your email</p> :  <p className="py-3 text-red-600">Invalid email. Try again!</p> : null}
                   <p className="mt-3 text-sm text-gray-300 sm:mt-4">
                     Start your free 14-day trial, no credit card necessary. By
                     providing your email, you agree to our{" "}
