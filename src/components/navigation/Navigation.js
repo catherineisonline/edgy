@@ -1,5 +1,5 @@
 import EdgyIcon from "../../assets/images/edgy-icon.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const links = [
   { name: "About", href: "/edgy/about" },
@@ -15,19 +15,19 @@ export default function Navigation() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
         <section className="w-full py-6 flex items-center justify-between border-b border-indigo-500 lg:border-none">
           <section className="flex items-center">
-            <a href="/edgy">
+            <Link to="/edgy">
               <span className="sr-only">Edgy</span>
               <img className="h-10 w-auto" src={EdgyIcon} alt="Edgy" />
-            </a>
+            </Link>
             <section className="hidden ml-10 space-x-8 lg:block">
               {links.map((link) => (
-                <NavLink
+                <Link
                   key={link.name}
                   to={link.href}
                   className="text-base font-medium text-white hover:text-indigo-50"
                 >
                   {link.name}
-                </NavLink>
+                </Link>
               ))}
             </section>
           </section>
@@ -42,13 +42,13 @@ export default function Navigation() {
         </section>
         <section className="py-4 flex flex-wrap justify-center space-x-6 lg:hidden">
           {links.map((link) => (
-            <NavLink
+            <Link
               key={link.name}
               to={link.href}
               className="text-base font-medium text-white hover:text-indigo-50"
             >
               {link.name}
-            </NavLink>
+            </Link>
           ))}
         </section>
       </nav>

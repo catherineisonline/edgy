@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const posts = [
     {
       title: "How to Start an Instagram Blog",
@@ -481,14 +483,14 @@ export default function BlogOne() {
               </section>
               <section className="flex-1 bg-gray-900 p-6 flex flex-col justify-between">
                 <section className="flex-1">
-                  <a href={post.href} className="block mt-2">
+                  <Link to={post.href} className="block mt-2">
                     <p className="text-xl font-semibold text-white">
                       {post.title}
                     </p>
                     <p className="mt-3 text-base text-gray-500">
                       {post.description}
                     </p>
-                  </a>
+                  </Link>
                 </section>
                 <section className="mt-6 flex items-center">
                   <section className="flex-shrink-0">

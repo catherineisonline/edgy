@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import InstagramCover from "../../assets/images/instagram-icon-cover.png";
 
 export default function Hero() {
@@ -45,9 +46,9 @@ export default function Hero() {
                   <p className="mt-3 text-sm text-gray-300 sm:mt-4">
                     Start your free 14-day trial, no credit card necessary. By
                     providing your email, you agree to our{" "}
-                    <a href="/terms" className="font-medium text-white">
+                    <Link to="/terms" className="font-medium text-white">
                       terms of service
-                    </a>
+                    </Link>
                     .
                   </p>
                 </form>
