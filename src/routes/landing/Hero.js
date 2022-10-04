@@ -3,12 +3,15 @@ import InstagramCover from "../../assets/images/instagram-icon-cover.png";
 import { useState } from "react";
 
 export default function Hero() {
+
   const [emailError, setEmailError] = useState(true);
   const [emailInput, setEmailInput] = useState("");
   const [submitClicked, setSubmitClicked] = useState(false);
+
+  const ResetLocation = () => window.scrollTo(0, 0);
   function SubmitEmail() {
     const emailValidation = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-    if(emailInput.length === 0) {
+    if (emailInput.length === 0) {
       return;
     }
     emailValidation.test(emailInput) ? setEmailError(false) : setEmailError(true);
@@ -49,19 +52,19 @@ export default function Hero() {
                     </section>
                     <section className="mt-3 sm:mt-0 sm:ml-3">
                       <button
-                      type="button"
-                       onClick={SubmitEmail}
+                        type="button"
+                        onClick={SubmitEmail}
                         className="block w-full py-3 px-4 rounded-md shadow bg-indigo-500 text-white font-medium hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 focus:ring-offset-gray-900"
                       >
                         Start free trial
                       </button>
                     </section>
                   </section>
-                  {submitClicked ?  !emailError ?  <p className="py-3 text-green-500">You have successfully applied for free trial! Please check your email</p> :  <p className="py-3 text-red-600">Invalid email. Try again!</p> : null}
+                  {submitClicked ? !emailError ? <p className="py-3 text-green-500">You have successfully applied for free trial! Please check your email</p> : <p className="py-3 text-red-600">Invalid email. Try again!</p> : null}
                   <p className="mt-3 text-sm text-gray-300 sm:mt-4">
                     Start your free 14-day trial, no credit card necessary. By
                     providing your email, you agree to our{" "}
-                    <Link to="/terms" className="font-medium text-white">
+                    <Link to="/terms" className="font-medium text-white" onClick={ResetLocation}>
                       terms of service
                     </Link>
                     .

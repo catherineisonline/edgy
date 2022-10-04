@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import SignInForm from "./SignInForm";
 
 export default function SignIn() {
+  const ResetLocation = () => window.scrollTo(0, 0);
   return (
     <article className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-gray-900 pt-40 pb-40">
       <section className="max-w-md w-full space-y-8">
@@ -15,6 +16,7 @@ export default function SignIn() {
           <p className="mt-2 text-center text-sm text-gray-600">
             Or{" "}
             <Link
+              onClick={ResetLocation}
               to="/edgy/sign-up"
               className="font-medium text-indigo-600 hover:text-indigo-500"
             >
@@ -22,7 +24,7 @@ export default function SignIn() {
             </Link>
           </p>
         </section>
-      <SignInForm/>
+        <SignInForm />
       </section>
     </article>
   );

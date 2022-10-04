@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 export default function ContactForm() {
+
   const [formValue, setFormValue] = useState({ firstName: '', lastName: '', email: '', company: '', phone: '', textarea: '' });
   const [formError, setFormError] = useState({})
   const [submit, setSubmit] = useState(false);

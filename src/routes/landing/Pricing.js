@@ -21,6 +21,7 @@ const BusinessFeatures = [
 ];
 
 export default function Pricing() {
+  const ResetLocation = () => window.scrollTo(0, 0);
   return (
     <article className="bg-gray-900">
       <section className="pt-12 px-4 sm:px-6 lg:px-8 lg:pt-20 bg-gray-900">
@@ -86,6 +87,7 @@ export default function Pricing() {
                       <section className="mt-8">
                         <section className="rounded-lg shadow-md">
                           <Link
+                            onClick={ResetLocation}
                             to="/edgy/sign-up"
                             className="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-indigo-600 hover:bg-gray-50"
                             aria-describedby="tier-hobby"
@@ -151,6 +153,7 @@ export default function Pricing() {
                     <section className="mt-10">
                       <section className="rounded-lg shadow-md">
                         <Link
+                          onClick={ResetLocation}
                           to="/edgy/sign-up"
                           className="block w-full text-center rounded-lg border border-transparent bg-indigo-600 px-6 py-4 text-xl leading-6 font-medium text-white hover:bg-indigo-700"
                           aria-describedby="tier-growth"
@@ -205,6 +208,7 @@ export default function Pricing() {
                       <section className="mt-8">
                         <section className="rounded-lg shadow-md">
                           <Link
+                            onClick={ResetLocation}
                             to="/edgy/sign-up"
                             className="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-indigo-600 hover:bg-gray-50"
                             aria-describedby="tier-scale"
