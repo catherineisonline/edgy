@@ -1,17 +1,19 @@
 {
   "files": {
     "main.css": "/edgy/static/css/main.0c61579b.css",
-    "main.js": "/edgy/static/js/main.d605b852.js",
+    "main.js": "/edgy/static/js/main.ef15a35e.js",
     "static/js/787.5cb614d8.chunk.js": "/edgy/static/js/787.5cb614d8.chunk.js",
     "static/media/instagram-preview.jpg": "/edgy/static/media/instagram-preview.e85e9672354d849253cb.jpg",
     "static/media/instagram-icon-cover.png": "/edgy/static/media/instagram-icon-cover.e4eb84c880af538e9761.png",
+    "static/media/github-pink.svg": "/edgy/static/media/github-pink.659775859a5ace31b90cafc7db993a5b.svg",
     "index.html": "/edgy/index.html",
+    "static/media/linkedin-pink.svg": "/edgy/static/media/linkedin-pink.447bc4d1444eda5b2c8ac2d7711544bf.svg",
     "main.0c61579b.css.map": "/edgy/static/css/main.0c61579b.css.map",
-    "main.d605b852.js.map": "/edgy/static/js/main.d605b852.js.map",
+    "main.ef15a35e.js.map": "/edgy/static/js/main.ef15a35e.js.map",
     "787.5cb614d8.chunk.js.map": "/edgy/static/js/787.5cb614d8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0c61579b.css",
-    "static/js/main.d605b852.js"
+    "static/js/main.ef15a35e.js"
   ]
 }
