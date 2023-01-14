@@ -32,9 +32,8 @@ export default function Hero() {
                 </span>
               </h1>
               <p className="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-                Lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-                fugiat.
+                Boost your popularity on Instagram with our premium package that
+                will skyrocket your profile engagement!
               </p>
               <section className="mt-10 sm:mt-12">
                 <form className="sm:max-w-xl sm:mx-auto lg:mx-0">

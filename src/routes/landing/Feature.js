@@ -1,49 +1,49 @@
-import PhoneIcon from "../../assets/images/customer-support.png";
-import SecurityIcon from "../../assets/images/security.png";
-import FollowerIcon from "../../assets/images/followers.png";
-import ContentIcon from "../../assets/images/content-management.png";
-import TargetIcon from "../../assets/images/target-audience.png";
-import PlanIcon from "../../assets/images/payment-plan.png";
+import PhoneIcon from '../../assets/images/customer-support.png'
+import SecurityIcon from '../../assets/images/security.png'
+import FollowerIcon from '../../assets/images/followers.png'
+import ContentIcon from '../../assets/images/content-management.png'
+import TargetIcon from '../../assets/images/target-audience.png'
+import PlanIcon from '../../assets/images/payment-plan.png'
 
 const features = [
   {
-    name: "Flexible plans",
+    name: 'Flexible plans',
     description:
-      "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
+      'Three kinds of plans which you can test and change anytime. You can also have special plans crafted for you',
     icon: PlanIcon,
   },
   {
-    name: "Targeted audience",
+    name: 'Targeted audience',
     description:
-      "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
+      'The audience which craves your content day and night. We target people who love your content',
     icon: TargetIcon,
   },
   {
-    name: "Content management",
+    name: 'Content management',
     description:
-      "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
+      'Organized content and no more messy photo galleries. We will take care of all your content',
     icon: ContentIcon,
   },
   {
-    name: "Organic followers",
+    name: 'Organic followers',
     description:
-      "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
+      'Receive real followers on your Instagram profile instantly within minutes. The real people who are ready to engage',
     icon: FollowerIcon,
   },
   {
-    name: "Advanced security",
+    name: 'Advanced security',
     description:
-      "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
+      'Real people, real views, real likes and follows. Your account is 100% secure and authentic in any way possible',
     icon: SecurityIcon,
   },
 
   {
-    name: "24/7 support",
+    name: '24/7 support',
     description:
-      "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
+      'Having new ideas and want to impement them asap? We are ready to make your dreams come true 24/7',
     icon: PhoneIcon,
   },
-];
+]
 
 export default function Feature() {
   return (
@@ -56,9 +56,8 @@ export default function Feature() {
           #1 Instagram Growth Agency
         </p>
         <p className="mx-auto mt-5 max-w-prose text-xl text-gray-500">
-          Phasellus lorem quam molestie id quisque diam aenean nulla in.
-          Accumsan in quis quis nunc, ullamcorper malesuada. Eleifend
-          condimentum id viverra nulla.
+          Everything you need for your Instagram profile in one complete growth
+          plan without spending too much time and effort!
         </p>
         <section className="mt-12">
           <section className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -88,5 +87,5 @@ export default function Feature() {
         </section>
       </section>
     </article>
-  );
+  )
 }

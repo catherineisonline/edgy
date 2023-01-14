@@ -1,27 +1,27 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { CheckIcon } from "@heroicons/react/outline";
-import { Link } from "react-router-dom";
+import { CheckIcon } from '@heroicons/react/outline'
+import { Link } from 'react-router-dom'
 
 const StandardFeatures = [
-  "Pariatur quod similique",
-  "Sapiente libero doloribus",
-  "Vel ipsa esse repudiandae",
-];
+  'Pariatur quod similique',
+  'Sapiente libero doloribus',
+  'Vel ipsa esse repudiandae',
+]
 const PremiumFeatures = [
-  "Quia rem est sed impedit magnam",
-  "Dolorem vero ratione voluptates",
-  "Qui sed ab doloribus voluptatem dolore",
-  "Laborum commodi molestiae id et fugiat",
-  "Nam ut ipsa nesciunt culpa modi dolor",
-];
+  'Quia rem est sed impedit magnam',
+  'Dolorem vero ratione voluptates',
+  'Qui sed ab doloribus voluptatem dolore',
+  'Laborum commodi molestiae id et fugiat',
+  'Nam ut ipsa nesciunt culpa modi dolor',
+]
 const BusinessFeatures = [
-  "Pariatur quod similique",
-  "Sapiente libero doloribus",
-  "Vel ipsa esse repudiandae",
-];
+  'Pariatur quod similique',
+  'Sapiente libero doloribus',
+  'Vel ipsa esse repudiandae',
+]
 
 export default function Pricing() {
-  const ResetLocation = () => window.scrollTo(0, 0);
+  const ResetLocation = () => window.scrollTo(0, 0)
   return (
     <article className="bg-gray-900">
       <section className="pt-12 px-4 sm:px-6 lg:px-8 lg:pt-20 bg-gray-900">
@@ -33,8 +33,8 @@ export default function Pricing() {
             Instagram Growth Plans
           </h3>
           <p className="mt-3 max-w-4xl mx-auto text-xl text-gray-300 sm:mt-5 sm:text-2xl">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit
-            numquam eligendi quos odit doloribus molestiae voluptatum.
+            Various plans depending on your needs, capabiltiies, dreams and
+            business goals
           </p>
         </section>
       </section>
@@ -226,5 +226,5 @@ export default function Pricing() {
         </section>
       </section>
     </article>
-  );
+  )
 }

@@ -1,53 +1,53 @@
 const team = [
   {
-    name: "Whitney Francis",
-    role: "Manager",
+    name: 'Whitney Francis',
+    role: 'Manager',
     imageUrl:
-      "https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
-    twitterUrl: "https://twitter.com/",
-    linkedinUrl: "https://www.linkedin.com/",
+      'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
+    twitterUrl: 'https://twitter.com/',
+    linkedinUrl: 'https://www.linkedin.com/',
   },
   {
-    name: "Charly Stuart",
-    role: "Team Leader",
+    name: 'Charly Stuart',
+    role: 'Team Leader',
     imageUrl:
-      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
-    twitterUrl: "https://twitter.com/",
-    linkedinUrl: "https://www.linkedin.com/",
+      'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
+    twitterUrl: 'https://twitter.com/',
+    linkedinUrl: 'https://www.linkedin.com/',
   },
   {
-    name: "Fox Lister",
-    role: "Growth Specialist",
+    name: 'Fox Lister',
+    role: 'Growth Specialist',
     imageUrl:
-      "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
-    twitterUrl: "https://twitter.com/",
-    linkedinUrl: "https://www.linkedin.com/",
+      'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80',
+    twitterUrl: 'https://twitter.com/',
+    linkedinUrl: 'https://www.linkedin.com/',
   },
   {
-    name: "Steven Francis",
-    role: "Head of Marketing",
+    name: 'Steven Francis',
+    role: 'Head of Marketing',
     imageUrl:
-      "https://images.unsplash.com/photo-1605462863863-10d9e47e15ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
-    twitterUrl: "https://twitter.com/",
-    linkedinUrl: "https://www.linkedin.com/",
+      'https://images.unsplash.com/photo-1605462863863-10d9e47e15ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80',
+    twitterUrl: 'https://twitter.com/',
+    linkedinUrl: 'https://www.linkedin.com/',
   },
   {
-    name: "David Wisley",
-    role: "Sales Manager",
+    name: 'David Wisley',
+    role: 'Sales Manager',
     imageUrl:
-      "https://images.unsplash.com/photo-1577880216142-8549e9488dad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
-    twitterUrl: "https://twitter.com/",
-    linkedinUrl: "https://www.linkedin.com/",
+      'https://images.unsplash.com/photo-1577880216142-8549e9488dad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80',
+    twitterUrl: 'https://twitter.com/',
+    linkedinUrl: 'https://www.linkedin.com/',
   },
   {
-    name: "Colt Denson",
-    role: "Customer Support",
+    name: 'Colt Denson',
+    role: 'Customer Support',
     imageUrl:
-      "https://images.unsplash.com/photo-1567515004624-219c11d31f2e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
-    twitterUrl: "https://twitter.com/",
-    linkedinUrl: "https://www.linkedin.com/",
+      'https://images.unsplash.com/photo-1567515004624-219c11d31f2e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80',
+    twitterUrl: 'https://twitter.com/',
+    linkedinUrl: 'https://www.linkedin.com/',
   },
-];
+]
 
 export default function Team() {
   return (
@@ -55,13 +55,14 @@ export default function Team() {
       <section className="max-w-7xl mx-auto py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
         <section className="space-y-12">
           <section className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
-          
             <h3 className="mt-2 text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl">
               Meet Our Team
             </h3>
             <p className="mt-3 max-w-4xl mx-auto text-xl text-gray-300 sm:mt-5 sm:text-2xl">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit
-              numquam eligendi quos odit doloribus molestiae voluptatum.
+              It takes some of the same principles the bots used, but is more
+              customized with a human touch. The service today is one of the
+              only of it’s kind and proud to say that there is nothing automated
+              here.
             </p>
           </section>
           <ul className="mx-auto space-y-16 sm:grid sm:grid-cols-2 sm:gap-16 sm:space-y-0 lg:grid-cols-3 lg:max-w-5xl">
@@ -128,5 +129,5 @@ export default function Team() {
         </section>
       </section>
     </article>
-  );
+  )
 }

@@ -95,9 +95,10 @@ export default function Testimonials() {
             <blockquote className="relative">
               <section className="text-2xl leading-9 font-medium text-white">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
-                  expedita voluptas culpa sapiente alias molestiae. Numquam
-                  corrupti in laborum sed rerum et corporis.
+                  Once we begin interacting with your target audience, that's
+                  when the fun begins! As a result of our team's strategic
+                  persistence, you will see an increase in traffic to your
+                  Instagram profile and content.
                 </p>
               </section>
               <section className="mt-8">
@@ -124,5 +125,5 @@ export default function Testimonials() {
         </section>
       </section>
     </article>
-  );
+  )
 }
