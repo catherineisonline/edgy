@@ -1,21 +1,22 @@
-import { Link } from "react-router-dom";
-import InstagramCover from "../../assets/images/instagram-icon-cover.png";
-import { useState } from "react";
+import { Link } from 'react-router-dom'
+import InstagramCover from '../../assets/images/instagram-icon-cover.png'
+import { useState } from 'react'
 
 export default function Hero() {
+  const [emailError, setEmailError] = useState(true)
+  const [emailInput, setEmailInput] = useState('')
+  const [submitClicked, setSubmitClicked] = useState(false)
 
-  const [emailError, setEmailError] = useState(true);
-  const [emailInput, setEmailInput] = useState("");
-  const [submitClicked, setSubmitClicked] = useState(false);
-
-  const ResetLocation = () => window.scrollTo(0, 0);
+  const ResetLocation = () => window.scrollTo(0, 0)
   function SubmitEmail() {
-    const emailValidation = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+    const emailValidation = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
     if (emailInput.length === 0) {
-      return;
+      setEmailError(true)
     }
-    emailValidation.test(emailInput) ? setEmailError(false) : setEmailError(true);
-    setSubmitClicked(true);
+    emailValidation.test(emailInput)
+      ? setEmailError(false)
+      : setEmailError(true)
+    setSubmitClicked(true)
   }
   return (
     <article className="pt-10 bg-gray-900 sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden">
@@ -54,17 +55,32 @@ export default function Hero() {
                       <button
                         type="button"
                         onClick={SubmitEmail}
-                        className="block w-full py-3 px-4 rounded-md shadow bg-indigo-500 text-white font-medium hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 focus:ring-offset-gray-900"
+                        className="block w-full py-3 px-4 rounded-md shadow bg-indigo-500 text-white font-medium hover:bg-indigo-600 focus:outline-none focus:ring-2  focus:ring-offset-gray-900"
                       >
                         Start free trial
                       </button>
                     </section>
                   </section>
-                  {submitClicked ? !emailError ? <p className="py-3 text-green-500">You have successfully applied for free trial! Please check your email</p> : <p className="py-3 text-red-600">Invalid email. Try again!</p> : null}
+                  {submitClicked ? (
+                    !emailError ? (
+                      <p className="py-3 text-green-500">
+                        You have successfully applied for free trial! Please
+                        check your email
+                      </p>
+                    ) : (
+                      <p className="py-3 text-red-600">
+                        Invalid email. Try again!
+                      </p>
+                    )
+                  ) : null}
                   <p className="mt-3 text-sm text-gray-300 sm:mt-4">
                     Start your free 14-day trial, no credit card necessary. By
-                    providing your email, you agree to our{" "}
-                    <Link to="/terms" className="font-medium text-white" onClick={ResetLocation}>
+                    providing your email, you agree to our{' '}
+                    <Link
+                      to="/terms"
+                      className="font-medium text-white"
+                      onClick={ResetLocation}
+                    >
                       terms of service
                     </Link>
                     .
@@ -80,11 +96,12 @@ export default function Hero() {
                 className="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-90 lg:w-90 lg:max-w-none opacity-60"
                 src={InstagramCover}
                 alt=""
+                aria-hidden="true"
               />
             </section>
           </section>
         </section>
       </section>
     </article>
-  );
+  )
 }
