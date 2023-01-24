@@ -1,6 +1,10 @@
 <img src="https://github.com/catherineisonline/edgy/blob/main/public/project-preview.png?raw=true"></img>
 
 # Edgy - #1 Instagram Growth Agency
+Edgy: A social media marketing agency that helps businesses and beginner influencers grow their Instagram presence. Our website features a range of services, pricing options, a contact form, a blog, and even a career page.
+
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
