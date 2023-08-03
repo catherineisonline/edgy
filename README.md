@@ -40,5 +40,5 @@ This project serves as a personal portfolio website to show off my personal skil
 
 ## License  <a id="license"></a>
 
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/catherineisonline/travel-with-catherine/blob/main/LICENSE) file for details. You free to use this project in your portfolio.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/catherineisonline/travel-with-catherine/blob/main/LICENSE) file for details. You are free to use this project in your portfolio.
 
