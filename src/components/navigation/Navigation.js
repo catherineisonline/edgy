@@ -2,11 +2,11 @@ import EdgyIcon from "../../assets/images/edgy-icon.png";
 import { Link } from "react-router-dom";
 
 const links = [
-  { name: "About", href: "/edgy/about" },
-  { name: "Pricing", href: "/edgy/pricing" },
-  { name: "Blog", href: "/edgy/blog" },
-  { name: "FAQ", href: "/edgy/faq" },
-  { name: "Contact", href: "/edgy/contact" },
+  { name: "About", href: "/about" },
+  { name: "Pricing", href: "/pricing" },
+  { name: "Blog", href: "/blog" },
+  { name: "FAQ", href: "/faq" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function Navigation() {
@@ -16,7 +16,7 @@ export default function Navigation() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
         <section className="w-full py-6 flex items-center justify-between border-b border-indigo-500 lg:border-none">
           <section className="flex items-center">
-            <Link to="/edgy" onClick={ResetLocation}>
+            <Link to="/" onClick={ResetLocation}>
               <span className="sr-only">Edgy</span>
               <img className="h-10 w-auto" src={EdgyIcon} alt="Edgy" />
             </Link>

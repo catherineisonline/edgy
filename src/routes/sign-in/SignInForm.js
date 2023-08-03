@@ -54,7 +54,7 @@ export default function SignInForm() {
 
         <section className="text-sm">
           <Link
-            to="/edgy/forgot-password"
+            to="/forgot-password"
             className="font-medium text-indigo-600 hover:text-indigo-500"
           >
             Forgot your password?

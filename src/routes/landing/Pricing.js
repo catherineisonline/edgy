@@ -88,7 +88,7 @@ export default function Pricing() {
                         <section className="rounded-lg shadow-md">
                           <Link
                             onClick={ResetLocation}
-                            to="/edgy/sign-up"
+                            to="/sign-up"
                             className="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-indigo-600 hover:bg-gray-50"
                             aria-describedby="tier-hobby"
                           >
@@ -154,7 +154,7 @@ export default function Pricing() {
                       <section className="rounded-lg shadow-md">
                         <Link
                           onClick={ResetLocation}
-                          to="/edgy/sign-up"
+                          to="/sign-up"
                           className="block w-full text-center rounded-lg border border-transparent bg-indigo-600 px-6 py-4 text-xl leading-6 font-medium text-white hover:bg-indigo-700"
                           aria-describedby="tier-growth"
                         >
@@ -209,7 +209,7 @@ export default function Pricing() {
                         <section className="rounded-lg shadow-md">
                           <Link
                             onClick={ResetLocation}
-                            to="/edgy/sign-up"
+                            to="/sign-up"
                             className="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-indigo-600 hover:bg-gray-50"
                             aria-describedby="tier-scale"
                           >

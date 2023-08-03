@@ -10,19 +10,19 @@ const navigation = {
     { name: "support@edgy.com", href: "mailto:support@edgy.com" },
   ],
   support: [
-    { name: "Pricing", href: "/edgy/pricing" },
-    { name: "FAQ", href: "/edgy/faq" },
-    { name: "Contact", href: "/edgy/contact" },
+    { name: "Pricing", href: "/pricing" },
+    { name: "FAQ", href: "/faq" },
+    { name: "Contact", href: "/contact" },
   ],
   company: [
-    { name: "About", href: "/edgy/about" },
-    { name: "Blog", href: "/edgy/blog" },
-    { name: "Jobs", href: "/edgy/jobs" },
+    { name: "About", href: "/about" },
+    { name: "Blog", href: "/blog" },
+    { name: "Jobs", href: "/jobs" },
   ],
   legal: [
-    { name: "Terms", href: "/edgy/terms" },
-    { name: "Privacy", href: "/edgy/privacy" },
-    { name: "Refunds", href: "/edgy/refunds" },
+    { name: "Terms", href: "/terms" },
+    { name: "Privacy", href: "/privacy" },
+    { name: "Refunds", href: "/refunds" },
   ],
   social: [
     {

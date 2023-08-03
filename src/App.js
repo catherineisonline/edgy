@@ -20,25 +20,25 @@ import SignUp from "./routes/sign-up/SignUp";
 
 
 export default function App() {
-    return(
+  return (
 
-        <Router>
-        <Navigation />
-        <Routes>
-          <Route path="/edgy" element={<Landing />} />
-          <Route path="/edgy/contact" element={<Contact />} />
-          <Route path="/edgy/pricing" element={<Pricing />} />
-          <Route path="/edgy/faq" element={<Faq />} />
-          <Route path="/edgy/blog" element={<Blog />} />
-          <Route path="/edgy/about" element={<About />} />
-          <Route path="/edgy/terms" element={<Terms />} />
-          <Route path="/edgy/refunds" element={<Refunds />} />
-          <Route path="/edgy/privacy" element={<Privacy />} />
-          <Route path="/edgy/jobs" element={<Jobs />} />
-          <Route path="/edgy/sign-in" element={<SignIn />} />
-          <Route path="/edgy/sign-up" element={<SignUp />} />
-        </Routes>
-        <Footer />
-      </Router>
-    )
+    <Router>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/faq" element={<Faq />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/refunds" element={<Refunds />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/jobs" element={<Jobs />} />
+        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/sign-up" element={<SignUp />} />
+      </Routes>
+      <Footer />
+    </Router>
+  )
 }

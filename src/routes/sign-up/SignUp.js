@@ -16,7 +16,7 @@ export default function SignUp() {
             Or{" "}
             <Link
               onClick={ResetLocation}
-              to="/edgy/sign-in"
+              to="/sign-in"
               className="font-medium text-indigo-600 hover:text-indigo-500"
             >
               sign in

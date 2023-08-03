@@ -76,7 +76,7 @@ export default function Hero() {
                     Start your free 14-day trial, no credit card necessary. By
                     providing your email, you agree to our{' '}
                     <Link
-                      to="/edgy/terms"
+                      to="/terms"
                       className="font-medium text-white"
                       onClick={ResetLocation}
                     >
