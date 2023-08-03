@@ -7,8 +7,8 @@ const posts = [
 
     description:
       'Starting an Instagram blog is relatively easy and can be done in a few simple steps and some creativity as well',
-    date: 'Mar 16, 2022',
-    datetime: '2022-03-16',
+    date: 'Mar 16, 2023',
+    datetime: '2023-03-16',
     imageUrl:
       'https://images.unsplash.com/photo-1600096194534-95cf5ece04cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80',
     readingTime: '5 min',
@@ -23,8 +23,8 @@ const posts = [
     href: '/blog/what-to-post-on-instagram',
     description:
       'There are many different types of content that you can post on Instagram to engage with your followers and grow your following.',
-    date: 'Mar 10, 2022',
-    datetime: '2022-03-10',
+    date: 'Mar 10, 2023',
+    datetime: '2023-03-10',
     imageUrl:
       'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80',
     readingTime: '4 min',
@@ -40,8 +40,8 @@ const posts = [
 
     description:
       'Instagram Creator Studio is a tool that allows creators and businesses to manage their Instagram content and account from a desktop computer.',
-    date: 'Feb 12, 2022',
-    datetime: '2022-02-12',
+    date: 'Feb 12, 2023',
+    datetime: '2023-02-12',
     imageUrl:
       'https://images.unsplash.com/photo-1505322747495-6afdd3b70760?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80',
     readingTime: '11 min',
@@ -57,8 +57,8 @@ const posts = [
 
     description:
       'Here is a collection of 20 tactful Instagram tips that will helps you to grow engagement, increase authentic followers, create quality content and so on',
-    date: 'Mar 16, 2022',
-    datetime: '2022-03-16',
+    date: 'Mar 16, 2023',
+    datetime: '2023-03-16',
     imageUrl:
       'https://images.unsplash.com/photo-1539187577537-e54cf54ae2f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80',
     readingTime: '5 min',
@@ -74,8 +74,8 @@ const posts = [
 
     description:
       'There are different Instagram marketing resources you need to be aware of in order to grow your Instagram and benefit the business',
-    date: 'Mar 10, 2022',
-    datetime: '2022-03-10',
+    date: 'Mar 10, 2023',
+    datetime: '2023-03-10',
     imageUrl:
       'https://images.unsplash.com/photo-1616469829935-c2f33ebd89b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80',
     readingTime: '4 min',
@@ -90,8 +90,8 @@ const posts = [
     href: '/blog/how-to-run-an-instagram-contest',
     description:
       'An Instagram contest is a promotional activity where users are asked to submit content (e.g. a photo, video, or text) or perform an action (e.g. like, comment, or share) in exchange for a chance to win a prize',
-    date: 'Mar 10, 2022',
-    datetime: '2022-03-10',
+    date: 'Mar 10, 2023',
+    datetime: '2023-03-10',
     imageUrl:
       'https://images.unsplash.com/photo-1562147458-0c12e8d29f50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80',
     readingTime: '4 min',
@@ -107,8 +107,8 @@ const posts = [
 
     description:
       'Ultimately, the most important thing in order to get followers on Instagram is to post content that is relevant and interesting to your target audience',
-    date: 'Mar 10, 2022',
-    datetime: '2022-03-10',
+    date: 'Mar 10, 2023',
+    datetime: '2023-03-10',
     imageUrl:
       'https://images.unsplash.com/photo-1588177806780-51d021f6b2d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80',
     readingTime: '4 min',
@@ -123,8 +123,8 @@ const posts = [
     href: '/blog/how-to-promote-your-ecommerce-store-on-instagram',
     description:
       'There are many ways to promote your store like optimizing your profile, using keywords in your bio and making your profile set to public.',
-    date: 'Mar 10, 2022',
-    datetime: '2022-03-10',
+    date: 'Mar 10, 2023',
+    datetime: '2023-03-10',
     imageUrl:
       'https://images.unsplash.com/photo-1564758596018-3e5b1f2340cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80',
     readingTime: '4 min',
@@ -140,8 +140,8 @@ const posts = [
 
     description:
       'Instagram for business is a way for companies to promote their products or services on the popular social media platform.',
-    date: 'Mar 16, 2022',
-    datetime: '2022-03-16',
+    date: 'Mar 16, 2023',
+    datetime: '2023-03-16',
     imageUrl:
       'https://images.unsplash.com/photo-1598128558393-70ff21433be0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1089&q=80',
     readingTime: '5 min',
@@ -157,8 +157,8 @@ const posts = [
 
     description:
       'Starting an Instagram blog is relatively easy and can be done in a few simple steps and some creativity as well',
-    date: 'Mar 16, 2022',
-    datetime: '2022-03-16',
+    date: 'Mar 16, 2023',
+    datetime: '2023-03-16',
     imageUrl:
       'https://images.unsplash.com/photo-1600096194534-95cf5ece04cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80',
     readingTime: '5 min',
@@ -174,8 +174,8 @@ const posts = [
 
     description:
       'There are many different types of content that you can post on Instagram to engage with your followers and grow your following.',
-    date: 'Mar 10, 2022',
-    datetime: '2022-03-10',
+    date: 'Mar 10, 2023',
+    datetime: '2023-03-10',
     imageUrl:
       'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80',
     readingTime: '4 min',
@@ -191,8 +191,8 @@ const posts = [
 
     description:
       'Instagram Creator Studio is a tool that allows creators and businesses to manage their Instagram content and account from a desktop computer.',
-    date: 'Feb 12, 2022',
-    datetime: '2022-02-12',
+    date: 'Feb 12, 2023',
+    datetime: '2023-02-12',
     imageUrl:
       'https://images.unsplash.com/photo-1505322747495-6afdd3b70760?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80',
     readingTime: '11 min',
@@ -208,8 +208,8 @@ const posts = [
 
     description:
       'Here is a collection of 20 tactful Instagram tips that will helps you to grow engagement, increase authentic followers, create quality content and so on',
-    date: 'Mar 16, 2022',
-    datetime: '2022-03-16',
+    date: 'Mar 16, 2023',
+    datetime: '2023-03-16',
     imageUrl:
       'https://images.unsplash.com/photo-1539187577537-e54cf54ae2f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80',
     readingTime: '5 min',
@@ -225,8 +225,8 @@ const posts = [
 
     description:
       'There are different Instagram marketing resources you need to be aware of in order to grow your Instagram and benefit the business',
-    date: 'Mar 10, 2022',
-    datetime: '2022-03-10',
+    date: 'Mar 10, 2023',
+    datetime: '2023-03-10',
     imageUrl:
       'https://images.unsplash.com/photo-1616469829935-c2f33ebd89b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80',
     readingTime: '4 min',
@@ -241,8 +241,8 @@ const posts = [
     href: '/blog/how-to-run-an-instagram-contest',
     description:
       'An Instagram contest is a promotional activity where users are asked to submit content (e.g. a photo, video, or text) or perform an action (e.g. like, comment, or share) in exchange for a chance to win a prize',
-    date: 'Mar 10, 2022',
-    datetime: '2022-03-10',
+    date: 'Mar 10, 2023',
+    datetime: '2023-03-10',
     imageUrl:
       'https://images.unsplash.com/photo-1562147458-0c12e8d29f50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80',
     readingTime: '4 min',
@@ -257,8 +257,8 @@ const posts = [
     href: '/blog/get-more-instagram-followers',
     description:
       'Ultimately, the most important thing in order to get followers on Instagram is to post content that is relevant and interesting to your target audience',
-    date: 'Mar 10, 2022',
-    datetime: '2022-03-10',
+    date: 'Mar 10, 2023',
+    datetime: '2023-03-10',
     imageUrl:
       'https://images.unsplash.com/photo-1588177806780-51d021f6b2d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80',
     readingTime: '4 min',
@@ -273,8 +273,8 @@ const posts = [
     href: '/blog/how-to-promote-your-ecommerce-store-on-instagram',
     description:
       'There are many ways to promote your store like optimizing your profile, using keywords in your bio and making your profile set to public.',
-    date: 'Mar 10, 2022',
-    datetime: '2022-03-10',
+    date: 'Mar 10, 2023',
+    datetime: '2023-03-10',
     imageUrl:
       'https://images.unsplash.com/photo-1564758596018-3e5b1f2340cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80',
     readingTime: '4 min',
@@ -290,8 +290,8 @@ const posts = [
 
     description:
       'Instagram for business is a way for companies to promote their products or services on the popular social media platform.',
-    date: 'Mar 16, 2022',
-    datetime: '2022-03-16',
+    date: 'Mar 16, 2023',
+    datetime: '2023-03-16',
     imageUrl:
       'https://images.unsplash.com/photo-1598128558393-70ff21433be0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1089&q=80',
     readingTime: '5 min',
@@ -307,8 +307,8 @@ const posts = [
 
     description:
       'Starting an Instagram blog is relatively easy and can be done in a few simple steps and some creativity as well',
-    date: 'Mar 16, 2022',
-    datetime: '2022-03-16',
+    date: 'Mar 16, 2023',
+    datetime: '2023-03-16',
     imageUrl:
       'https://images.unsplash.com/photo-1600096194534-95cf5ece04cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80',
     readingTime: '5 min',
@@ -324,8 +324,8 @@ const posts = [
 
     description:
       'There are many different types of content that you can post on Instagram to engage with your followers and grow your following.',
-    date: 'Mar 10, 2022',
-    datetime: '2022-03-10',
+    date: 'Mar 10, 2023',
+    datetime: '2023-03-10',
     imageUrl:
       'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80',
     readingTime: '4 min',
@@ -341,8 +341,8 @@ const posts = [
 
     description:
       'Instagram Creator Studio is a tool that allows creators and businesses to manage their Instagram content and account from a desktop computer.',
-    date: 'Feb 12, 2022',
-    datetime: '2022-02-12',
+    date: 'Feb 12, 2023',
+    datetime: '2023-02-12',
     imageUrl:
       'https://images.unsplash.com/photo-1505322747495-6afdd3b70760?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80',
     readingTime: '11 min',
@@ -358,8 +358,8 @@ const posts = [
 
     description:
       'Here is a collection of 20 tactful Instagram tips that will helps you to grow engagement, increase authentic followers, create quality content and so on',
-    date: 'Mar 16, 2022',
-    datetime: '2022-03-16',
+    date: 'Mar 16, 2023',
+    datetime: '2023-03-16',
     imageUrl:
       'https://images.unsplash.com/photo-1539187577537-e54cf54ae2f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80',
     readingTime: '5 min',
@@ -375,8 +375,8 @@ const posts = [
 
     description:
       'There are different Instagram marketing resources you need to be aware of in order to grow your Instagram and benefit the business',
-    date: 'Mar 10, 2022',
-    datetime: '2022-03-10',
+    date: 'Mar 10, 2023',
+    datetime: '2023-03-10',
     imageUrl:
       'https://images.unsplash.com/photo-1616469829935-c2f33ebd89b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80',
     readingTime: '4 min',
@@ -391,8 +391,8 @@ const posts = [
     href: '/blog/how-to-run-an-instagram-contest',
     description:
       'An Instagram contest is a promotional activity where users are asked to submit content (e.g. a photo, video, or text) or perform an action (e.g. like, comment, or share) in exchange for a chance to win a prize',
-    date: 'Mar 10, 2022',
-    datetime: '2022-03-10',
+    date: 'Mar 10, 2023',
+    datetime: '2023-03-10',
     imageUrl:
       'https://images.unsplash.com/photo-1562147458-0c12e8d29f50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80',
     readingTime: '4 min',
@@ -408,8 +408,8 @@ const posts = [
 
     description:
       'Ultimately, the most important thing in order to get followers on Instagram is to post content that is relevant and interesting to your target audience',
-    date: 'Mar 10, 2022',
-    datetime: '2022-03-10',
+    date: 'Mar 10, 2023',
+    datetime: '2023-03-10',
     imageUrl:
       'https://images.unsplash.com/photo-1588177806780-51d021f6b2d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80',
     readingTime: '4 min',
@@ -424,8 +424,8 @@ const posts = [
     href: '/blog/how-to-promote-your-ecommerce-store-on-instagram',
     description:
       'There are many ways to promote your store like optimizing your profile, using keywords in your bio and making your profile set to public.',
-    date: 'Mar 10, 2022',
-    datetime: '2022-03-10',
+    date: 'Mar 10, 2023',
+    datetime: '2023-03-10',
     imageUrl:
       'https://images.unsplash.com/photo-1564758596018-3e5b1f2340cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80',
     readingTime: '4 min',
@@ -441,8 +441,8 @@ const posts = [
 
     description:
       'Instagram for business is a way for companies to promote their products or services on the popular social media platform.',
-    date: 'Mar 16, 2022',
-    datetime: '2022-03-16',
+    date: 'Mar 16, 2023',
+    datetime: '2023-03-16',
     imageUrl:
       'https://images.unsplash.com/photo-1598128558393-70ff21433be0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1089&q=80',
     readingTime: '5 min',

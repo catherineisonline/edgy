@@ -106,258 +106,42 @@ export default function Privacy() {
       </section>
       <section className="relative px-4 sm:px-6 lg:px-8">
         <section className="text-lg max-w-prose mx-auto">
-          <h1>
+          <h2>
             <span className="block text-base text-center text-indigo-600 font-semibold tracking-wide uppercase">
               Legal
             </span>
             <span className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
               Edgy Privacy Policy
             </span>
-          </h1>
-          <p className="mt-8 text-xl text-gray-500 leading-8">
-            Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At
-            arcu, sit dui mi, nibh dui, diam eget aliquam. Quisque id at vitae
-            feugiat egestas ac. Diam nulla orci at in viverra scelerisque eget.
-            Eleifend egestas fringilla sapien.
-          </p>
-        </section>
-        <section className="mt-6 prose prose-indigo prose-lg text-white mx-auto w-7/12">
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. <strong>Dignissim</strong>{" "}
-            sed <strong>eget risus enim</strong>. Mattis mauris semper sed amet
-            vitae sed turpis id. Id dolor praesent donec est. Odio penatibus
-            risus viverra tellus varius sit neque erat velit. Faucibus commodo
-            massa rhoncus, volutpat. Dignissim sed eget risus enim.{" "}
-            <a href="/">Mattis mauris semper</a> sed amet vitae sed turpis id.
-          </p>
-          <ul>
-            <li>Quis elit egestas venenatis mattis dignissim.</li>
-            <li>
-              Cras cras lobortis vitae vivamus ultricies facilisis tempus.
-            </li>
-            <li>Orci in sit morbi dignissim metus diam arcu pretium.</li>
+          </h2>
+          <p className="mt-8 text-lg text-gray-500">This Privacy Policy ("Policy") outlines how Edgy ("Edgy," "we," "our," or "us") collects, uses, and protects your personal information when you use our Instagram growth services. By using our services, you ("you," "your," or "user") consent to the practices described in this Policy.</p>
+          <h3 className="text-lg text-gray-500">1. Information We Collect:</h3>
+          <p className="text-lg text-gray-500">We may collect the following types of information when you use our services:</p>
+          <ul className="text-lg text-gray-500">
+            <li>Information provided by you during registration, including your name, email address, and Instagram account details.</li>
+            <li>Information obtained through your interactions with our services, such as account activity, engagement metrics, and content preferences.</li>
+            <li>Information collected through cookies and similar technologies to enhance your user experience and improve our services.</li>
           </ul>
-          <p>
-            Quis semper vulputate aliquam venenatis egestas sagittis quisque
-            orci. Donec commodo sit viverra aliquam porttitor ultrices gravida
-            eu. Tincidunt leo, elementum mattis elementum ut nisl, justo, amet,
-            mattis. Nunc purus, diam commodo tincidunt turpis. Amet, duis sed
-            elit interdum dignissim.
-          </p>
-          <h2>From beginner to expert in 30 days</h2>
-          <p>
-            Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat
-            in. Convallis arcu ipsum urna nibh. Pharetra, euismod vitae interdum
-            mauris enim, consequat vulputate nibh. Maecenas pellentesque id sed
-            tellus mauris, ultrices mauris. Tincidunt enim cursus ridiculus mi.
-            Pellentesque nam sed nullam sed diam turpis ipsum eu a sed convallis
-            diam.
-          </p>
-          <blockquote>
-            <p>
-              Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum
-              urna sed consectetur neque tristique pellentesque. Blandit amet,
-              sed aenean erat arcu morbi.
-            </p>
-          </blockquote>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus
-            enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor
-            praesent donec est. Odio penatibus risus viverra tellus varius sit
-            neque erat velit.
-          </p>
-          <h2>Everything you need to get up and running</h2>
-          <p>
-            Purus morbi dignissim senectus mattis <a href="/">adipiscing</a>.
-            Amet, massa quam varius orci dapibus volutpat cras. In amet eu
-            ridiculus leo sodales cursus tristique. Tincidunt sed tempus ut
-            viverra ridiculus non molestie. Gravida quis fringilla amet eget dui
-            tempor dignissim. Facilisis auctor venenatis varius nunc, congue
-            erat ac. Cras fermentum convallis quam.
-          </p>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus
-            enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor
-            praesent donec est. Odio penatibus risus viverra tellus varius sit
-            neque erat velit.
-          </p>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. <strong>Dignissim</strong>{" "}
-            sed <strong>eget risus enim</strong>. Mattis mauris semper sed amet
-            vitae sed turpis id. Id dolor praesent donec est. Odio penatibus
-            risus viverra tellus varius sit neque erat velit. Faucibus commodo
-            massa rhoncus, volutpat. Dignissim sed eget risus enim.{" "}
-            <a href="/">Mattis mauris semper</a> sed amet vitae sed turpis id.
-          </p>
-          <ul>
-            <li>Quis elit egestas venenatis mattis dignissim.</li>
-            <li>
-              Cras cras lobortis vitae vivamus ultricies facilisis tempus.
-            </li>
-            <li>Orci in sit morbi dignissim metus diam arcu pretium.</li>
+          <h3 className="text-lg text-gray-500">2. How We Use Your Information:</h3>
+          <p className="text-lg text-gray-500">We use the information we collect for the following purposes:</p>
+          <ul className="text-lg text-gray-500">
+            <li>To provide and improve our Instagram growth services, tailoring our strategies to your specific needs and objectives.</li>
+            <li>To communicate with you, respond to your inquiries, and provide customer support.</li>
+            <li>To analyze user behavior and engagement patterns to enhance our services and user experience.</li>
+            <li>To send you promotional and marketing communications related to our services, provided you have opted to receive such communications.</li>
+            <li>To ensure the security of our services and prevent fraudulent activities.</li>
           </ul>
-          <p>
-            Quis semper vulputate aliquam venenatis egestas sagittis quisque
-            orci. Donec commodo sit viverra aliquam porttitor ultrices gravida
-            eu. Tincidunt leo, elementum mattis elementum ut nisl, justo, amet,
-            mattis. Nunc purus, diam commodo tincidunt turpis. Amet, duis sed
-            elit interdum dignissim.
-          </p>
-          <h2>From beginner to expert in 30 days</h2>
-          <p>
-            Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat
-            in. Convallis arcu ipsum urna nibh. Pharetra, euismod vitae interdum
-            mauris enim, consequat vulputate nibh. Maecenas pellentesque id sed
-            tellus mauris, ultrices mauris. Tincidunt enim cursus ridiculus mi.
-            Pellentesque nam sed nullam sed diam turpis ipsum eu a sed convallis
-            diam.
-          </p>
-          <blockquote>
-            <p>
-              Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum
-              urna sed consectetur neque tristique pellentesque. Blandit amet,
-              sed aenean erat arcu morbi.
-            </p>
-          </blockquote>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus
-            enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor
-            praesent donec est. Odio penatibus risus viverra tellus varius sit
-            neque erat velit.
-          </p>
-          <h2>Everything you need to get up and running</h2>
-          <p>
-            Purus morbi dignissim senectus mattis <a href="/">adipiscing</a>.
-            Amet, massa quam varius orci dapibus volutpat cras. In amet eu
-            ridiculus leo sodales cursus tristique. Tincidunt sed tempus ut
-            viverra ridiculus non molestie. Gravida quis fringilla amet eget dui
-            tempor dignissim. Facilisis auctor venenatis varius nunc, congue
-            erat ac. Cras fermentum convallis quam.
-          </p>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus
-            enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor
-            praesent donec est. Odio penatibus risus viverra tellus varius sit
-            neque erat velit.
-          </p>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. <strong>Dignissim</strong>{" "}
-            sed <strong>eget risus enim</strong>. Mattis mauris semper sed amet
-            vitae sed turpis id. Id dolor praesent donec est. Odio penatibus
-            risus viverra tellus varius sit neque erat velit. Faucibus commodo
-            massa rhoncus, volutpat. Dignissim sed eget risus enim.{" "}
-            <a href="/">Mattis mauris semper</a> sed amet vitae sed turpis id.
-          </p>
-          <ul>
-            <li>Quis elit egestas venenatis mattis dignissim.</li>
-            <li>
-              Cras cras lobortis vitae vivamus ultricies facilisis tempus.
-            </li>
-            <li>Orci in sit morbi dignissim metus diam arcu pretium.</li>
-          </ul>
-          <p>
-            Quis semper vulputate aliquam venenatis egestas sagittis quisque
-            orci. Donec commodo sit viverra aliquam porttitor ultrices gravida
-            eu. Tincidunt leo, elementum mattis elementum ut nisl, justo, amet,
-            mattis. Nunc purus, diam commodo tincidunt turpis. Amet, duis sed
-            elit interdum dignissim.
-          </p>
-          <h2>From beginner to expert in 30 days</h2>
-          <p>
-            Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat
-            in. Convallis arcu ipsum urna nibh. Pharetra, euismod vitae interdum
-            mauris enim, consequat vulputate nibh. Maecenas pellentesque id sed
-            tellus mauris, ultrices mauris. Tincidunt enim cursus ridiculus mi.
-            Pellentesque nam sed nullam sed diam turpis ipsum eu a sed convallis
-            diam.
-          </p>
-          <blockquote>
-            <p>
-              Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum
-              urna sed consectetur neque tristique pellentesque. Blandit amet,
-              sed aenean erat arcu morbi.
-            </p>
-          </blockquote>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus
-            enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor
-            praesent donec est. Odio penatibus risus viverra tellus varius sit
-            neque erat velit.
-          </p>
-          <h2>Everything you need to get up and running</h2>
-          <p>
-            Purus morbi dignissim senectus mattis <a href="/">adipiscing</a>.
-            Amet, massa quam varius orci dapibus volutpat cras. In amet eu
-            ridiculus leo sodales cursus tristique. Tincidunt sed tempus ut
-            viverra ridiculus non molestie. Gravida quis fringilla amet eget dui
-            tempor dignissim. Facilisis auctor venenatis varius nunc, congue
-            erat ac. Cras fermentum convallis quam.
-          </p>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus
-            enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor
-            praesent donec est. Odio penatibus risus viverra tellus varius sit
-            neque erat velit.
-          </p>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. <strong>Dignissim</strong>{" "}
-            sed <strong>eget risus enim</strong>. Mattis mauris semper sed amet
-            vitae sed turpis id. Id dolor praesent donec est. Odio penatibus
-            risus viverra tellus varius sit neque erat velit. Faucibus commodo
-            massa rhoncus, volutpat. Dignissim sed eget risus enim.{" "}
-            <a href="/">Mattis mauris semper</a> sed amet vitae sed turpis id.
-          </p>
-          <ul>
-            <li>Quis elit egestas venenatis mattis dignissim.</li>
-            <li>
-              Cras cras lobortis vitae vivamus ultricies facilisis tempus.
-            </li>
-            <li>Orci in sit morbi dignissim metus diam arcu pretium.</li>
-          </ul>
-          <p>
-            Quis semper vulputate aliquam venenatis egestas sagittis quisque
-            orci. Donec commodo sit viverra aliquam porttitor ultrices gravida
-            eu. Tincidunt leo, elementum mattis elementum ut nisl, justo, amet,
-            mattis. Nunc purus, diam commodo tincidunt turpis. Amet, duis sed
-            elit interdum dignissim.
-          </p>
-          <h2>From beginner to expert in 30 days</h2>
-          <p>
-            Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat
-            in. Convallis arcu ipsum urna nibh. Pharetra, euismod vitae interdum
-            mauris enim, consequat vulputate nibh. Maecenas pellentesque id sed
-            tellus mauris, ultrices mauris. Tincidunt enim cursus ridiculus mi.
-            Pellentesque nam sed nullam sed diam turpis ipsum eu a sed convallis
-            diam.
-          </p>
-          <blockquote>
-            <p>
-              Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum
-              urna sed consectetur neque tristique pellentesque. Blandit amet,
-              sed aenean erat arcu morbi.
-            </p>
-          </blockquote>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus
-            enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor
-            praesent donec est. Odio penatibus risus viverra tellus varius sit
-            neque erat velit.
-          </p>
-          <h2>Everything you need to get up and running</h2>
-          <p>
-            Purus morbi dignissim senectus mattis <a href="/">adipiscing</a>.
-            Amet, massa quam varius orci dapibus volutpat cras. In amet eu
-            ridiculus leo sodales cursus tristique. Tincidunt sed tempus ut
-            viverra ridiculus non molestie. Gravida quis fringilla amet eget dui
-            tempor dignissim. Facilisis auctor venenatis varius nunc, congue
-            erat ac. Cras fermentum convallis quam.
-          </p>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus
-            enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor
-            praesent donec est. Odio penatibus risus viverra tellus varius sit
-            neque erat velit.
-          </p>
+          <h3 className="text-lg text-gray-500">3. Data Security:</h3>
+          <p className="text-lg text-gray-500">We take data security seriously and implement measures to safeguard your personal information. However, no method of transmission over the internet or electronic storage is completely secure. While we strive to protect your data, we cannot guarantee absolute security.</p>
+          <h3 className="text-lg text-gray-500">4. Third-Party Disclosures:</h3>
+          <p className="text-lg text-gray-500">We do not sell, trade, or transfer your personal information to third parties without your consent. However, we may share your information with trusted third-party service providers who assist us in delivering our services. These third-party providers are obligated to maintain the confidentiality and security of your information.</p>
+          <h3 className="text-lg text-gray-500">5. Children's Privacy:</h3>
+          <p className="text-lg text-gray-500">Our services are not intended for use by individuals under the age of 18. We do not knowingly collect personal information from children. If we become aware that a child under 18 has provided us with personal information, we will take steps to delete such information from our systems.</p>
+          <h3 className="text-lg text-gray-500">6. Changes to the Privacy Policy:</h3>
+          <p className="text-lg text-gray-500">We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes through the email associated with your account or by posting a prominent notice on our website. Your continued use of our services after such changes constitutes your acceptance of the revised Privacy Policy.</p>
+          <h3 className="text-lg text-gray-500">7. Contact Us:</h3>
+          <p className="text-lg text-gray-500">If you have any questions or concerns regarding this Privacy Policy or our services, please contact us at support@edgy.com.</p>
+          <p className="text-lg text-gray-500">By using Edgy's services, you acknowledge that you have read, understood, and agree to this Privacy Policy.</p>
         </section>
       </section>
     </main>

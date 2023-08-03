@@ -86,57 +86,26 @@ export default function AboutTwo() {
             <section className="lg:grid lg:grid-cols-2 lg:gap-6">
               <section className="prose prose-indigo prose-lg text-gray-500 lg:max-w-none">
                 <p>
-                  Ultrices ultricies a in odio consequat egestas rutrum. Ut
-                  vitae aliquam in ipsum. Duis nullam placerat cursus risus
-                  ultrices nisi, vitae tellus in. Qui non fugiat aut minus aut
-                  rerum. Perspiciatis iusto mollitia iste minima soluta id.
+                  Are you ready to take your Instagram game to the next level? Are you eager to see your follower count soar and your engagement skyrocket? Look no further! In this article, we unveil the secrets to turbocharging your Instagram growth. Say goodbye to the struggle of gaining followers and embrace our powerful growth strategies that will set you on a path to social media stardom.
                 </p>
                 <p>
-                  Erat pellentesque dictumst ligula porttitor risus eget et
-                  eget. Ultricies tellus felis id dignissim eget. Est augue{" "}
-                  <a href="/">maecenas</a> risus nulla ultrices congue nunc
-                  tortor. Eu leo risus porta integer suspendisse sed sit
-                  ligula elit.
+                  Before diving into our growth strategies, we shed light on the enigmatic Instagram algorithm. Delve into the inner workings of this algorithmic beast and learn how to work with it, not against it. By understanding the algorithm's preferences, you can position yourself for maximum exposure and enhanced visibility.
                 </p>
-                <ol>
-                  <li>
-                    Integer varius imperdiet sed interdum felis cras in nec
-                    nunc.
-                  </li>
-                  <li>
-                    Quam malesuada odio ut sit egestas. Elementum at porta
-                    vitae.
-                  </li>
-                </ol>
                 <p>
-                  Amet, eu nulla id molestie quis tortor. Auctor erat justo,
-                  sed pellentesque scelerisque interdum blandit lectus. Nec
-                  viverra amet ac facilisis vestibulum. Vestibulum purus nibh
-                  ac ultricies congue.
+                  Content is king, and in the realm of Instagram, quality reigns supreme. We show you how to create visually stunning and engaging content that captivates your audience. From eye-catching images to compelling captions, we reveal the essential elements that spark interest and drive followers to hit that "Follow" button.
                 </p>
               </section>
               <section className="mt-6 prose prose-indigo prose-lg text-gray-500 lg:mt-0">
                 <p>
-                  Erat pellentesque dictumst ligula porttitor risus eget et
-                  eget. Ultricies tellus felis id dignissim eget. Est augue
-                  maecenas risus nulla ultrices congue nunc tortor.
+                  Unlock the power of hashtags and trends to expand your reach beyond your current followers. We guide you on selecting the right hashtags and incorporating trending topics into your posts, ensuring your content reaches a broader audience.
                 </p>
                 <p>
-                  Eu leo risus porta integer suspendisse sed sit ligula elit.
-                  Elit egestas lacinia sagittis pellentesque neque dignissim
-                  vulputate sodales. Diam sed mauris felis risus, ultricies
-                  mauris netus tincidunt. Mauris sit eu ac tellus nibh non
-                  eget sed accumsan. Viverra ac sed venenatis pulvinar elit.
-                  Cras diam quis tincidunt lectus. Non mi vitae, scelerisque
-                  felis nisi, netus amet nisl.
+                  Genuine engagement is the lifeblood of Instagram growth. We share invaluable tips on how to foster meaningful connections with your followers, turning them into brand ambassadors who enthusiastically spread the word about your account.
                 </p>
                 <p>
-                  Eu eu mauris bibendum scelerisque adipiscing et. Justo,
-                  elementum consectetur morbi eros, posuere ipsum tortor. Eget
-                  cursus massa sed velit feugiat sed ut. Faucibus eros mauris
-                  morbi aliquam nullam. Scelerisque elementum sit magna
-                  ullamcorper dignissim pretium.
+                  Discover the science behind optimal posting times. By posting strategically, you can reach your audience when they are most active, increasing the likelihood of higher engagement and follower acquisition.
                 </p>
+                <p>With our powerful growth strategies at your disposal, you hold the key to unlocking Instagram success. Embrace the potential of our tried-and-tested methods and watch as your follower count grows organically. It's time to supercharge your Instagram presence and become the social media sensation you've always envisioned. Get ready to witness the magic happen!</p>
               </section>
             </section>
             <section className="mt-8 inline-flex rounded-md shadow">

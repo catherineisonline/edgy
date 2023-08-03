@@ -68,7 +68,7 @@ export default function Newsletter() {
             We care about the protection of your data. Read our{' '}
             <Link
               onClick={ResetLocation}
-              to="/privacy"
+              to="/edgy/privacy"
               className="text-white font-medium underline"
             >
               Privacy Policy.

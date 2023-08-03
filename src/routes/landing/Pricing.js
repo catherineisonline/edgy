@@ -3,21 +3,21 @@ import { CheckIcon } from '@heroicons/react/outline'
 import { Link } from 'react-router-dom'
 
 const StandardFeatures = [
-  'Pariatur quod similique',
-  'Sapiente libero doloribus',
-  'Vel ipsa esse repudiandae',
+  'Organic Follower Growth: Gain real, engaged followers through genuine interactions and personalized strategies, helping you build a loyal community.',
+  "Content Optimization: Receive tailored content recommendations to enhance your feed's visual appeal and captivate your target audience.",
+  "Hashtag Research: Unlock the potential of strategic hashtags to boost your posts' discoverability and increase your reach",
 ]
 const PremiumFeatures = [
-  'Quia rem est sed impedit magnam',
-  'Dolorem vero ratione voluptates',
-  'Qui sed ab doloribus voluptatem dolore',
-  'Laborum commodi molestiae id et fugiat',
-  'Nam ut ipsa nesciunt culpa modi dolor',
+  "Community Engagement: Our team proactively engages with your followers, responding to comments, and fostering genuine connections on your behalf.",
+  "Monthly Progress Report: Stay updated on your Instagram growth journey with a comprehensive monthly progress report, showcasing key metrics and insights.",
+  "Customized Strategy: Receive a tailor-made growth strategy designed specifically for your niche and target audience.",
+  "Influencer Outreach: Tap into our network of influencers for collaborations and shout-outs to gain exposure to a broader audience.",
+  "Story Management: Maximize the potential of Instagram Stories with engaging content and highlights to captivate your followers.",
 ]
 const BusinessFeatures = [
-  'Pariatur quod similique',
-  'Sapiente libero doloribus',
-  'Vel ipsa esse repudiandae',
+  "Competitor Analysis: Gain insights into your competitors' performance to identify opportunities and stay ahead of the curve.",
+  "Post Optimization Suggestions: Receive recommendations for optimizing your post timings and content to maximize engagement.",
+  "Exclusive Early Access: Get exclusive early access to new features and updates before they're rolled out to other plans.",
 ]
 
 export default function Pricing() {

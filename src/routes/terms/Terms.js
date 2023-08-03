@@ -106,376 +106,40 @@ export default function Terms() {
       </section>
       <section className="relative px-4 sm:px-6 lg:px-8">
         <section className="text-lg max-w-prose mx-auto">
-          <h1>
+          <h2>
             <span className="block text-base text-center text-indigo-600 font-semibold tracking-wide uppercase">
               Legal
             </span>
             <span className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
               Edgy Terms & Conditions
             </span>
-          </h1>
-          <p className="mt-8 text-xl text-gray-500 leading-8">
-            Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At
-            arcu, sit dui mi, nibh dui, diam eget aliquam. Quisque id at vitae
-            feugiat egestas ac. Diam nulla orci at in viverra scelerisque eget.
-            Eleifend egestas fringilla sapien.
-          </p>
-        </section>
-        <section className="mt-6 prose prose-indigo prose-lg text-white  mx-auto w-7/12">
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. <strong>Dignissim</strong>{" "}
-            sed <strong>eget risus enim</strong>. Mattis mauris semper sed amet
-            vitae sed turpis id. Id dolor praesent donec est. Odio penatibus
-            risus viverra tellus varius sit neque erat velit. Faucibus commodo
-            massa rhoncus, volutpat. Dignissim sed eget risus enim.{" "}
-            <a href="/">Mattis mauris semper</a> sed amet vitae sed turpis id.
-          </p>
-          <ul>
-            <li>Quis elit egestas venenatis mattis dignissim.</li>
-            <li>
-              Cras cras lobortis vitae vivamus ultricies facilisis tempus.
-            </li>
-            <li>Orci in sit morbi dignissim metus diam arcu pretium.</li>
-          </ul>
-          <p>
-            Quis semper vulputate aliquam venenatis egestas sagittis quisque
-            orci. Donec commodo sit viverra aliquam porttitor ultrices gravida
-            eu. Tincidunt leo, elementum mattis elementum ut nisl, justo, amet,
-            mattis. Nunc purus, diam commodo tincidunt turpis. Amet, duis sed
-            elit interdum dignissim.
-          </p>
-          <h2>From beginner to expert in 30 days</h2>
-          <p>
-            Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat
-            in. Convallis arcu ipsum urna nibh. Pharetra, euismod vitae interdum
-            mauris enim, consequat vulputate nibh. Maecenas pellentesque id sed
-            tellus mauris, ultrices mauris. Tincidunt enim cursus ridiculus mi.
-            Pellentesque nam sed nullam sed diam turpis ipsum eu a sed convallis
-            diam.
-          </p>
-          <blockquote>
-            <p>
-              Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum
-              urna sed consectetur neque tristique pellentesque. Blandit amet,
-              sed aenean erat arcu morbi.
-            </p>
-          </blockquote>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus
-            enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor
-            praesent donec est. Odio penatibus risus viverra tellus varius sit
-            neque erat velit.
-          </p>
-          <h2>Everything you need to get up and running</h2>
-          <p>
-            Purus morbi dignissim senectus mattis <a href="/">adipiscing</a>.
-            Amet, massa quam varius orci dapibus volutpat cras. In amet eu
-            ridiculus leo sodales cursus tristique. Tincidunt sed tempus ut
-            viverra ridiculus non molestie. Gravida quis fringilla amet eget dui
-            tempor dignissim. Facilisis auctor venenatis varius nunc, congue
-            erat ac. Cras fermentum convallis quam.
-          </p>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus
-            enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor
-            praesent donec est. Odio penatibus risus viverra tellus varius sit
-            neque erat velit.
-          </p>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. <strong>Dignissim</strong>{" "}
-            sed <strong>eget risus enim</strong>. Mattis mauris semper sed amet
-            vitae sed turpis id. Id dolor praesent donec est. Odio penatibus
-            risus viverra tellus varius sit neque erat velit. Faucibus commodo
-            massa rhoncus, volutpat. Dignissim sed eget risus enim.{" "}
-            <a href="/">Mattis mauris semper</a> sed amet vitae sed turpis id.
-          </p>
-          <ul>
-            <li>Quis elit egestas venenatis mattis dignissim.</li>
-            <li>
-              Cras cras lobortis vitae vivamus ultricies facilisis tempus.
-            </li>
-            <li>Orci in sit morbi dignissim metus diam arcu pretium.</li>
-          </ul>
-          <p>
-            Quis semper vulputate aliquam venenatis egestas sagittis quisque
-            orci. Donec commodo sit viverra aliquam porttitor ultrices gravida
-            eu. Tincidunt leo, elementum mattis elementum ut nisl, justo, amet,
-            mattis. Nunc purus, diam commodo tincidunt turpis. Amet, duis sed
-            elit interdum dignissim.
-          </p>
-          <h2>From beginner to expert in 30 days</h2>
-          <p>
-            Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat
-            in. Convallis arcu ipsum urna nibh. Pharetra, euismod vitae interdum
-            mauris enim, consequat vulputate nibh. Maecenas pellentesque id sed
-            tellus mauris, ultrices mauris. Tincidunt enim cursus ridiculus mi.
-            Pellentesque nam sed nullam sed diam turpis ipsum eu a sed convallis
-            diam.
-          </p>
-          <blockquote>
-            <p>
-              Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum
-              urna sed consectetur neque tristique pellentesque. Blandit amet,
-              sed aenean erat arcu morbi.
-            </p>
-          </blockquote>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus
-            enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor
-            praesent donec est. Odio penatibus risus viverra tellus varius sit
-            neque erat velit.
-          </p>
-          <h2>Everything you need to get up and running</h2>
-          <p>
-            Purus morbi dignissim senectus mattis <a href="/">adipiscing</a>.
-            Amet, massa quam varius orci dapibus volutpat cras. In amet eu
-            ridiculus leo sodales cursus tristique. Tincidunt sed tempus ut
-            viverra ridiculus non molestie. Gravida quis fringilla amet eget dui
-            tempor dignissim. Facilisis auctor venenatis varius nunc, congue
-            erat ac. Cras fermentum convallis quam.
-          </p>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus
-            enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor
-            praesent donec est. Odio penatibus risus viverra tellus varius sit
-            neque erat velit.
-          </p>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. <strong>Dignissim</strong>{" "}
-            sed <strong>eget risus enim</strong>. Mattis mauris semper sed amet
-            vitae sed turpis id. Id dolor praesent donec est. Odio penatibus
-            risus viverra tellus varius sit neque erat velit. Faucibus commodo
-            massa rhoncus, volutpat. Dignissim sed eget risus enim.{" "}
-            <a href="/">Mattis mauris semper</a> sed amet vitae sed turpis id.
-          </p>
-          <ul>
-            <li>Quis elit egestas venenatis mattis dignissim.</li>
-            <li>
-              Cras cras lobortis vitae vivamus ultricies facilisis tempus.
-            </li>
-            <li>Orci in sit morbi dignissim metus diam arcu pretium.</li>
-          </ul>
-          <p>
-            Quis semper vulputate aliquam venenatis egestas sagittis quisque
-            orci. Donec commodo sit viverra aliquam porttitor ultrices gravida
-            eu. Tincidunt leo, elementum mattis elementum ut nisl, justo, amet,
-            mattis. Nunc purus, diam commodo tincidunt turpis. Amet, duis sed
-            elit interdum dignissim.
-          </p>
-          <h2>From beginner to expert in 30 days</h2>
-          <p>
-            Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat
-            in. Convallis arcu ipsum urna nibh. Pharetra, euismod vitae interdum
-            mauris enim, consequat vulputate nibh. Maecenas pellentesque id sed
-            tellus mauris, ultrices mauris. Tincidunt enim cursus ridiculus mi.
-            Pellentesque nam sed nullam sed diam turpis ipsum eu a sed convallis
-            diam.
-          </p>
-          <blockquote>
-            <p>
-              Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum
-              urna sed consectetur neque tristique pellentesque. Blandit amet,
-              sed aenean erat arcu morbi.
-            </p>
-          </blockquote>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus
-            enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor
-            praesent donec est. Odio penatibus risus viverra tellus varius sit
-            neque erat velit.
-          </p>
-          <h2>Everything you need to get up and running</h2>
-          <p>
-            Purus morbi dignissim senectus mattis <a href="/">adipiscing</a>.
-            Amet, massa quam varius orci dapibus volutpat cras. In amet eu
-            ridiculus leo sodales cursus tristique. Tincidunt sed tempus ut
-            viverra ridiculus non molestie. Gravida quis fringilla amet eget dui
-            tempor dignissim. Facilisis auctor venenatis varius nunc, congue
-            erat ac. Cras fermentum convallis quam.
-          </p>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus
-            enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor
-            praesent donec est. Odio penatibus risus viverra tellus varius sit
-            neque erat velit.
-          </p>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. <strong>Dignissim</strong>{" "}
-            sed <strong>eget risus enim</strong>. Mattis mauris semper sed amet
-            vitae sed turpis id. Id dolor praesent donec est. Odio penatibus
-            risus viverra tellus varius sit neque erat velit. Faucibus commodo
-            massa rhoncus, volutpat. Dignissim sed eget risus enim.{" "}
-            <a href="/">Mattis mauris semper</a> sed amet vitae sed turpis id.
-          </p>
-          <ul>
-            <li>Quis elit egestas venenatis mattis dignissim.</li>
-            <li>
-              Cras cras lobortis vitae vivamus ultricies facilisis tempus.
-            </li>
-            <li>Orci in sit morbi dignissim metus diam arcu pretium.</li>
-          </ul>
-          <p>
-            Quis semper vulputate aliquam venenatis egestas sagittis quisque
-            orci. Donec commodo sit viverra aliquam porttitor ultrices gravida
-            eu. Tincidunt leo, elementum mattis elementum ut nisl, justo, amet,
-            mattis. Nunc purus, diam commodo tincidunt turpis. Amet, duis sed
-            elit interdum dignissim.
-          </p>
-          <h2>From beginner to expert in 30 days</h2>
-          <p>
-            Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat
-            in. Convallis arcu ipsum urna nibh. Pharetra, euismod vitae interdum
-            mauris enim, consequat vulputate nibh. Maecenas pellentesque id sed
-            tellus mauris, ultrices mauris. Tincidunt enim cursus ridiculus mi.
-            Pellentesque nam sed nullam sed diam turpis ipsum eu a sed convallis
-            diam.
-          </p>
-          <blockquote>
-            <p>
-              Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum
-              urna sed consectetur neque tristique pellentesque. Blandit amet,
-              sed aenean erat arcu morbi.
-            </p>
-          </blockquote>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus
-            enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor
-            praesent donec est. Odio penatibus risus viverra tellus varius sit
-            neque erat velit.
-          </p>
-          <h2>Everything you need to get up and running</h2>
-          <p>
-            Purus morbi dignissim senectus mattis <a href="/">adipiscing</a>.
-            Amet, massa quam varius orci dapibus volutpat cras. In amet eu
-            ridiculus leo sodales cursus tristique. Tincidunt sed tempus ut
-            viverra ridiculus non molestie. Gravida quis fringilla amet eget dui
-            tempor dignissim. Facilisis auctor venenatis varius nunc, congue
-            erat ac. Cras fermentum convallis quam.
-          </p>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus
-            enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor
-            praesent donec est. Odio penatibus risus viverra tellus varius sit
-            neque erat velit.
-          </p>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. <strong>Dignissim</strong>{" "}
-            sed <strong>eget risus enim</strong>. Mattis mauris semper sed amet
-            vitae sed turpis id. Id dolor praesent donec est. Odio penatibus
-            risus viverra tellus varius sit neque erat velit. Faucibus commodo
-            massa rhoncus, volutpat. Dignissim sed eget risus enim.{" "}
-            <a href="/">Mattis mauris semper</a> sed amet vitae sed turpis id.
-          </p>
-          <ul>
-            <li>Quis elit egestas venenatis mattis dignissim.</li>
-            <li>
-              Cras cras lobortis vitae vivamus ultricies facilisis tempus.
-            </li>
-            <li>Orci in sit morbi dignissim metus diam arcu pretium.</li>
-          </ul>
-          <p>
-            Quis semper vulputate aliquam venenatis egestas sagittis quisque
-            orci. Donec commodo sit viverra aliquam porttitor ultrices gravida
-            eu. Tincidunt leo, elementum mattis elementum ut nisl, justo, amet,
-            mattis. Nunc purus, diam commodo tincidunt turpis. Amet, duis sed
-            elit interdum dignissim.
-          </p>
-          <h2>From beginner to expert in 30 days</h2>
-          <p>
-            Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat
-            in. Convallis arcu ipsum urna nibh. Pharetra, euismod vitae interdum
-            mauris enim, consequat vulputate nibh. Maecenas pellentesque id sed
-            tellus mauris, ultrices mauris. Tincidunt enim cursus ridiculus mi.
-            Pellentesque nam sed nullam sed diam turpis ipsum eu a sed convallis
-            diam.
-          </p>
-          <blockquote>
-            <p>
-              Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum
-              urna sed consectetur neque tristique pellentesque. Blandit amet,
-              sed aenean erat arcu morbi.
-            </p>
-          </blockquote>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus
-            enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor
-            praesent donec est. Odio penatibus risus viverra tellus varius sit
-            neque erat velit.
-          </p>
-          <h2>Everything you need to get up and running</h2>
-          <p>
-            Purus morbi dignissim senectus mattis <a href="/">adipiscing</a>.
-            Amet, massa quam varius orci dapibus volutpat cras. In amet eu
-            ridiculus leo sodales cursus tristique. Tincidunt sed tempus ut
-            viverra ridiculus non molestie. Gravida quis fringilla amet eget dui
-            tempor dignissim. Facilisis auctor venenatis varius nunc, congue
-            erat ac. Cras fermentum convallis quam.
-          </p>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus
-            enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor
-            praesent donec est. Odio penatibus risus viverra tellus varius sit
-            neque erat velit.
-          </p>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. <strong>Dignissim</strong>{" "}
-            sed <strong>eget risus enim</strong>. Mattis mauris semper sed amet
-            vitae sed turpis id. Id dolor praesent donec est. Odio penatibus
-            risus viverra tellus varius sit neque erat velit. Faucibus commodo
-            massa rhoncus, volutpat. Dignissim sed eget risus enim.{" "}
-            <a href="/">Mattis mauris semper</a> sed amet vitae sed turpis id.
-          </p>
-          <ul>
-            <li>Quis elit egestas venenatis mattis dignissim.</li>
-            <li>
-              Cras cras lobortis vitae vivamus ultricies facilisis tempus.
-            </li>
-            <li>Orci in sit morbi dignissim metus diam arcu pretium.</li>
-          </ul>
-          <p>
-            Quis semper vulputate aliquam venenatis egestas sagittis quisque
-            orci. Donec commodo sit viverra aliquam porttitor ultrices gravida
-            eu. Tincidunt leo, elementum mattis elementum ut nisl, justo, amet,
-            mattis. Nunc purus, diam commodo tincidunt turpis. Amet, duis sed
-            elit interdum dignissim.
-          </p>
-          <h2>From beginner to expert in 30 days</h2>
-          <p>
-            Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat
-            in. Convallis arcu ipsum urna nibh. Pharetra, euismod vitae interdum
-            mauris enim, consequat vulputate nibh. Maecenas pellentesque id sed
-            tellus mauris, ultrices mauris. Tincidunt enim cursus ridiculus mi.
-            Pellentesque nam sed nullam sed diam turpis ipsum eu a sed convallis
-            diam.
-          </p>
-          <blockquote>
-            <p>
-              Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum
-              urna sed consectetur neque tristique pellentesque. Blandit amet,
-              sed aenean erat arcu morbi.
-            </p>
-          </blockquote>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus
-            enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor
-            praesent donec est. Odio penatibus risus viverra tellus varius sit
-            neque erat velit.
-          </p>
-          <h2>Everything you need to get up and running</h2>
-          <p>
-            Purus morbi dignissim senectus mattis <a href="/">adipiscing</a>.
-            Amet, massa quam varius orci dapibus volutpat cras. In amet eu
-            ridiculus leo sodales cursus tristique. Tincidunt sed tempus ut
-            viverra ridiculus non molestie. Gravida quis fringilla amet eget dui
-            tempor dignissim. Facilisis auctor venenatis varius nunc, congue
-            erat ac. Cras fermentum convallis quam.
-          </p>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus
-            enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor
-            praesent donec est. Odio penatibus risus viverra tellus varius sit
-            neque erat velit.
-          </p>
+          </h2>
+          <p className="mt-8 text-lg text-gray-500">These Terms & Conditions ("Terms") govern your use of the Instagram growth services provided by [Company Name] ("Edgy," "we," "our," or "us"). By using our services, you ("you," "your," or "user") agree to comply with these Terms and enter into a binding agreement with Edgy. If you do not agree with these Terms, please refrain from using our services.</p>
+          <h3 className="text-lg text-gray-500">1. Instagram Account Access:</h3>
+          <p className="text-lg text-gray-500">To utilize our services, you grant Edgy limited access to your Instagram account. This access is necessary for our team to perform manual engagement and implement growth strategies. We do not store or share your account login information, and we handle your data with utmost confidentiality.</p>
+          <h3 className="text-lg text-gray-500">2. Service Eligibility:</h3>
+          <p className="text-lg text-gray-500">You must be at least 18 years old and possess the legal authority to enter into a contract to use our services. By using our services, you represent and warrant that you meet these eligibility requirements.</p>
+          <h3 className="text-lg text-gray-500">3. Prohibited Activities:</h3>
+          <p className="text-lg text-gray-500">You agree not to use our services for any illegal, unethical, or unauthorized purposes. You must not engage in any activity that violates Instagram's terms of service or any applicable laws and regulations. Prohibited activities include, but are not limited to, spamming, using bots or automation, engaging in fraudulent activities, and violating intellectual property rights.</p>
+          <h3 className="text-lg text-gray-500">4. Service Results:</h3>
+          <p className="text-lg text-gray-500">While we strive to deliver significant growth and engagement on your Instagram account, we do not guarantee specific outcomes. The results may vary based on factors such as your content, target audience, and account history. Our growth strategies are designed to be organic and authentic, focusing on building meaningful connections with your audience.</p>
+          <h3 className="text-lg text-gray-500">5. Intellectual Property:</h3>
+          <p className="text-lg text-gray-500">All intellectual property rights associated with our services, including but not limited to trademarks, logos, and content, are owned by Edgy. You are not allowed to use, copy, or distribute our intellectual property without our express written consent.</p>
+          <h3 className="text-lg text-gray-500">6. Termination:</h3>
+          <p className="text-lg text-gray-500">You have the right to terminate your use of our services at any time. We also reserve the right to terminate or suspend your access to our services, with or without cause, at our discretion. In the event of termination, any fees paid are non-refundable.</p>
+          <h3 className="text-lg text-gray-500">7. Disclaimer of Warranties:</h3>
+          <p className="text-lg text-gray-500">Our services are provided "as is" and without any warranties or guarantees. Edgy does not warrant that our services will be uninterrupted, error-free, or free of viruses or other harmful components. We disclaim all warranties, whether express or implied, including but not limited to the implied warranties of merchantability and fitness for a particular purpose.</p>
+          <h3 className="text-lg text-gray-500">8. Limitation of Liability:</h3>
+          <p className="text-lg text-gray-500">To the maximum extent permitted by law, Edgy shall not be liable for any direct, indirect, incidental, special, consequential, or punitive damages arising from or related to the use of our services.</p>
+          <h3 className="text-lg text-gray-500">9. Indemnification:</h3>
+          <p className="text-lg text-gray-500">You agree to indemnify and hold Edgy harmless from any claims, losses, liabilities, damages, expenses, and costs (including attorney's fees) arising from your use of our services or your violation of these Terms.</p>
+          <h3 className="text-lg text-gray-500">10. Modifications:</h3>
+          <p className="text-lg text-gray-500">Edgy reserves the right to update or modify these Terms at any time without prior notice. Your continued use of our services after any changes to the Terms constitutes your acceptance of the revised Terms.</p>
+          <h3 className="text-lg text-gray-500">11. Governing Law:</h3>
+          <p className="text-lg text-gray-500">These Terms shall be governed by and construed in accordance with the laws of [Jurisdiction], without regard to its conflict of laws principles.</p>
+          <h3 className="text-lg text-gray-500">12. Contact Us:</h3>
+          <p className="text-lg text-gray-500">If you have any questions or concerns regarding these Terms or our services, please contact us at support@edgy.com.</p>
+          <p className="text-lg text-gray-500">By using Edgy's services, you acknowledge that you have read, understood, and agree to these Terms & Conditions.</p>
         </section>
       </section>
     </main>
