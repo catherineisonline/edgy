@@ -7,7 +7,7 @@ export default function AboutTwo() {
       <section className="max-w-max lg:max-w-7xl mx-auto">
         <section className="relative z-10 mb-8 md:mb-2 md:px-6 ">
           <section className="text-base max-w-prose lg:max-w-none ">
-            <h2 className="leading-6 text-indigo-600 font-semibold tracking-wide uppercase">
+            <h2 className="leading-6 text-[color:var(--primary-font-color)] font-semibold tracking-wide uppercase">
               Become an influencer
             </h2>
             <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">

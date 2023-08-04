@@ -77,7 +77,7 @@ export default function Team() {
                   <section className="space-y-2">
                     <section className="text-lg leading-6 font-medium space-y-1">
                       <h3 className="text-white">{person.name}</h3>
-                      <p className="text-indigo-600">{person.role}</p>
+                      <p className="text-[color:var(--primary-font-color)]">{person.role}</p>
                     </section>
                     <ul className="flex justify-center space-x-5">
                       <li>

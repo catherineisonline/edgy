@@ -58,7 +58,7 @@ export default function Testimonials() {
                 y={0}
                 width={4}
                 height={4}
-                className="text-indigo-600"
+                className="text-[color:var(--primary-font-color)]"
                 fill="currentColor"
               />
             </pattern>
@@ -114,7 +114,7 @@ export default function Testimonials() {
                     <section className="text-base font-medium text-white">
                       Catherine Black
                     </section>
-                    <section className="text-base font-medium text-indigo-600">
+                    <section className="text-base font-medium text-[color:var(--primary-font-color)]">
                       CEO, Edgy
                     </section>
                   </section>

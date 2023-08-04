@@ -51,7 +51,7 @@ export default function Hero() {
             <section className="lg:py-24">
               <h1 className="mt-4 text-5xl tracking-tight font-extrabold text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
                 <span className="block">Edgy</span>
-                <span className="block text-indigo-400">
+                <span className="block text-[color:var(--primary-font-color)]">
                   your Instagram growth secret
                 </span>
               </h1>

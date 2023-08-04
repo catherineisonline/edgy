@@ -43,7 +43,7 @@ export default function JobsForm() {
             <h2 className="inline text-3xl font-extrabold tracking-tight text-white sm:block sm:text-4xl">
                 Ready to advance your career?
             </h2>
-            <p className="inline text-3xl font-extrabold tracking-tight text-indigo-600 sm:block sm:text-4xl">
+            <p className="inline text-3xl font-extrabold tracking-tight text-[color:var(--primary-font-color)] sm:block sm:text-4xl">
                 Send us your email and we will contact you.
             </p>
             {loading ?

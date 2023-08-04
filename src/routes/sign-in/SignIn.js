@@ -18,7 +18,7 @@ export default function SignIn() {
             <Link
               onClick={ResetLocation}
               to="/sign-up"
-              className="font-medium text-indigo-600 hover:text-indigo-500"
+              className="font-medium text-[color:var(--primary-font-color)] hover:text-[color:var(--primary-font-color-hover)]"
             >
               sign up
             </Link>

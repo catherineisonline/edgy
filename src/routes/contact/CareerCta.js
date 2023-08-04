@@ -7,7 +7,7 @@ export default function CareerCta() {
       <section className="max-w-md mx-auto text-center py-16 px-4 sm:max-w-2xl sm:py-24 sm:px-6 lg:px-8 lg:py-32">
         <h2 className="text-3xl font-extrabold sm:text-4xl">
           <span className="block text-white">Looking for a new career?</span>
-          <span className="block text-indigo-600">We’re hiring.</span>
+          <span className="block text-[color:var(--primary-font-color)]">We’re hiring.</span>
         </h2>
         <Link
           onClick={ResetLocation}

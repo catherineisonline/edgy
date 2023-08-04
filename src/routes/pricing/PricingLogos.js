@@ -4,7 +4,7 @@ export default function PricingLogos() {
   return (
     <section className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
       <h2>
-        <span className="block text-base text-center text-indigo-600 font-semibold tracking-wide uppercase">
+        <span className="block text-base text-center text-[color:var(--primary-font-color)] font-semibold tracking-wide uppercase">
           business
         </span>
         <span className="mb-10 block text-3xl text-center leading-8 font-extrabold tracking-tight text-white sm:text-4xl">

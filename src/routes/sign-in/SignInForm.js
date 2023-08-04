@@ -42,7 +42,7 @@ export default function SignInForm() {
             id="remember-me"
             name="remember-me"
             type="checkbox"
-            className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+            className="h-4 w-4 text-[color:var(--primary-font-color)] focus:ring-indigo-500 border-gray-300 rounded"
           />
           <label
             htmlFor="remember-me"
@@ -55,7 +55,7 @@ export default function SignInForm() {
         <section className="text-sm">
           <Link
             to="/forgot-password"
-            className="font-medium text-indigo-600 hover:text-indigo-500"
+            className="font-medium text-[color:var(--primary-font-color)] hover:text-[color:var(--primary-font-color-hover)]"
           >
             Forgot your password?
           </Link>
@@ -69,7 +69,7 @@ export default function SignInForm() {
         >
           <span className="absolute left-0 inset-y-0 flex items-center pl-3">
             <LockClosedIcon
-              className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400"
+              className="h-5 w-5 text-[color:var(--primary-font-color)] group-hover:text-[color:var(--primary-font-color-hover)]"
               aria-hidden="true"
             />
           </span>

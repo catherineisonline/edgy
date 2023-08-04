@@ -6,7 +6,7 @@ export default function Pricing() {
   return (
     <main className="bg-gray-900">
       <section className="text-center p-10">
-        <h2 className="text-lg leading-6 font-semibold text-indigo-600 uppercase tracking-wider">
+        <h2 className="text-lg leading-6 font-semibold text-[color:var(--primary-font-color)] uppercase tracking-wider">
           Pricing Comparison
         </h2>
         <h3 className="mt-2 text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl">

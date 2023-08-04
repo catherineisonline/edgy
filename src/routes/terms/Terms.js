@@ -107,7 +107,7 @@ export default function Terms() {
       <section className="relative px-4 sm:px-6 lg:px-8">
         <section className="text-lg max-w-prose mx-auto">
           <h2>
-            <span className="block text-base text-center text-indigo-600 font-semibold tracking-wide uppercase">
+            <span className="block text-base text-center text-[color:var(--primary-font-color)] font-semibold tracking-wide uppercase">
               Legal
             </span>
             <span className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-white sm:text-4xl">

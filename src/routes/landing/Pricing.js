@@ -89,7 +89,7 @@ export default function Pricing() {
                           <Link
                             onClick={ResetLocation}
                             to="/sign-up"
-                            className="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-indigo-600 hover:bg-gray-50"
+                            className="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-[color:var(--primary-font-color)] hover:bg-gray-50"
                             aria-describedby="tier-hobby"
                           >
                             Get Started
@@ -210,7 +210,7 @@ export default function Pricing() {
                           <Link
                             onClick={ResetLocation}
                             to="/sign-up"
-                            className="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-indigo-600 hover:bg-gray-50"
+                            className="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-[color:var(--primary-font-color)] hover:bg-gray-50"
                             aria-describedby="tier-scale"
                           >
                             Get Started

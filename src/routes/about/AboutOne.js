@@ -67,7 +67,7 @@ export default function AboutOne() {
               <blockquote className="mt-8">
                 <section className="relative text-lg font-medium text-white md:flex-grow">
                   <svg
-                    className="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-indigo-400"
+                    className="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-[color:var(--primary-font-color)]"
                     fill="currentColor"
                     viewBox="0 0 32 32"
                     aria-hidden="true"

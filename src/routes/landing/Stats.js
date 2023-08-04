@@ -47,7 +47,7 @@ export default function Stats() {
       </section>
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8 xl:grid xl:grid-cols-2 xl:grid-flow-col-dense xl:gap-x-8">
         <section className="relative pt-12 pb-64 sm:pt-24 sm:pb-64 xl:col-start-1 xl:pb-24">
-          <h2 className="text-sm font-semibold text-indigo-300 tracking-wide uppercase">
+          <h2 className="text-sm font-semibold text-[color:var(--primary-font-color)] tracking-wide uppercase">
             Valuable Metrics
           </h2>
           <p className="mt-3 text-3xl font-extrabold text-white">
