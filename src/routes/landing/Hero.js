@@ -80,7 +80,7 @@ export default function Hero() {
                             Email address
                           </label>
                           <input
-                            id="email"
+                            id="trial-email"
                             name="email"
                             type="text"
                             value={formValue.email}

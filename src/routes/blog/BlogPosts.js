@@ -478,6 +478,7 @@ export default function BlogPosts() {
                 className="h-48 w-full object-cover"
                 src={post.imageUrl}
                 alt=""
+                aria-hidden="true"
               />
             </section>
             <section className="flex-1 bg-gray-900 p-6 flex flex-col justify-between">

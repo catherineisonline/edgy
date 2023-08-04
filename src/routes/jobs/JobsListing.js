@@ -56,13 +56,12 @@ export default function JobsListing() {
             {jobs.map((job) => (
               <li key={job.department}>
                 <section className="space-y-4">
-                  {/* <section className="aspect-w-3 aspect-h-2 h-10"> */}
                   <img
                     className="object-cover shadow-lg rounded-lg h-64 w-full"
                     src={job.imageUrl}
                     alt=""
+                    aria-hidden="true"
                   />
-                  {/* </section> */}
                   <section className="text-lg leading-6 font-medium space-y-1">
                     <h3 className="text-white">{job.department}</h3>
                     <p className="text-indigo-600">{job.role}</p>
