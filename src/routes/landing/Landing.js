@@ -7,7 +7,7 @@ import Pricing from "./Pricing";
 import Testimonials from "./Testimonials";
 import Team from "../../components/team/Team";
 import Comparison from "./Comparison";
-import Newsletter from "./Newsletter";
+import Newsletter from "../../components/Newsletter";
 
 function Landing() {
   return (
@@ -21,7 +21,7 @@ function Landing() {
       <Testimonials />
       <Team />
       <Comparison />
-      <Newsletter/>
+      <Newsletter />
     </article>
   );
 }

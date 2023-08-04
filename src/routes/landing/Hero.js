@@ -17,17 +17,13 @@ export default function Hero() {
     setFormError(validateForm(formValue))
     if (Object.keys(validateForm(formValue)).length > 0) {
       setLoading(false);
-      console.log('err')
       return null;
     }
     else {
       setSubmit(true);
       setFormValue({ email: '' });
       setLoading(false);
-      console.log('done')
     }
-
-
   }
   const handleValidation = (e) => {
     const { name, value } = e.target;

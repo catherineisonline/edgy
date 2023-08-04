@@ -33,7 +33,7 @@ const jobs = [
   },
 ]
 
-export default function JobsOne() {
+export default function JobsListing() {
   return (
     <article className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
       <section className="space-y-12 lg:grid lg:grid-cols-3 lg:gap-8 lg:space-y-0">
@@ -56,13 +56,13 @@ export default function JobsOne() {
             {jobs.map((job) => (
               <li key={job.department}>
                 <section className="space-y-4">
-                  <section className="aspect-w-3 aspect-h-2">
-                    <img
-                      className="object-cover shadow-lg rounded-lg"
-                      src={job.imageUrl}
-                      alt=""
-                    />
-                  </section>
+                  {/* <section className="aspect-w-3 aspect-h-2 h-10"> */}
+                  <img
+                    className="object-cover shadow-lg rounded-lg h-64 w-full"
+                    src={job.imageUrl}
+                    alt=""
+                  />
+                  {/* </section> */}
                   <section className="text-lg leading-6 font-medium space-y-1">
                     <h3 className="text-white">{job.department}</h3>
                     <p className="text-indigo-600">{job.role}</p>

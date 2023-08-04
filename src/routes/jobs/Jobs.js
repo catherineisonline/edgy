@@ -1,11 +1,11 @@
-import JobsOne from "./JobsOne";
-import JobsTwo from './JobsTwo'
+import JobsForm from "../../components/JobsForm";
+import JobsListing from "./JobsListing";
 
 export default function Jobs() {
   return (
     <main className="bg-gray-900">
-     <JobsOne/>
-     <JobsTwo/>
+      <JobsListing />
+      <JobsForm />
     </main>
   );
 }

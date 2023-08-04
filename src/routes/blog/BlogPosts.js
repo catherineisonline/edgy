@@ -454,7 +454,7 @@ const posts = [
   },
 ]
 
-export default function BlogOne() {
+export default function BlogPosts() {
   const ResetLocation = () => window.scrollTo(0, 0)
   return (
     <article className="relative max-w-7xl mx-auto">
