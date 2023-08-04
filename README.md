@@ -37,6 +37,10 @@ This project serves as a personal portfolio website to show off my personal skil
 - [HeroIcons](https://heroicons.com/)
 - [React Router](https://www.npmjs.com/package/react-router-dom)
 - [Craco](https://www.npmjs.com/package/@craco/craco)
+- [Express](https://www.npmjs.com/package/express)
+- [cors](https://www.npmjs.com/package/cors)
+- [dotenv](https://www.npmjs.com/package/dotenv)
+
 
 ## License  <a id="license"></a>
 
