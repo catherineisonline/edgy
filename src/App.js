@@ -14,6 +14,7 @@ import Privacy from "./routes/privacy/Privacy";
 import Jobs from "./routes/jobs/Jobs";
 import SignIn from "./routes/sign-in/SignIn";
 import SignUp from "./routes/sign-up/SignUp";
+import BlogPost from "./routes/blog-post/blogPost";
 
 
 
@@ -29,6 +30,7 @@ export default function App() {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/faq" element={<Faq />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:name" element={<BlogPost />} />
         <Route path="/about" element={<About />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/refunds" element={<Refunds />} />
