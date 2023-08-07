@@ -76,9 +76,9 @@ export default function Testimonials() {
               className="h-64 w-64 rounded-full xl:h-80 xl:w-80"
               src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
               alt=""
+              ia-hidden="true"
             />
           </section>
-
           <section className="relative lg:ml-10">
             <svg
               className="absolute top-0 left-0 transform -translate-x-8 -translate-y-24 h-36 w-36 text-white opacity-50"

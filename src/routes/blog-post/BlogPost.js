@@ -6,7 +6,6 @@ function BlogPost() {
 
     const findPost = (href) => {
         setPost(blogPostsData.filter((post) => post.href === href)[0]);
-        console.log(blogPostsData.filter((post) => post.href === href))
     }
     useEffect(() => {
         findPost(window.location.pathname);
@@ -24,16 +23,12 @@ function BlogPost() {
                 <section className="mt-6 flex items-center">
                     <section className="flex-shrink-0">
                         <span className="sr-only">{post.author.name}</span>
-                        <img
-                            className="h-10 w-10 rounded-full"
+                        <img className="h-10 w-10 rounded-full"
                             src={post.author.imageUrl}
-                            alt=""
-                        />
+                            alt="" />
                     </section>
                     <section className="ml-3">
-                        <p className="text-sm font-medium text-white">
-                            {post.author.name}
-                        </p>
+                        <p className="text-sm font-medium text-white">{post.author.name} </p>
                         <section className="flex space-x-1 text-sm text-gray-500">
                             <time dateTime={post.datetime}>{post.date}</time>
                             <span aria-hidden="true">&middot;</span>

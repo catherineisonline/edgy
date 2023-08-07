@@ -1,6 +1,6 @@
+import Partners from "../landing/Partners";
 import PricingComparisonTable from "./PricingComparisonTable";
 import PricingFaq from "./PricingFaq";
-import PricingLogos from "./PricingLogos";
 
 export default function Pricing() {
   return (
@@ -18,7 +18,7 @@ export default function Pricing() {
       </section>
       <PricingComparisonTable />
       <PricingFaq />
-      <PricingLogos />
+      <Partners />
     </main>
   );
 }

@@ -1,5 +1,5 @@
 import Hero from "./Hero";
-import Logocloud from "./Logocloud";
+import Partners from "./Partners";
 import Feature from "./Feature";
 import Cta from "../../components/cta/Cta";
 import Stats from "./Stats";
@@ -13,7 +13,7 @@ function Landing() {
   return (
     <article className="bg-gray-900">
       <Hero />
-      <Logocloud />
+      <Partners />
       <Feature />
       <Cta />
       <Stats />

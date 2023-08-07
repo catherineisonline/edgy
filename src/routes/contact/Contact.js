@@ -6,10 +6,10 @@ export default function Contact() {
   return (
     <main className="bg-gray-900">
       <article className="relative bg-gray-900">
-       <ContactImg/>
-       <ContactFormSection/>
+        <ContactImg />
+        <ContactFormSection />
       </article>
-     <CareerCta/>
+      <CareerCta />
     </main>
   );
 }

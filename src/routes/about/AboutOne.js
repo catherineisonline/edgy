@@ -1,5 +1,5 @@
 import EdgyIcon from "../../assets/images/edgy-icon.png";
-import companyStatistics from "../../data/companyStatistics";
+import companyInformation from "../../data/companyInformation";
 
 export default function AboutOne() {
   return (
@@ -103,7 +103,7 @@ export default function AboutOne() {
         {/* Stats section */}
         <section className="mt-10">
           <dl className="grid grid-cols-2 gap-x-4 gap-y-8">
-            {companyStatistics.map((stat) => (
+            {companyInformation.map((stat) => (
               <section
                 key={stat.label}
                 className="border-t-2 border-gray-100 pt-6"

@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { CheckIcon, MinusIcon } from "@heroicons/react/solid";
-import { tiers } from "../pricing/PricingComparisonTable";
-import { sections } from "../pricing/PricingComparisonTable";
+import { pricingTiers } from "../../data/pricingTiers";
+import { pricingSections } from "../../data/pricingSections";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -12,7 +12,7 @@ export default function Comparison() {
     <article className="bg-gray-900">
       <section className="max-w-7xl mx-auto bg-white py-16 sm:py-24 sm:px-6 lg:px-8">
         <section className="max-w-2xl mx-auto space-y-16 lg:hidden">
-          {tiers.map((tier, tierIdx) => (
+          {pricingTiers.map((tier, tierIdx) => (
             <section key={tier.name}>
               <section className="px-4 mb-8">
                 <h2 className="text-lg leading-6 font-medium text-gray-900">
@@ -35,7 +35,7 @@ export default function Comparison() {
                 </a>
               </section>
 
-              {sections.map((section) => (
+              {pricingSections.map((section) => (
                 <table key={section.name} className="w-full">
                   <caption className="bg-gray-50 border-t border-gray-200 py-3 px-4 text-sm font-medium text-gray-900 text-left">
                     {section.name}
@@ -97,7 +97,7 @@ export default function Comparison() {
 
               <section
                 className={classNames(
-                  tierIdx < tiers.length - 1 ? "py-5 border-b" : "pt-5",
+                  tierIdx < pricingTiers.length - 1 ? "py-5 border-b" : "pt-5",
                   "border-t border-gray-200 px-4"
                 )}
               >
@@ -123,7 +123,7 @@ export default function Comparison() {
                   <span className="sr-only">Feature by</span>
                   <span>Plans</span>
                 </th>
-                {tiers.map((tier) => (
+                {pricingTiers.map((tier) => (
                   <th
                     key={tier.name}
                     className="w-1/4 pb-4 px-6 text-lg leading-6 font-medium text-gray-900 text-left"
@@ -142,7 +142,7 @@ export default function Comparison() {
                 >
                   Pricing
                 </th>
-                {tiers.map((tier) => (
+                {pricingTiers.map((tier) => (
                   <td key={tier.name} className="h-full py-8 px-6 align-top">
                     <section className="relative h-full table">
                       <p>
@@ -166,7 +166,7 @@ export default function Comparison() {
                   </td>
                 ))}
               </tr>
-              {sections.map((section) => (
+              {pricingSections.map((section) => (
                 <Fragment key={section.name}>
                   <tr>
                     <th
@@ -185,7 +185,7 @@ export default function Comparison() {
                       >
                         {feature.name}
                       </th>
-                      {tiers.map((tier) => (
+                      {pricingTiers.map((tier) => (
                         <td key={tier.name} className="py-5 px-6">
                           {typeof feature.tiers[tier.name] === "string" ? (
                             <span className="block text-sm text-gray-700">
@@ -225,7 +225,7 @@ export default function Comparison() {
                 <th className="sr-only" scope="row">
                   Choose your plan
                 </th>
-                {tiers.map((tier) => (
+                {pricingTiers.map((tier) => (
                   <td key={tier.name} className="pt-5 px-6">
                     <a
                       href={tier.href}

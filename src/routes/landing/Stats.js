@@ -1,31 +1,5 @@
 import StatsCover from '../../assets/images/instagram-preview.jpg'
-
-const stats = [
-  {
-    id: 1,
-    stat: '5K+',
-    title: 'Happy Customers',
-    desc: 'and they are becoming more happy',
-  },
-  {
-    id: 2,
-    stat: '205M+',
-    title: 'Followers Gained',
-    desc: 'and they never stop coming',
-  },
-  {
-    id: 3,
-    stat: '+150%',
-    title: 'Increased Engagement',
-    desc: 'your content is blowing',
-  },
-  {
-    id: 4,
-    stat: '+33%',
-    title: 'Increased Leads',
-    desc: 'the business keeps getting better',
-  },
-]
+import companyStats from '../../data/companyStats'
 
 export default function Stats() {
   return (
@@ -36,7 +10,8 @@ export default function Stats() {
             <img
               className="h-full w-full object-cover opacity-25 xl:absolute xl:inset-0"
               src={StatsCover}
-              alt="People working on laptops"
+              alt=""
+              aria-hidden="true"
             />
             <section
               aria-hidden="true"
@@ -61,7 +36,7 @@ export default function Stats() {
             way. Don’t risk your account with those other shady providers.
           </p>
           <section className="mt-12 grid grid-cols-1 gap-y-12 gap-x-6 sm:grid-cols-2">
-            {stats.map((item) => (
+            {companyStats.map((item) => (
               <p key={item.id}>
                 <span className="block text-2xl font-bold text-white">
                   {item.stat}

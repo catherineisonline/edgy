@@ -113,15 +113,13 @@ export default function Hero() {
             </section>
           </section>
           {/* IMAGE SECTION */}
-          <section className="mt-12 -mb-16 sm:-mb-48 lg:m-0 lg:relative">
-            <section className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0">
-              <img
-                className="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-90 lg:w-90 lg:max-w-none opacity-60"
-                src={InstagramCover}
-                alt=""
-                aria-hidden="true"
-              />
-            </section>
+          <section className="mt-12 -mb-16 md:-mb-48 lg:m-0 lg:relative">
+            <img
+              className="w-full lg:inset-y-0 lg:left-0 lg:w-90 lg:max-w-none opacity-60 object-cover"
+              src={InstagramCover}
+              alt=""
+              aria-hidden="true"
+            />
           </section>
         </section>
       </section>
