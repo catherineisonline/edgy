@@ -41,6 +41,8 @@ This project serves as a personal portfolio website to show off my personal skil
 - [cors](https://www.npmjs.com/package/cors)
 - [dotenv](https://www.npmjs.com/package/dotenv)
 - [Google ReCAPTCHA](https://www.google.com/recaptcha/about/)
+- [uuid](https://www.npmjs.com/package/uuid)
+- [Airtable](https://www.npmjs.com/package/airtable)
 
 
 ## License  <a id="license"></a>

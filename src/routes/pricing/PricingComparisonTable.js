@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { CheckIcon, MinusIcon } from "@heroicons/react/solid";
 import { pricingSections } from "../../data/pricingSections";
 import { pricingTiers } from "../../data/pricingTiers";
+import { Link } from "react-router-dom";
 
 
 export default function PricingComparisonTable() {
@@ -24,12 +25,13 @@ export default function PricingComparisonTable() {
                 </span>
               </p>
               <p className="mt-4 text-sm text-gray-500">{tier.description}</p>
-              <a
-                href={tier.href}
-                className="mt-6 block w-full bg-indigo-600 border border-transparent rounded-md shadow py-2 text-sm font-semibold text-white text-center hover:to-pink-600"
+              <Link
+                to="/sign-up"
+                onClick={window.scrollTo(0, 0)}
+                className="block w-full bg-indigo-600 border border-transparent rounded-md shadow py-2 text-sm font-semibold text-white text-center hover:to-pink-600"
               >
                 Buy {tier.name}
-              </a>
+              </Link>
             </section>
             {pricingSections.map((section) => (
               <table key={section.name} className="w-full">
@@ -92,12 +94,13 @@ export default function PricingComparisonTable() {
             ))}
 
             <section className="border-t border-gray-200 px-4 pt-5">
-              <a
-                href="/"
+              <Link
+                to="/sign-up"
+                onClick={window.scrollTo(0, 0)}
                 className="block w-full bg-indigo-600 border border-transparent rounded-md shadow py-2 text-sm font-semibold text-white text-center hover:to-pink-600"
               >
                 Buy {tier.name}
-              </a>
+              </Link>
             </section>
           </section>
         ))}
@@ -151,12 +154,13 @@ export default function PricingComparisonTable() {
                         {tier.description}
                       </p>
                     </section>
-                    <a
-                      href={tier.href}
-                      className="mt-6 block w-full bg-indigo-600 border border-transparent rounded-md shadow py-2 text-sm font-semibold text-white text-center hover:to-pink-600"
+                    <Link
+                      to="/sign-up"
+                      onClick={window.scrollTo(0, 0)}
+                      className="block w-full bg-indigo-600 border border-transparent rounded-md shadow py-2 text-sm font-semibold text-white text-center hover:to-pink-600"
                     >
                       Buy {tier.name}
-                    </a>
+                    </Link>
                   </section>
                 </td>
               ))}
@@ -222,12 +226,13 @@ export default function PricingComparisonTable() {
               </th>
               {pricingTiers.map((tier) => (
                 <td key={tier.name} className="pt-5 px-6">
-                  <a
-                    href="/"
+                  <Link
+                    to="/sign-up"
+                    onClick={window.scrollTo(0, 0)}
                     className="block w-full bg-indigo-600 border border-transparent rounded-md shadow py-2 text-sm font-semibold text-white text-center hover:to-pink-600"
                   >
                     Buy {tier.name}
-                  </a>
+                  </Link>
                 </td>
               ))}
             </tr>

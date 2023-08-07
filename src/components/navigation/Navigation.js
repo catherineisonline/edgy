@@ -1,5 +1,5 @@
 import EdgyIcon from "../../assets/images/edgy-icon.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const links = [
   { name: "About", href: "/about" },
@@ -9,7 +9,8 @@ const links = [
   { name: "Contact", href: "/contact" },
 ];
 
-export default function Navigation() {
+export default function Navigation({ loggedIn, setLoggedIn }) {
+  const navigate = useNavigate()
   const ResetLocation = () => window.scrollTo(0, 0);
   return (
     <header className="bg-gray-900">
@@ -33,14 +34,21 @@ export default function Navigation() {
               ))}
             </section>
           </section>
-          <section className="ml-10 space-x-4">
+          {loggedIn ? <section className="ml-10 space-x-4">
+            <button onClick={() => { setLoggedIn(false); navigate('/') }} className="inline-block bg-indigo-500 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75">
+              Sign out
+            </button>
+            <Link onClick={ResetLocation} to="/profile" className="inline-block bg-white py-2 px-4 border border-transparent rounded-md text-base font-medium text-indigo-600 hover:bg-indigo-50">
+              Profile
+            </Link>
+          </section> : <section className="ml-10 space-x-4">
             <Link onClick={ResetLocation} to="/sign-in" className="inline-block bg-indigo-500 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75">
               Sign in
             </Link>
             <Link onClick={ResetLocation} to="/sign-up" className="inline-block bg-white py-2 px-4 border border-transparent rounded-md text-base font-medium text-indigo-600 hover:bg-indigo-50">
               Sign up
             </Link>
-          </section>
+          </section>}
         </section>
         <section className="py-4 flex flex-wrap justify-center space-x-6 lg:hidden">
           {links.map((link) => (

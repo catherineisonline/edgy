@@ -5,6 +5,7 @@ const captchaKey = process.env.REACT_APP_CAPTCHA_KEY;
 const captchaSecret = process.env.REACT_APP_CAPTCHA_SECRET;
 const serverlUrl = process.env.REACT_APP_SERVER_URL;
 
+
 export default function ContactForm() {
   const captchaRef = useRef();
   const [formValue, setFormValue] = useState({ firstName: '', lastName: '', email: '', company: '', phone: '', textarea: '' });
@@ -41,6 +42,7 @@ export default function ContactForm() {
     const { name, value } = e.target;
     setFormValue({ ...formValue, [name]: value });
   }
+
 
   const verifyCaptcha = async (captchaToken) => {
     try {

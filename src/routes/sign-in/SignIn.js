@@ -3,7 +3,7 @@ import EdgyIcon from "../../assets/images/edgy-icon.png";
 import { Link } from "react-router-dom";
 import SignInForm from "./SignInForm";
 
-export default function SignIn() {
+export default function SignIn({ retrieveDatabase, user, setLoggedIn }) {
   const ResetLocation = () => window.scrollTo(0, 0);
   return (
     <article className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-gray-900 pt-40 pb-40">
@@ -24,7 +24,7 @@ export default function SignIn() {
             </Link>
           </p>
         </section>
-        <SignInForm />
+        <SignInForm retrieveDatabase={retrieveDatabase} user={user} setLoggedIn={setLoggedIn} />
       </section>
     </article>
   );

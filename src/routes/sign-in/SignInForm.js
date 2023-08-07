@@ -1,44 +1,105 @@
 import { LockClosedIcon } from "@heroicons/react/solid";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-export default function SignInForm() {
+export default function SignInForm({ retrieveDatabase, user, setLoggedIn }) {
+  const [formValue, setFormValue] = useState({ email: '', password: '' });
+  const [errorValue, setErrorValue] = useState({});
+  const [retrievedUser, setRetrievedUser] = useState(true);
+  const [rememberOn, setRememberOn] = useState(false);
+  const navigate = useNavigate();
+
+  const submitForm = async (e) => {
+    e.preventDefault();
+    setErrorValue(validateForm(formValue));
+    if (Object.keys(validateForm(formValue)).length > 0) {
+      return;
+    }
+    else {
+      const retrievedUser = await retrieveDatabase(formValue.email);
+      if (retrievedUser === false) {
+        setRetrievedUser(false);
+        setFormValue({ email: '', password: '' });
+        return;
+      }
+      if (retrievedUser === true) {
+        navigate(`/profile`);
+        setLoggedIn(true);
+        setRetrievedUser(true);
+        setFormValue({ email: '', password: '' });
+      }
+    }
+  }
+
+  const handleCheckbox = () => {
+    setRememberOn(!rememberOn);
+  }
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValue({ ...formValue, [name]: value });
+  }
+
+  const validateForm = (value) => {
+    const errors = {};
+    const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+
+    if (!value.email) {
+      errors.email = "Enter your email";
+    }
+    else if (!emailRegex.test(value.email)) {
+      errors.email = "Invalid email";
+    }
+    if (!value.password) {
+      errors.password = "Password field shouldn't be empty";
+    }
+    else if (value.password && value.password.length < 8) {
+      errors.password = "Password must be min. 8 characters";
+    }
+    return errors;
+  }
+
+
   return (
-    <form className="mt-8 space-y-6" action="#" method="POST">
-      <input type="hidden" name="remember" defaultValue="true" />
+    <form onSubmit={submitForm} className="mt-8 space-y-6">
+      {retrievedUser ? null : <span className="text-red-400">Such user doesn't exist!</span>}
       <section className="rounded-md shadow-sm -space-y-px">
         <section>
           <label htmlFor="email-address" className="sr-only">
-            Email address
+            Email
           </label>
           <input
+            onChange={handleChange}
+            value={formValue.email}
             id="email-address"
             name="email"
-            type="email"
             autoComplete="email"
-            required
             className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
             placeholder="Email address"
           />
+          <span className="text-red-400">{errorValue.email}</span>
         </section>
         <section>
           <label htmlFor="password" className="sr-only">
             Password
           </label>
           <input
+            onChange={handleChange}
+            value={formValue.password}
             id="password"
             name="password"
             type="password"
             autoComplete="current-password"
-            required
             className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
             placeholder="Password"
           />
+          <span className="text-red-400">{errorValue.password}</span>
         </section>
       </section>
 
       <section className="flex items-center justify-between">
         <section className="flex items-center">
           <input
+            onChange={handleCheckbox}
             id="remember-me"
             name="remember-me"
             type="checkbox"
