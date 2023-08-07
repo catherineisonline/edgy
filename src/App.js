@@ -14,7 +14,7 @@ import Privacy from "./routes/privacy/Privacy";
 import Jobs from "./routes/jobs/Jobs";
 import SignIn from "./routes/sign-in/SignIn";
 import SignUp from "./routes/sign-up/SignUp";
-import BlogPost from "./routes/blog-post/blogPost";
+import BlogPost from "./routes/blog-post/BlogPost";
 
 
 

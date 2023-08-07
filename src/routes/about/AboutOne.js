@@ -1,15 +1,8 @@
 import EdgyIcon from "../../assets/images/edgy-icon.png";
-
-const stats = [
-  { label: "Founded", value: "2022" },
-  { label: "Employees", value: "200" },
-  { label: "Beta Users", value: "521" },
-  { label: "Raised", value: "$25M" },
-];
+import companyStatistics from "../../data/companyStatistics";
 
 export default function AboutOne() {
   return (
-
     <article className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-24 lg:items-start">
       <section className="relative sm:py-16 lg:py-0">
         <section
@@ -57,6 +50,7 @@ export default function AboutOne() {
               className="absolute inset-0 h-full w-full object-cover"
               src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
               alt=""
+              aria-hidden="true"
             />
             <section className="absolute inset-0 bg-indigo-500 mix-blend-multiply opacity-30" />
             <section className="absolute inset-0 bg-gradient-to-t from-indigo-600 via-indigo-600 opacity-90" />
@@ -106,11 +100,10 @@ export default function AboutOne() {
             </p>
           </section>
         </section>
-
         {/* Stats section */}
         <section className="mt-10">
           <dl className="grid grid-cols-2 gap-x-4 gap-y-8">
-            {stats.map((stat) => (
+            {companyStatistics.map((stat) => (
               <section
                 key={stat.label}
                 className="border-t-2 border-gray-100 pt-6"
