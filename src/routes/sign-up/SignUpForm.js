@@ -12,7 +12,7 @@ export default function SignUpForm({ registerUser }) {
     repeatPassword: '',
   });
   const [errorValue, setErrorValue] = useState({});
-  // const [submit, setSubmit] = useState(false);
+  const [userExists, setUserExists] = useState(false);
 
   const submitForm = async (e) => {
     e.preventDefault();
@@ -21,15 +21,22 @@ export default function SignUpForm({ registerUser }) {
       return null;
     }
     else {
-      // setSubmit(true);
-      await registerUser(formValue);
+      const registerUserOK = await registerUser(formValue);
       setFormValue({
         email: '',
         fullname: '',
         password: '',
         repeatPassword: '',
       });
-      navigate('/sign-in');
+      if (registerUserOK) {
+        setUserExists(false);
+        navigate('/sign-in');
+
+      }
+      else {
+        setUserExists(true);
+      }
+
     }
   }
 
@@ -74,6 +81,7 @@ export default function SignUpForm({ registerUser }) {
 
   return (
     <form onSubmit={submitForm} className="mt-8 space-y-6">
+      {userExists ? <span className="text-red-400">A user with such email already exists</span> : null}
       <section>
         <label htmlFor="fullname" className="sr-only">
           Full name

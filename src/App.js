@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 //Components
-
+import moment from "moment";
 import Navigation from "./components/navigation/Navigation";
 import Landing from "./routes/landing/Landing";
 import Footer from "./components/footer/Footer";
@@ -25,7 +25,7 @@ import Profile from "./routes/user-profile/Profile";
 import NotFound from "./components/NotFound";
 
 export default function App() {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({ id: '', createdTime: '', email: '', fullname: '' });
   const [loggedIn, setLoggedIn] = useState(false);
 
   const retrieveDatabase = async (email) => {
@@ -33,7 +33,8 @@ export default function App() {
       const response = await fetch(process.env.REACT_APP_AIRTABLE_SERVER_URL);
       const data = await response.json();
       if (Object.keys(data.records.filter((record) => record.fields.email === email)[0]).length > 0) {
-        setUser(data.records.filter((record) => record.fields.email === email)[0]);
+        const theUser = data.records.filter((record) => record.fields.email === email)[0];
+        setUser({ id: theUser.id, createdTime: moment(theUser.createdTime).utc().format('YYYY-MM-DD'), email: theUser.fields.email, fullname: theUser.fields.fullname, gender: theUser.fields.gender, plan: theUser.fields.plan });
         return true;
       }
       else {
@@ -49,31 +50,71 @@ export default function App() {
   const registerUser = async (data) => {
     const { email, password, fullname } = data;
     const id = uuidv4();
-    try {
-      edgyBase('users').create([
-        {
-          "fields": {
-            "id": id,
-            "email": email,
-            "password": password,
-            "fullname": fullname,
-          }
-        },
 
-      ],
-        { typecast: true }, function (err, records) {
-          if (err) {
-            console.error(err);
-            return;
-          }
-          records.forEach(function (record) {
-            console.log(record.getId());
-          });
-        });
+    const checkUser = await retrieveDatabase(data.email);
+    if (checkUser) {
+      return;
     }
-    catch (error) {
-      console.error(error);
+    if (checkUser === false) {
+      try {
+        edgyBase('users').create([
+          {
+            "fields": {
+              "id": id,
+              "email": email,
+              "password": password,
+              "fullname": fullname,
+            }
+          },
+        ]
+        );
+
+      }
+      catch (error) {
+        console.error(error);
+      }
     }
+
+  }
+
+  const updateUser = async (userId, formValue) => {
+    //destructure incoming data
+    const key = Object.keys(formValue)[0];
+    const value = Object.values(formValue)[0];
+    console.log(userId)
+    const form = {
+      [key]: value,
+    }
+    //Update user info
+    edgyBase('users').update([
+      {
+        "id": userId,
+        "fields": form
+      }
+    ]
+      , function (error) {
+        if (error) {
+          console.log(`Message: ${error.message} | Code: ${error.statusCode}`);
+          return;
+        }
+        else {
+          return true;
+        }
+      }
+
+    );
+    setUser({ ...user, [key]: value });
+  }
+
+
+  const deleteUser = (userId) => {
+    edgyBase('users').destroy([userId], function (err, deletedRecords) {
+      if (err) {
+        console.error(err);
+        return;
+      }
+    });
+    setLoggedIn(false);
   }
 
   return (
@@ -91,9 +132,9 @@ export default function App() {
         <Route path="/refunds" element={<Refunds />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/jobs" element={<Jobs />} />
-        <Route path="/sign-in" element={<SignIn retrieveDatabase={retrieveDatabase} user={user} setLoggedIn={setLoggedIn} />} />
-        <Route path="/sign-up" element={<SignUp registerUser={registerUser} />} />
-        <Route path="/profile" element={loggedIn ? <Profile /> : <NotFound />} />
+        <Route path="/sign-in" element={loggedIn ? <Profile user={user} updateUser={updateUser} deleteUser={deleteUser} /> : <SignIn retrieveDatabase={retrieveDatabase} user={user} setLoggedIn={setLoggedIn} />} />
+        <Route path="/sign-up" element={loggedIn ? <Profile user={user} updateUser={updateUser} deleteUser={deleteUser} /> : <SignUp registerUser={registerUser} />} />
+        <Route path="/profile" element={loggedIn ? <Profile user={user} updateUser={updateUser} deleteUser={deleteUser} /> : <NotFound />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />

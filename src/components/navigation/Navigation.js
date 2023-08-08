@@ -41,14 +41,15 @@ export default function Navigation({ loggedIn, setLoggedIn }) {
             <Link onClick={ResetLocation} to="/profile" className="inline-block bg-white py-2 px-4 border border-transparent rounded-md text-base font-medium text-indigo-600 hover:bg-indigo-50">
               Profile
             </Link>
-          </section> : <section className="ml-10 space-x-4">
-            <Link onClick={ResetLocation} to="/sign-in" className="inline-block bg-indigo-500 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75">
-              Sign in
-            </Link>
-            <Link onClick={ResetLocation} to="/sign-up" className="inline-block bg-white py-2 px-4 border border-transparent rounded-md text-base font-medium text-indigo-600 hover:bg-indigo-50">
-              Sign up
-            </Link>
-          </section>}
+          </section> :
+            <section className="ml-10 space-x-4">
+              <Link onClick={ResetLocation} to="/sign-in" className="inline-block bg-indigo-500 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75">
+                Sign in
+              </Link>
+              <Link onClick={ResetLocation} to="/sign-up" className="inline-block bg-white py-2 px-4 border border-transparent rounded-md text-base font-medium text-indigo-600 hover:bg-indigo-50">
+                Sign up
+              </Link>
+            </section>}
         </section>
         <section className="py-4 flex flex-wrap justify-center space-x-6 lg:hidden">
           {links.map((link) => (

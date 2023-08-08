@@ -43,6 +43,7 @@ This project serves as a personal portfolio website to show off my personal skil
 - [Google ReCAPTCHA](https://www.google.com/recaptcha/about/)
 - [uuid](https://www.npmjs.com/package/uuid)
 - [Airtable](https://www.npmjs.com/package/airtable)
+- [Moment.js](https://www.npmjs.com/package/moment)
 
 
 ## License  <a id="license"></a>
