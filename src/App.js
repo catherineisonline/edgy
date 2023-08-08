@@ -25,7 +25,7 @@ import Profile from "./routes/user-profile/Profile";
 import NotFound from "./components/NotFound";
 
 export default function App() {
-  const [user, setUser] = useState({ id: '', createdTime: '', email: '', fullname: '' });
+  const [user, setUser] = useState({ id: '', createdTime: '', email: '', fullname: '', gender: '', plan: '', password: '' });
   const [loggedIn, setLoggedIn] = useState(false);
 
   const retrieveDatabase = async (email) => {
@@ -34,7 +34,8 @@ export default function App() {
       const data = await response.json();
       if (Object.keys(data.records.filter((record) => record.fields.email === email)[0]).length > 0) {
         const theUser = data.records.filter((record) => record.fields.email === email)[0];
-        setUser({ id: theUser.id, createdTime: moment(theUser.createdTime).utc().format('YYYY-MM-DD'), email: theUser.fields.email, fullname: theUser.fields.fullname, gender: theUser.fields.gender, plan: theUser.fields.plan });
+        console.log({ id: theUser.id, createdTime: moment(theUser.createdTime).utc().format('YYYY-MM-DD'), email: theUser.fields.email, fullname: theUser.fields.fullname, gender: theUser.fields.gender, plan: theUser.fields.plan, password: theUser.fields.password })
+        setUser({ id: theUser.id, createdTime: moment(theUser.createdTime).utc().format('YYYY-MM-DD'), email: theUser.fields.email, fullname: theUser.fields.fullname, gender: theUser.fields.gender, plan: theUser.fields.plan, password: theUser.fields.password });
         return true;
       }
       else {
@@ -81,7 +82,6 @@ export default function App() {
     //destructure incoming data
     const key = Object.keys(formValue)[0];
     const value = Object.values(formValue)[0];
-    console.log(userId)
     const form = {
       [key]: value,
     }
@@ -103,8 +103,10 @@ export default function App() {
       }
 
     );
+    // console.log(user)
     setUser({ ...user, [key]: value });
   }
+
 
 
   const deleteUser = (userId) => {

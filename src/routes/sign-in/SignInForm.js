@@ -42,18 +42,22 @@ export default function SignInForm({ retrieveDatabase, user, setLoggedIn }) {
   const validateForm = (value) => {
     const errors = {};
     const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-
+    retrieveDatabase(value.email);
     if (!value.email) {
       errors.email = "Enter your email";
     }
     else if (!emailRegex.test(value.email)) {
       errors.email = "Invalid email";
     }
+
     if (!value.password) {
       errors.password = "Password field shouldn't be empty";
     }
-    else if (value.password && value.password.length < 8) {
+    else if (value.password.length < 8) {
       errors.password = "Password must be min. 8 characters";
+    }
+    else if (retrievedUser && user.password !== value.password) {
+      errors.password = "Wrong password";
     }
     return errors;
   }
