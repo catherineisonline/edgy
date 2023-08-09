@@ -7,7 +7,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/catherineisonline/edgy)](https://github.com/catherineisonline/edgy/issues)
 [![GitHub stars](https://img.shields.io/github/stars/catherineisonline/edgy)](https://github.com/catherineisonline/edgy/stargazers)
 
-## 👉 Introduction <a id="introduction"></a>
+## Introduction <a id="introduction"></a>
 Welcome to the Edgy Social Media Marketing Agency's website! At Edgy, we're not just a business; we're your partners in navigating the dynamic landscape of Instagram marketing. Whether you're a budding influencer or a business looking to boost your brand's online visibility, we're here to help you stand out in the digital crowd.
 
 #### About Edgy:
@@ -23,14 +23,14 @@ Career Opportunities: Passionate about social media marketing? Explore exciting 
 #### Get in Touch:
 Contact Form: Have questions, inquiries, or simply want to say hello? Our contact form is designed to make reaching out to us quick and easy. We value your input and are always ready to assist you.
 
-## 👉 Disclaimer
+## Disclaimer
 Please note that Edgy is a fictional business created for illustrative purposes. While our website and services are designed to provide insights into the world of social media marketing, we do not provide real services or consultations. This platform is intended to showcase a hypothetical business model.
 
 Thank you for visiting Edgy's website. We look forward to being a part of your journey towards Instagram success!
 
 Disclaimer: This is a fictional business created for demonstration purposes.
 
-## 👉 Features
+## Features
 
 The website offers a seamless user experience through its comprehensive account management features. Users have the ability to perform essential actions such as signing up, logging in, and modifying their profile information.
 
@@ -81,7 +81,7 @@ The combination of user account management features and the secure contact form 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## 👉 Available Scripts
+## Available Scripts
 
 In the project directory, you can run:
 
@@ -98,13 +98,13 @@ You may also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## 👉 Contribution <a id="contributiion"></a>
+## Contribution <a id="contributiion"></a>
 This website is my way of showcasing the skills and talents I bring to the table. I've taken the lead in crafting this project, so I'm not currently seeking external contributions like pull requests.
 However, I'm definitely open to hearing your suggestions and ideas. Feel free to drop me a message using any of the social media platforms I have. If you're more of a community person, you can also join the [discussions](https://github.com/catherineisonline/edgy/discussions) and share your thoughts there.
 If you've got the urge to put your own spin on things, you're in luck! This project is fork-friendly, so you can take it, modify it, and make it your own. Let your creativity flow!
 Thanks for stopping by and checking out what I've put together here. I appreciate your interest and look forward to any insights you might have, even as I steer the ship on this project for now.
 
-## 👉 Dependencies | API | Services used  <a id="dependencies"></a>
+## Dependencies | API | Services used  <a id="dependencies"></a>
 - [HeroIcons](https://heroicons.com/)
 - [React Router](https://www.npmjs.com/package/react-router-dom)
 - [Craco](https://www.npmjs.com/package/@craco/craco)
@@ -117,10 +117,10 @@ Thanks for stopping by and checking out what I've put together here. I appreciat
 - [Moment.js](https://www.npmjs.com/package/moment)
 
 
-## 👉 License  <a id="license"></a>
+## License  <a id="license"></a>
 This project is released under the MIT [LICENSE](https://github.com/catherineisonline/travel-with-catherine/blob/main/LICENSE). You can find the specific terms and conditions outlined in the LICENSE file. This means you're free to utilize, modify, and distribute the project according to the terms of the MIT License.
 
-#### Build Your Portfolio
+#### Build Your Portfolio:
 Feel free to incorporate this project into your personal portfolio! Showcase your skills and creativity by featuring your adaptations or implementations of this project. Just make sure to follow the guidelines of the MIT License while doing so.
 
 Happy coding!
