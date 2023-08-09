@@ -7,7 +7,6 @@ export default function SignInForm({ retrieveDatabase, user, setLoggedIn }) {
   const [errorValue, setErrorValue] = useState({});
   const [loading, setLoading] = useState(false);
   const [retrievedUser, setRetrievedUser] = useState(true);
-  const [rememberOn, setRememberOn] = useState(false);
   const navigate = useNavigate();
 
   const submitForm = async (e) => {
@@ -37,9 +36,7 @@ export default function SignInForm({ retrieveDatabase, user, setLoggedIn }) {
     }
   }
 
-  const handleCheckbox = () => {
-    setRememberOn(!rememberOn);
-  }
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValue({ ...formValue, [name]: value });
@@ -116,25 +113,6 @@ export default function SignInForm({ retrieveDatabase, user, setLoggedIn }) {
                 <span className="text-red-400">{errorValue.password}</span>
               </section>
             </section>
-
-            <section className="flex items-center justify-between">
-              <section className="flex items-center">
-                <input
-                  onChange={handleCheckbox}
-                  id="remember-me"
-                  name="remember-me"
-                  type="checkbox"
-                  className="h-4 w-4 text-[color:var(--primary-font-color)] focus:ring-indigo-500 border-gray-300 rounded"
-                />
-                <label
-                  htmlFor="remember-me"
-                  className="ml-2 block text-sm text-white"
-                >
-                  Remember me
-                </label>
-              </section>
-            </section>
-
             <section>
               <button
                 type="submit"

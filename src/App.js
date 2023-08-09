@@ -31,14 +31,15 @@ export default function App() {
 
   const saveSession = () => {
     if (sessionStorage.getItem('loggedIn') !== null) {
-      console.log("there is session storage");
+      return;
     }
     if (sessionStorage.getItem('loggedIn') === null) {
       sessionStorage.setItem('loggedIn', true);
     }
   };
 
-  //Workign with sessions storage every time the website reloads
+
+  //Working with sessions storage every time the website reloads
   useEffect(() => {
     //if use logged in AND login session isn't saved AND logout wasn't triggered THEN save the login session
     if (loggedIn && sessionStorage.getItem('loggedIn') === null && !triggeredLogout) {
