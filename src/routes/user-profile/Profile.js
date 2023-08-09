@@ -13,6 +13,7 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
     const [editEmail, setEditEmail] = useState(false);
     const [editGender, setEditGender] = useState(false);
     const [editPassword, setEditPassword] = useState(false);
+    const [editPlan, setEditPlan] = useState(false);
 
     const activateEditField = (fieldName) => {
         if (fieldName === 'fullname') {
@@ -35,6 +36,13 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
         }
         if (fieldName === 'password') {
             setEditPassword(true);
+            setEditFullName(false);
+            setEditEmail(false);
+            setEditGender(false);
+        }
+        if (fieldName === 'plan') {
+            setEditPlan(true);
+            setEditPassword(false);
             setEditFullName(false);
             setEditEmail(false);
             setEditGender(false);
@@ -79,6 +87,9 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
         }
         if (target === 'gender') {
             setEditGender(false);
+        }
+        if (target === 'plan') {
+            setEditPlan(false);
         }
         setFormValue({});
         setFormErrors({});
@@ -148,6 +159,7 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
     const validateEmail = formValidator("email");
     const validatePassword = formValidator("password");
     const validateGender = formValidator("gender");
+    const validatePlan = formValidator("plan");
 
     return (
         <div className="overflow-hidden bg-gray-900 shadow p-10">
@@ -172,7 +184,7 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
                                         type="submit"
                                         className="group relative w-full flex justify-center py-1 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
                                     <button
-                                        type="submit"
+                                        type="button"
                                         onClick={() => handleCancel("fullname")} className="group relative w-full flex justify-center py-1 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
 
                                 </form>
@@ -197,7 +209,7 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
                                         type="submit"
                                         className="group relative w-full flex justify-center py-1 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
                                     <button
-                                        type="submit"
+                                        type="button"
                                         onClick={() => handleCancel("email")} className="group relative w-full flex justify-center py-1 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
 
                                 </form>
@@ -219,8 +231,7 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
                                     id="gender"
                                     name="gender"
                                     className=" w-max cursor-pointer relative block px-1 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                                    defaultValue={user.gender}
-                                >
+                                    defaultValue={user.gender}>
                                     <option value='Male'>Male</option>
                                     <option value='Female'>Female</option>
                                     <option value='N/A'>N/A</option>
@@ -229,22 +240,41 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
                                     type="submit"
                                     className="group relative w-full flex justify-center py-1 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
                                 <button
-                                    type="submit"
+                                    type="button"
                                     onClick={() => handleCancel("gender")} className="group relative w-full flex justify-center py-1 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
-
                             </form>
                             <span className="text-red-400">{formErrors['email']}</span>
-                        </section> : <dd className="flex flex-row gap-2 mt-1 text-sm leading-6 text-gray-400 sm:col-span-2 sm:mt-0">{user.gender?.length > 0 ? user.gender : "Not selected"} <PencilAltIcon onClick={() => activateEditField('gender')} className="w-4 h-auto text-white" /></dd>}
+                        </section> :
+                            <dd className="flex flex-row gap-2 mt-1 text-sm leading-6 text-gray-400 sm:col-span-2 sm:mt-0">{user.gender?.length > 0 ? user.gender : "Not selected"} <PencilAltIcon onClick={() => activateEditField('gender')} className="w-4 h-auto text-white" /></dd>}
                     </div>
                     <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                        <dt className="text-sm font-medium leading-6 text-white">Current plan</dt>
-                        <dd className="mt-1 text-sm leading-6 text-gray-400 sm:col-span-2 sm:mt-0">{user.plan?.length > 0 ? user.plan : "No plan selected"}</dd>
-                    </div>
-                    <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                        <dt className="text-sm font-medium leading-6 text-white">Account created on</dt>
-                        <dd className="mt-1 text-sm leading-6 text-gray-400 sm:col-span-2 sm:mt-0">
-                            {user.createdTime}
-                        </dd>
+                        <dt className="text-sm font-medium leading-6 text-white">Plan</dt>
+                        {editPlan ? <section className="flex flex-col gap-2">
+                            <form onSubmit={(e) => submitForm(e, validatePlan, "plan")} className="flex flex-row gap-2">
+                                <label htmlFor="plan" className="sr-only">
+                                    Plan
+                                </label>
+                                <select
+                                    onChange={handelChange}
+                                    id="plan"
+                                    name="plan"
+                                    className=" w-max cursor-pointer relative block px-1 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                                    defaultValue={user.gender}>
+                                    <option value='Standard'>Standard</option>
+                                    <option value='Premium'>Premium</option>
+                                    <option value='Business'>Business</option>
+                                    <option value='N/A'>N/A</option>
+                                </select>
+                                <button
+                                    type="submit"
+                                    className="group relative w-full flex justify-center py-1 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
+                                <button
+                                    type="button"
+                                    onClick={() => handleCancel("plan")} className="group relative w-full flex justify-center py-1 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
+                            </form>
+                            <span className="text-red-400">{formErrors['plan']}</span>
+                        </section> :
+                            <dd className="flex flex-row gap-2 mt-1 text-sm leading-6 text-gray-400 sm:col-span-2 sm:mt-0">{user.plan?.length > 0 ? user.plan : "Not selected"} <PencilAltIcon onClick={() => activateEditField('plan')} className="w-4 h-auto text-white" /></dd>}
 
                     </div>
 
@@ -343,7 +373,7 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
                                         Change password
                                     </button>
                                     <button
-                                        type="submit"
+                                        type="button"
                                         onClick={() => handleCancel("password")}
                                         className="mt-3 inline-flex w-full  h-max justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
                                     >
