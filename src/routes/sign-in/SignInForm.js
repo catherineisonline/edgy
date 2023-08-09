@@ -2,7 +2,7 @@ import { LockClosedIcon } from "@heroicons/react/solid";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function SignInForm({ retrieveDatabase, user, setLoggedIn }) {
+export default function SignInForm({ retrieveDatabase, setLoggedIn }) {
   const [formValue, setFormValue] = useState({ email: '', password: '' });
   const [errorValue, setErrorValue] = useState({});
   const [loading, setLoading] = useState(false);
@@ -12,13 +12,16 @@ export default function SignInForm({ retrieveDatabase, user, setLoggedIn }) {
   const submitForm = async (e) => {
     e.preventDefault();
     setLoading(true);
+    //validate form before sending to server
     setErrorValue(validateForm(formValue));
+    //if validation object is not empty stop loading and sign in process
     if (Object.keys(validateForm(formValue)).length > 0) {
       setLoading(false);
       return;
     }
     else {
-      const retrievedUser = await retrieveDatabase(formValue.email);
+      //otherwise send info to the server and check if the user exists
+      const retrievedUser = await retrieveDatabase(formValue.email, formValue.password);
       if (retrievedUser === false) {
         setRetrievedUser(false);
         setLoading(false);
@@ -45,23 +48,22 @@ export default function SignInForm({ retrieveDatabase, user, setLoggedIn }) {
   const validateForm = (value) => {
     const errors = {};
     const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-    retrieveDatabase(value.email);
     if (!value.email) {
       errors.email = "Enter your email";
     }
     else if (!emailRegex.test(value.email)) {
       errors.email = "Invalid email";
     }
-
     if (!value.password) {
       errors.password = "Password field shouldn't be empty";
     }
     else if (value.password.length < 8) {
       errors.password = "Password must be min. 8 characters";
     }
-    else if (retrievedUser && user.password !== value.password) {
-      errors.password = "Wrong password";
+    if (!value.email && value.password) {
+      errors.email = "Enter your email";
     }
+
     return errors;
   }
 
@@ -79,7 +81,7 @@ export default function SignInForm({ retrieveDatabase, user, setLoggedIn }) {
           </div>
           :
           <form onSubmit={submitForm} className="mt-8 space-y-6" >
-            {retrievedUser ? null : <span className="text-red-400">Such user doesn't exist!</span>}
+            {retrievedUser ? null : <span className="text-red-400">The user doesn't exist or you entered a wrong email/password</span>}
             <section className="rounded-md shadow-sm -space-y-px" >
               <section>
                 <label htmlFor="email-address" className="sr-only">

@@ -56,18 +56,31 @@ export default function App() {
   }, [loggedIn, triggeredLogout]);
 
 
-  const retrieveDatabase = async (email) => {
+  const retrieveDatabase = async (email, password = undefined) => {
     try {
       const response = await fetch(process.env.REACT_APP_AIRTABLE_SERVER_URL);
       const data = await response.json();
-      if (Object.keys(data.records.filter((record) => record.fields.email === email)[0]).length > 0) {
-        const theUser = data.records.filter((record) => record.fields.email === email)[0];
-        setUser({ id: theUser.id, createdTime: moment(theUser.createdTime).utc().format('YYYY-MM-DD'), email: theUser.fields.email, fullname: theUser.fields.fullname, gender: theUser.fields.gender, plan: theUser.fields.plan, password: theUser.fields.password });
-        return true;
+      //if I didn't provide password argument
+      if (password === undefined) {
+        if (Object.keys(data.records.filter((record) => record.fields.email === email)[0]).length > 0) {
+          const theUser = data.records.filter((record) => record.fields.email === email)[0];
+          setUser({ id: theUser.id, createdTime: moment(theUser.createdTime).utc().format('YYYY-MM-DD'), email: theUser.fields.email, fullname: theUser.fields.fullname, gender: theUser.fields.gender, plan: theUser.fields.plan, password: theUser.fields.password });
+          return true;
+        }
+        else {
+          return false;
+        }
       }
-      else {
-        return false;
+      if (password !== undefined) {
+        const targetUser = data.records.filter((record) => record.fields.email === email)[0];
+        if (targetUser.fields.password === password) {
+          return true;
+        }
+        else {
+          return false;
+        }
       }
+
     }
     catch (err) {
       console.log(err.message)
