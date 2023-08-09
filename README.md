@@ -1,4 +1,4 @@
-<img src="https://github.com/catherineisonline/edgy/blob/main/public/project-preview.png?raw=true"></img>
+![Edgy](https://github.com/catherineisonline/edgy/blob/main/public/project-preview.png?raw=true)
 
 # [Edgy](https://edgy-media.vercel.app/) - #1 Instagram Growth Agency
 
