@@ -3,7 +3,7 @@ import companyInformation from "../../data/companyInformation";
 
 export default function AboutOne() {
   return (
-    <article className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-24 lg:items-start">
+    <article className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-24 lg:items-start max-w-7xl mx-auto">
       <section className="relative sm:py-16 lg:py-0">
         <section
           aria-hidden="true"

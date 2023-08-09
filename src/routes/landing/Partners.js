@@ -2,7 +2,7 @@ import partners from "../../data/partners";
 
 export default function Partners() {
   return (
-    <article className="bg-gray-900 mt-16 hidden md:block">
+    <article className="bg-gray-900 mt-16 hidden md:block max-w-7xl mx-auto pb-8">
       <section className="grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5 lg:mt-12 sm:mt-32">
         {partners.map((partner) => {
           return (

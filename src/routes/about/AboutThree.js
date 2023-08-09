@@ -1,10 +1,10 @@
 export default function AboutThree() {
   return (
     <article className="relative bg-gray-900">
-      <section className="lg:absolute lg:inset-0">
+      <section className="lg:absolute lg:inset-0 max-w-7xl mx-auto">
         <section className="lg:absolute lg:inset-y-0 lg:left-0 lg:w-1/2">
           <img
-            className="h-56 w-full object-cover lg:absolute lg:h-full"
+            className="h-56 w-full object-cover lg:absolute lg:h-full object-center"
             src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
             alt=""
             aria-hidden="true"

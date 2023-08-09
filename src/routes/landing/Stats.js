@@ -5,7 +5,7 @@ export default function Stats() {
   return (
     <article className="relative bg-gray-900">
       <section className="h-80 w-full absolute bottom-0 xl:inset-0 xl:h-full">
-        <section className="h-full w-full xl:grid xl:grid-cols-2">
+        <section className="h-full w-full xl:grid xl:grid-cols-2 max-w-7xl mx-auto">
           <section className="h-full xl:relative xl:col-start-2">
             <img
               className="h-full w-full object-cover opacity-25 xl:absolute xl:inset-0"
