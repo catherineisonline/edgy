@@ -88,7 +88,7 @@ export default function Newsletter() {
                     Notify me
                   </button>
                 </section>
-                <span className="text-red-400 absolute mt-16">{formError.email}</span>
+                <span className="text-red-400 absolute sm:mt-14 md:mt-16">{formError.email}</span>
               </form>}
           <p className="text-sm text-gray-300 mt-11">
             We care about the protection of your data. Read our{' '}
