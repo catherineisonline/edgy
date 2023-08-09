@@ -3,7 +3,7 @@ export const pricingTiers = [
         name: "Standard",
         href: "/sign-up",
         priceMonthly: 79,
-        description: "Our Standard plan is perfect for individuals and small businesses looking to kickstart their Instagram growth journey. With a focus on authenticity and manual interaction, we ensure that your account receives the attention it deserves, driving real, organic growth.",
+        description: "Our Standard plan is perfect for individuals and small businesses looking to kickstart their Instagram growth journey. With authenticity and manual interaction, we ensure that your account receives the attention it deserves.",
     },
     {
         name: "Premium",

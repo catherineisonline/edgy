@@ -2,12 +2,13 @@ import { Fragment } from "react";
 import { CheckIcon, MinusIcon } from "@heroicons/react/solid";
 import { pricingTiers } from "../../data/pricingTiers";
 import { pricingSections } from "../../data/pricingSections";
+import { Link } from "react-router-dom";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Comparison() {
+export default function Comparison({ loggedIn }) {
   return (
     <article className="bg-gray-900">
       <section className="max-w-7xl mx-auto bg-white py-16 sm:py-24 sm:px-6 lg:px-8">
@@ -27,12 +28,9 @@ export default function Comparison() {
                   </span>
                 </p>
                 <p className="mt-4 text-sm text-gray-500">{tier.description}</p>
-                <a
-                  href={tier.href}
-                  className="mt-6 block border border-gray-800 rounded-md bg-gray-800 w-full py-2 text-sm font-semibold text-white text-center hover:bg-gray-900"
-                >
+                <Link to={loggedIn ? "/profile" : "/sign-up"} className="block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">
                   Buy {tier.name}
-                </a>
+                </Link>
               </section>
 
               {pricingSections.map((section) => (
@@ -101,12 +99,9 @@ export default function Comparison() {
                   "border-t border-gray-200 px-4"
                 )}
               >
-                <a
-                  href={tier.href}
-                  className="block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900"
-                >
+                <Link onClick={() => window.scrollTo(0, 0)} to={loggedIn ? "/profile" : "/sign-up"} className="block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">
                   Buy {tier.name}
-                </a>
+                </Link>
               </section>
             </section>
           ))}
@@ -144,7 +139,7 @@ export default function Comparison() {
                 </th>
                 {pricingTiers.map((tier) => (
                   <td key={tier.name} className="h-full py-8 px-6 align-top">
-                    <section className="relative h-full table">
+                    <section className="relative h-full flex flex-col justify-between">
                       <p>
                         <span className="text-4xl font-extrabold text-gray-900">
                           ${tier.priceMonthly}
@@ -156,12 +151,9 @@ export default function Comparison() {
                       <p className="mt-4 mb-16 text-sm text-gray-500">
                         {tier.description}
                       </p>
-                      <a
-                        href={tier.href}
-                        className="absolute bottom-0 flex-grow block w-full bg-gray-800 border border-gray-800 rounded-md 5 py-2 text-sm font-semibold text-white text-center hover:bg-gray-900"
-                      >
+                      <Link onClick={() => window.scrollTo(0, 0)} to={loggedIn ? "/profile" : "/sign-up"} className="block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">
                         Buy {tier.name}
-                      </a>
+                      </Link>
                     </section>
                   </td>
                 ))}
@@ -227,12 +219,9 @@ export default function Comparison() {
                 </th>
                 {pricingTiers.map((tier) => (
                   <td key={tier.name} className="pt-5 px-6">
-                    <a
-                      href={tier.href}
-                      className="block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900"
-                    >
+                    <Link to={loggedIn ? "/profile" : "/sign-up"} className="block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">
                       Buy {tier.name}
-                    </a>
+                    </Link>
                   </td>
                 ))}
               </tr>

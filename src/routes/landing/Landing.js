@@ -9,18 +9,18 @@ import Team from "../../components/team/Team";
 import Comparison from "./Comparison";
 import Newsletter from "../../components/Newsletter";
 
-function Landing() {
+function Landing({ loggedIn }) {
   return (
     <article className="bg-gray-900">
       <Hero />
       <Partners />
       <Feature />
-      <Cta />
+      <Cta g loggedIn={loggedIn} />
       <Stats />
-      <Pricing />
+      <Pricing loggedIn={loggedIn} />
       <Testimonials />
       <Team />
-      <Comparison />
+      <Comparison loggedIn={loggedIn} />
       <Newsletter />
     </article>
   );

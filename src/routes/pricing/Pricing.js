@@ -2,7 +2,7 @@ import Partners from "../landing/Partners";
 import PricingComparisonTable from "./PricingComparisonTable";
 import PricingFaq from "./PricingFaq";
 
-export default function Pricing() {
+export default function Pricing({ loggedIn }) {
   return (
     <main className="bg-gray-900">
       <section className="text-center p-10">
@@ -16,7 +16,7 @@ export default function Pricing() {
           Instagram Growth Plans offer a clear pathway to success, whether you are an aspiring influencer, a startup entrepreneur, or an established brand looking to expand your reach. Choose from our three meticulously designed plans - Standard, Premium, and Business - and embark on a transformational journey to elevate your Instagram growth.
         </p>
       </section>
-      <PricingComparisonTable />
+      <PricingComparisonTable loggedIn={loggedIn} />
       <PricingFaq />
       <Partners />
     </main>

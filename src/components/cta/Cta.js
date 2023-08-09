@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-export default function Cta() {
+export default function Cta({ loggedIn }) {
   const ResetLocation = () => window.scrollTo(0, 0);
   return (
     <article className="bg-gray-900">
@@ -14,7 +14,7 @@ export default function Cta() {
           <section className="inline-flex rounded-md shadow">
             <Link
               onClick={ResetLocation}
-              to="/sign-up"
+              to={loggedIn ? "/profile" : "/sign-up"}
               className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
             >
               Get started

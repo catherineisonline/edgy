@@ -164,9 +164,9 @@ export default function App() {
     <Router>
       <Navigation loggedIn={loggedIn} setLoggedIn={setLoggedIn} setTriggeredLogout={setTriggeredLogout} />
       <Routes>
-        <Route path="/" element={<Landing />} />
+        <Route path="/" element={<Landing loggedIn={loggedIn} />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/pricing" element={<Pricing loggedIn={loggedIn} />} />
         <Route path="/faq" element={<Faq />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:name" element={<BlogPost />} />

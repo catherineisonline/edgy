@@ -5,7 +5,7 @@ import { pricingTiers } from "../../data/pricingTiers";
 import { Link } from "react-router-dom";
 
 
-export default function PricingComparisonTable() {
+export default function PricingComparisonTable({ loggedIn }) {
   return (
     <section className="max-w-2xl mx-auto bg-white py-16 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
       {/* xs to lg */}
@@ -26,7 +26,7 @@ export default function PricingComparisonTable() {
               </p>
               <p className="mt-4 text-sm text-gray-500">{tier.description}</p>
               <Link
-                to="/sign-up"
+                to={loggedIn ? "/profile" : "/sign-up"}
                 onClick={window.scrollTo(0, 0)}
                 className="block w-full bg-indigo-600 border border-transparent rounded-md shadow py-2 text-sm font-semibold text-white text-center hover:to-pink-600"
               >
@@ -95,7 +95,7 @@ export default function PricingComparisonTable() {
 
             <section className="border-t border-gray-200 px-4 pt-5">
               <Link
-                to="/sign-up"
+                to={loggedIn ? "/profile" : "/sign-up"}
                 onClick={window.scrollTo(0, 0)}
                 className="block w-full bg-indigo-600 border border-transparent rounded-md shadow py-2 text-sm font-semibold text-white text-center hover:to-pink-600"
               >
@@ -155,7 +155,7 @@ export default function PricingComparisonTable() {
                       </p>
                     </section>
                     <Link
-                      to="/sign-up"
+                      to={loggedIn ? "/profile" : "/sign-up"}
                       onClick={window.scrollTo(0, 0)}
                       className="block w-full bg-indigo-600 border border-transparent rounded-md shadow py-2 text-sm font-semibold text-white text-center hover:to-pink-600"
                     >
@@ -227,7 +227,7 @@ export default function PricingComparisonTable() {
               {pricingTiers.map((tier) => (
                 <td key={tier.name} className="pt-5 px-6">
                   <Link
-                    to="/sign-up"
+                    to={loggedIn ? "/profile" : "/sign-up"}
                     onClick={window.scrollTo(0, 0)}
                     className="block w-full bg-indigo-600 border border-transparent rounded-md shadow py-2 text-sm font-semibold text-white text-center hover:to-pink-600"
                   >
