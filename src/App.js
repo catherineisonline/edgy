@@ -74,6 +74,7 @@ export default function App() {
       if (password !== undefined) {
         const targetUser = data.records.filter((record) => record.fields.email === email)[0];
         if (targetUser.fields.password === password) {
+          setUser({ id: targetUser.id, createdTime: moment(targetUser.createdTime).utc().format('YYYY-MM-DD'), email: targetUser.fields.email, fullname: targetUser.fields.fullname, gender: targetUser.fields.gender, plan: targetUser.fields.plan, password: targetUser.fields.password });
           return true;
         }
         else {
