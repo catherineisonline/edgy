@@ -38,6 +38,7 @@ export default function SignUpForm({ registerUser }) {
         setLoading(false);
         setUserExists(false);
         navigate('/sign-in');
+        window.scrollTo(0, 0)
       }
       else {
         setLoading(false);

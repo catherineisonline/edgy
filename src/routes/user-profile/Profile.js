@@ -280,7 +280,7 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
 
                 </dl>
             </div>
-            <section className="mt-10 space-x-4">
+            <section className="mt-10 space-x-4 flex flex-row gap-2">
                 <button onClick={() => { setDeleteRequest(true); }} className="inline-block bg-indigo-500 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75">
                     Delete account
                 </button>

@@ -114,7 +114,7 @@ export default function Terms() {
               Edgy Terms & Conditions
             </span>
           </h2>
-          <p className="mt-8 text-lg text-gray-500">These Terms & Conditions ("Terms") govern your use of the Instagram growth services provided by [Company Name] ("Edgy," "we," "our," or "us"). By using our services, you ("you," "your," or "user") agree to comply with these Terms and enter into a binding agreement with Edgy. If you do not agree with these Terms, please refrain from using our services.</p>
+          <p className="mt-8 text-lg text-gray-500">These Terms & Conditions ("Terms") govern your use of the Instagram growth services provided by Edgy ("Edgy," "we," "our," or "us"). By using our services, you ("you," "your," or "user") agree to comply with these Terms and enter into a binding agreement with Edgy. If you do not agree with these Terms, please refrain from using our services.</p>
           <h3 className="text-lg text-gray-500">1. Instagram Account Access:</h3>
           <p className="text-lg text-gray-500">To utilize our services, you grant Edgy limited access to your Instagram account. This access is necessary for our team to perform manual engagement and implement growth strategies. We do not store or share your account login information, and we handle your data with utmost confidentiality.</p>
           <h3 className="text-lg text-gray-500">2. Service Eligibility:</h3>

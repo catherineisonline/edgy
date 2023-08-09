@@ -40,10 +40,10 @@ export default function JobsForm() {
     }
     return (
         <article className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-            <h2 className="inline text-3xl font-extrabold tracking-tight text-white sm:block sm:text-4xl">
+            <h2 className=" text-3xl font-extrabold tracking-tight text-white sm:block sm:text-4xl">
                 Ready to advance your career?
             </h2>
-            <p className="inline text-3xl font-extrabold tracking-tight text-[color:var(--primary-font-color)] sm:block sm:text-4xl">
+            <p className=" text-3xl font-extrabold tracking-tight text-[color:var(--primary-font-color)] sm:block sm:text-4xl">
                 Send us your email and we will contact you.
             </p>
             {loading ?
@@ -57,7 +57,7 @@ export default function JobsForm() {
                     </div>
                 </React.Fragment>
                 : submit && Object.keys(formError).length === 0 ? <p className='font-medium text-green-600 sm:text-xl lg:text-lg xl:text-xl mt-6'>We received your request! Please check you email.</p> :
-                    <form onSubmit={handleSubmit} className="mt-8 sm:flex">
+                    <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-8 w-full sm:max-w-xs">
                         <label htmlFor="email" className="sr-only">
                             Email address
                         </label>
@@ -66,18 +66,16 @@ export default function JobsForm() {
                             name="email"
                             onChange={handleValidation}
                             type="text"
-                            className="w-full px-5 py-3 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs border-gray-300 rounded-md"
+                            className="w-full px-5 py-3 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                             placeholder="Enter your email"
                         />
-                        <span className="text-red-400 absolute mt-16">{formError.email}</span>
-                        <section className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
-                            <button
-                                type="submit"
-                                className="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                            >
-                                Let's do this
-                            </button>
-                        </section>
+                        <span className="text-red-400 absolute mt-12">{formError.email}</span>
+                        <button
+                            type="submit"
+                            className="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        >
+                            Let's do this
+                        </button>
                     </form>}
 
         </article>
