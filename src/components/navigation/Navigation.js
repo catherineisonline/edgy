@@ -9,9 +9,14 @@ const links = [
   { name: "Contact", href: "/contact" },
 ];
 
-export default function Navigation({ loggedIn, setLoggedIn }) {
+export default function Navigation({ loggedIn, setLoggedIn, setTriggeredLogout }) {
   const navigate = useNavigate()
   const ResetLocation = () => window.scrollTo(0, 0);
+  const logOutUser = () => {
+    setTriggeredLogout(true);
+    setLoggedIn(false);
+    navigate('/')
+  }
   return (
     <header className="bg-gray-900">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
@@ -35,7 +40,7 @@ export default function Navigation({ loggedIn, setLoggedIn }) {
             </section>
           </section>
           {loggedIn ? <section className="ml-10 space-x-4">
-            <button onClick={() => { setLoggedIn(false); navigate('/') }} className="inline-block bg-indigo-500 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75">
+            <button onClick={() => { logOutUser() }} className="inline-block bg-indigo-500 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75">
               Sign out
             </button>
             <Link onClick={ResetLocation} to="/profile" className="inline-block bg-white py-2 px-4 border border-transparent rounded-md text-base font-medium text-indigo-600 hover:bg-indigo-50">

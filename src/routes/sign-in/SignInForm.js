@@ -1,6 +1,6 @@
 import { LockClosedIcon } from "@heroicons/react/solid";
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function SignInForm({ retrieveDatabase, user, setLoggedIn }) {
   const [formValue, setFormValue] = useState({ email: '', password: '' });

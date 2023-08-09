@@ -18,7 +18,7 @@ import SignUp from "./routes/sign-up/SignUp";
 import BlogPost from "./routes/blog-post/BlogPost";
 //Airtable
 import edgyBase from "./airtable/airtable";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 //uuid
 import { v4 as uuidv4 } from 'uuid';
 import Profile from "./routes/user-profile/Profile";
@@ -27,6 +27,33 @@ import NotFound from "./components/NotFound";
 export default function App() {
   const [user, setUser] = useState({ id: '', createdTime: '', email: '', fullname: '', gender: '', plan: '', password: '' });
   const [loggedIn, setLoggedIn] = useState(false);
+  const [triggeredLogout, setTriggeredLogout] = useState(false);
+
+  const saveSession = () => {
+    if (sessionStorage.getItem('loggedIn') !== null) {
+      console.log("there is session storage");
+    }
+    if (sessionStorage.getItem('loggedIn') === null) {
+      sessionStorage.setItem('loggedIn', true);
+    }
+  };
+
+  //Workign with sessions storage every time the website reloads
+  useEffect(() => {
+    //if use logged in AND login session isn't saved AND logout wasn't triggered THEN save the login session
+    if (loggedIn && sessionStorage.getItem('loggedIn') === null && !triggeredLogout) {
+      saveSession();
+    }
+    //if user triggered logout AND we have login session in the storage THEN remove this sessions
+    if (triggeredLogout && sessionStorage.getItem('loggedIn') !== null) {
+      sessionStorage.removeItem('loggedIn');
+    }
+    //there is login session in the storage AND it wasn't the trigger of the logout THEN retrieve the sessions from the storage
+    if (sessionStorage.getItem('loggedIn') !== null && !triggeredLogout) {
+      setLoggedIn(sessionStorage.getItem('loggedIn'));
+    }
+  }, [loggedIn, triggeredLogout]);
+
 
   const retrieveDatabase = async (email) => {
     try {
@@ -120,7 +147,7 @@ export default function App() {
 
   return (
     <Router>
-      <Navigation loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+      <Navigation loggedIn={loggedIn} setLoggedIn={setLoggedIn} setTriggeredLogout={setTriggeredLogout} />
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/contact" element={<Contact />} />
@@ -133,9 +160,9 @@ export default function App() {
         <Route path="/refunds" element={<Refunds />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/jobs" element={<Jobs />} />
-        <Route path="/sign-in" element={loggedIn ? <Profile retrieveDatabase={retrieveDatabase} user={user} updateUser={updateUser} deleteUser={deleteUser} /> : <SignIn retrieveDatabase={retrieveDatabase} user={user} setLoggedIn={setLoggedIn} />} />
-        <Route path="/sign-up" element={loggedIn ? <Profile retrieveDatabase={retrieveDatabase} user={user} updateUser={updateUser} deleteUser={deleteUser} /> : <SignUp retrieveDatabase={retrieveDatabase} user={user} registerUser={registerUser} />} />
-        <Route path="/profile" element={loggedIn ? <Profile retrieveDatabase={retrieveDatabase} user={user} updateUser={updateUser} deleteUser={deleteUser} /> : <NotFound />} />
+        <Route path="/sign-in" element={loggedIn ? <Profile retrieveDatabase={retrieveDatabase} user={user} updateUser={updateUser} deleteUser={deleteUser} setLoggedIn={setLoggedIn} setTriggeredLogout={setTriggeredLogout} /> : <SignIn retrieveDatabase={retrieveDatabase} user={user} setLoggedIn={setLoggedIn} />} />
+        <Route path="/sign-up" element={loggedIn ? <Profile retrieveDatabase={retrieveDatabase} user={user} updateUser={updateUser} deleteUser={deleteUser} setLoggedIn={setLoggedIn} setTriggeredLogout={setTriggeredLogout} /> : <SignUp retrieveDatabase={retrieveDatabase} user={user} registerUser={registerUser} />} />
+        <Route path="/profile" element={loggedIn ? <Profile retrieveDatabase={retrieveDatabase} user={user} updateUser={updateUser} deleteUser={deleteUser} setLoggedIn={setLoggedIn} setTriggeredLogout={setTriggeredLogout} /> : <NotFound />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />

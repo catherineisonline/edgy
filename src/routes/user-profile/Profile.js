@@ -4,7 +4,7 @@ import { ExclamationIcon } from "@heroicons/react/outline";
 import { useNavigate } from "react-router-dom";
 
 
-const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, }) => {
+const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, setTriggeredLogout }) => {
     const navigator = useNavigate();
     const [formValue, setFormValue] = useState({});
     const [formErrors, setFormErrors] = useState({});
@@ -92,6 +92,8 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, }) => {
 
     const deleteAcc = () => {
         deleteUser(user.id);
+        setLoggedIn(false);
+        setTriggeredLogout(true);
         navigator('/');
         window.scrollTo(0, 0);
     }
