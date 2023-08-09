@@ -27,7 +27,7 @@ export default function PricingComparisonTable({ loggedIn }) {
               <p className="mt-4 text-sm text-gray-500">{tier.description}</p>
               <Link
                 to={loggedIn ? "/profile" : "/sign-up"}
-                onClick={window.scrollTo(0, 0)}
+                onClick={() => window.scrollTo(0, 0)}
                 className="block w-full bg-indigo-600 border border-transparent rounded-md shadow py-2 text-sm font-semibold text-white text-center hover:to-pink-600"
               >
                 Buy {tier.name}
@@ -96,7 +96,7 @@ export default function PricingComparisonTable({ loggedIn }) {
             <section className="border-t border-gray-200 px-4 pt-5">
               <Link
                 to={loggedIn ? "/profile" : "/sign-up"}
-                onClick={window.scrollTo(0, 0)}
+                onClick={() => window.scrollTo(0, 0)}
                 className="block w-full bg-indigo-600 border border-transparent rounded-md shadow py-2 text-sm font-semibold text-white text-center hover:to-pink-600"
               >
                 Buy {tier.name}
@@ -156,7 +156,7 @@ export default function PricingComparisonTable({ loggedIn }) {
                     </section>
                     <Link
                       to={loggedIn ? "/profile" : "/sign-up"}
-                      onClick={window.scrollTo(0, 0)}
+                      onClick={() => window.scrollTo(0, 0)}
                       className="block w-full bg-indigo-600 border border-transparent rounded-md shadow py-2 text-sm font-semibold text-white text-center hover:to-pink-600"
                     >
                       Buy {tier.name}
@@ -228,7 +228,7 @@ export default function PricingComparisonTable({ loggedIn }) {
                 <td key={tier.name} className="pt-5 px-6">
                   <Link
                     to={loggedIn ? "/profile" : "/sign-up"}
-                    onClick={window.scrollTo(0, 0)}
+                    onClick={() => window.scrollTo(0, 0)}
                     className="block w-full bg-indigo-600 border border-transparent rounded-md shadow py-2 text-sm font-semibold text-white text-center hover:to-pink-600"
                   >
                     Buy {tier.name}
