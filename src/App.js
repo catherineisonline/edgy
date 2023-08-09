@@ -34,7 +34,6 @@ export default function App() {
       const data = await response.json();
       if (Object.keys(data.records.filter((record) => record.fields.email === email)[0]).length > 0) {
         const theUser = data.records.filter((record) => record.fields.email === email)[0];
-        console.log({ id: theUser.id, createdTime: moment(theUser.createdTime).utc().format('YYYY-MM-DD'), email: theUser.fields.email, fullname: theUser.fields.fullname, gender: theUser.fields.gender, plan: theUser.fields.plan, password: theUser.fields.password })
         setUser({ id: theUser.id, createdTime: moment(theUser.createdTime).utc().format('YYYY-MM-DD'), email: theUser.fields.email, fullname: theUser.fields.fullname, gender: theUser.fields.gender, plan: theUser.fields.plan, password: theUser.fields.password });
         return true;
       }
@@ -54,7 +53,8 @@ export default function App() {
 
     const checkUser = await retrieveDatabase(data.email);
     if (checkUser) {
-      return;
+
+      return false;
     }
     if (checkUser === false) {
       try {
@@ -69,7 +69,7 @@ export default function App() {
           },
         ]
         );
-
+        return true;
       }
       catch (error) {
         console.error(error);
@@ -103,7 +103,6 @@ export default function App() {
       }
 
     );
-    // console.log(user)
     setUser({ ...user, [key]: value });
   }
 
@@ -134,9 +133,9 @@ export default function App() {
         <Route path="/refunds" element={<Refunds />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/jobs" element={<Jobs />} />
-        <Route path="/sign-in" element={loggedIn ? <Profile user={user} updateUser={updateUser} deleteUser={deleteUser} /> : <SignIn retrieveDatabase={retrieveDatabase} user={user} setLoggedIn={setLoggedIn} />} />
-        <Route path="/sign-up" element={loggedIn ? <Profile user={user} updateUser={updateUser} deleteUser={deleteUser} /> : <SignUp registerUser={registerUser} />} />
-        <Route path="/profile" element={loggedIn ? <Profile user={user} updateUser={updateUser} deleteUser={deleteUser} /> : <NotFound />} />
+        <Route path="/sign-in" element={loggedIn ? <Profile retrieveDatabase={retrieveDatabase} user={user} updateUser={updateUser} deleteUser={deleteUser} /> : <SignIn retrieveDatabase={retrieveDatabase} user={user} setLoggedIn={setLoggedIn} />} />
+        <Route path="/sign-up" element={loggedIn ? <Profile retrieveDatabase={retrieveDatabase} user={user} updateUser={updateUser} deleteUser={deleteUser} /> : <SignUp retrieveDatabase={retrieveDatabase} user={user} registerUser={registerUser} />} />
+        <Route path="/profile" element={loggedIn ? <Profile retrieveDatabase={retrieveDatabase} user={user} updateUser={updateUser} deleteUser={deleteUser} /> : <NotFound />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />

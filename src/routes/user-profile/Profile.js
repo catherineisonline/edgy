@@ -4,7 +4,7 @@ import { ExclamationIcon } from "@heroicons/react/outline";
 import { useNavigate } from "react-router-dom";
 
 
-const Profile = ({ user, updateUser, deleteUser }) => {
+const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, }) => {
     const navigator = useNavigate();
     const [formValue, setFormValue] = useState({});
     const [formErrors, setFormErrors] = useState({});
@@ -93,20 +93,28 @@ const Profile = ({ user, updateUser, deleteUser }) => {
     const deleteAcc = () => {
         deleteUser(user.id);
         navigator('/');
+        window.scrollTo(0, 0);
     }
 
 
     const formValidator = (field) => (formValue) => {
         const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
         const errors = {};
+        retrieveDatabase(user.email);
         if (!formValue) {
             errors[field] = `${field} field is required`;
         }
         else if (field === 'fullname' && formValue.length < 3) {
-            errors[field] = `${field} is too short`;
+            errors[field] = `Full name is too short`;
+        }
+        else if (field === 'fullname' && formValue === user.fullname) {
+            errors[field] = `Full name is the same`;
         }
         else if (field === 'email' && !emailRegex.test(formValue)) {
-            errors[field] = `${field} is not valid`;
+            errors[field] = `Email is not valid`;
+        }
+        else if (field === 'email' && formValue === user.email) {
+            errors[field] = `Email is the same`;
         }
         if (field === 'password') {
             if (!formValue.password && !formValue.repeatedPassword) {
@@ -116,7 +124,7 @@ const Profile = ({ user, updateUser, deleteUser }) => {
                 errors.password = `Password field is empty`;
             }
             else if (!formValue.repeatedPassword) {
-                errors.repeatedPassword = `Password field are empty`;
+                errors.repeatedPassword = `Password field is empty`;
             }
             else if (formValue.password.length < 8) {
                 errors.password = `Password should be min. 8 characters`;
@@ -126,6 +134,9 @@ const Profile = ({ user, updateUser, deleteUser }) => {
             }
             else if (formValue.password !== formValue.repeatedPassword) {
                 errors.password = `Passwords should match`;
+            }
+            else if (formValue.password === user.password) {
+                errors.password = `New password can't be the same as old`;
             }
         }
         return errors;
