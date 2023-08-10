@@ -8,7 +8,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/catherineisonline/edgy)](https://github.com/catherineisonline/edgy/stargazers)
 
 ## Introduction <a id="introduction"></a>
-Welcome to the Edgy Social Media Marketing Agency's full stack website! At Edgy, we're not just a business; we're your partners in navigating the dynamic landscape of Instagram marketing. Whether you're a budding influencer or a business looking to boost your brand's online visibility, we're here to help you stand out in the digital crowd.
+Welcome to the Edgy Social Media Marketing Agency's full-stack website! At Edgy, we're not just a business; we're your partners in navigating the dynamic landscape of Instagram marketing. Whether you're a budding influencer or a business looking to boost your brand's online visibility, we're here to help you stand out in the digital crowd.
 
 #### About Edgy:
 Edgy is a fictional social media marketing agency that specializes in Instagram growth strategies. Our team of passionate experts understands the ever-changing algorithms, trends, and techniques that define success on Instagram. With our tailored services and creative solutions, we're dedicated to helping you harness the power of this platform to its fullest potential.
@@ -118,7 +118,7 @@ Thanks for stopping by and checking out what I've put together here. I appreciat
 
 
 ## License  <a id="license"></a>
-This project is released under the MIT [LICENSE](https://github.com/catherineisonline/travel-with-catherine/blob/main/LICENSE). You can find the specific terms and conditions outlined in the LICENSE file. This means you're free to utilize, modify, and distribute the project according to the terms of the MIT License.
+This project is released under the MIT [LICENSE](https://github.com/catherineisonline/edgy/blob/main/LICENSE). You can find the specific terms and conditions outlined in the LICENSE file. This means you're free to utilize, modify, and distribute the project according to the terms of the MIT License.
 
 #### Build Your Portfolio:
 Feel free to incorporate this project into your personal portfolio! Showcase your skills and creativity by featuring your adaptations or implementations of this project. Just make sure to follow the guidelines of the MIT License while doing so.
