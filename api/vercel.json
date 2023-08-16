@@ -8,11 +8,11 @@
     ],
     "routes": [
         {
-            "src": "/api/airtable",
+            "src": "/airtable",
             "dest": "/api/airtable"
         },
         {
-            "src": "/api/verify-recaptcha",
+            "src": "/verify-recaptcha",
             "dest": "/api/verify-recaptcha"
         },
         {

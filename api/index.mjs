@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
     res.send('Server Deployed 🥳')
 })
 
-app.get("/api/airtable", (req, response) => {
+app.get("/airtable", (req, response) => {
     fetch(`https://api.airtable.com/v0/appd8UNly6GmJ3LFX/users`, {
     })
         .then((response) => response.json())
@@ -24,7 +24,7 @@ app.get("/api/airtable", (req, response) => {
 });
 
 
-app.post('/api/verify-recaptcha', async (req, res) => {
+app.post('/verify-recaptcha', async (req, res) => {
     const { token } = req.body;
     const secret = captchaSecret; // Replace with your own reCAPTCHA secret key
     const uri = `https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${token}`;
