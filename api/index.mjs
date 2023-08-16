@@ -17,7 +17,7 @@ app.get("/api/airtable", (req, response) => {
     })
         .then((response) => response.json())
         .then((result) => {
-
+            response.header("Access-Control-Allow-Origin", "https://edgy-media.vercel.app/");
             return response.json(result);
         })
         .catch((err) => {
