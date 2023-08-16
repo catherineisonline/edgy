@@ -2,23 +2,22 @@ import express, { json } from 'express';
 import cors from 'cors'; // Import the cors middleware
 import fetch from 'node-fetch';
 const captchaSecret = process.env.REACT_APP_CAPTCHA_SECRET;
-
-
-
 const app = express();
 const port = 3000; // Choose a port for your server
 
 app.use(json());
 app.use(cors()); // Enable CORS for all routes
 
+
 app.get('/', (req, res) => {
-    res.send('Hey this is my API running 🥳')
+    res.send('Server Deployed 🥳')
 })
 
 app.get("/airtable", (req, response) => {
     fetch(`https://api.airtable.com/v0/appd8UNly6GmJ3LFX/users`, {
         headers: {
-            'Authorization': `Bearer keyjBEcUEoMCwO7GA`
+            'Authorization': `Bearer keyjBEcUEoMCwO7GA`,
+            'Access-Control-Allow-Origin': '*'
         }
     })
         .then((response) => response.json())
@@ -30,9 +29,7 @@ app.get("/airtable", (req, response) => {
             return console.log(err, 'hu');
         });
 });
-// export default function handler(request, response) {
-//     return response.end("I'm a Serverless Function!");
-// }
+
 
 app.post('/verify-recaptcha', async (req, res) => {
     const { token } = req.body;
