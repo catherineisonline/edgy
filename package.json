@@ -34,7 +34,7 @@
     "test": "craco test",
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build -r https://github.com/catherineisonline/edgy",
-    "server": "node backend/server.mjs"
+    "server": "node api/server.mjs"
   },
   "eslintConfig": {
     "extends": [
