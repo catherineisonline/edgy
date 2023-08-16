@@ -7,13 +7,16 @@ const port = 3000; // Choose a port for your server
 
 app.use(json());
 app.use(cors()); // Enable CORS for all routes
-app.options('*', cors())
+// app.options('*', cors())
 
 app.get('/', (req, res) => {
     res.send('Server Deployed 🥳')
 })
 
 app.get("/airtable", (req, response) => {
+    response.header("Access-Control-Allow-Origin", "*");
+    response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    // next();
     fetch(`https://api.airtable.com/v0/appd8UNly6GmJ3LFX/users`, {
     })
         .then((response) => response.json())
