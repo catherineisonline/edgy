@@ -7,7 +7,12 @@ const port = 3000; // Choose a port for your server
 // app.use(cors({ origin: 'https://edgy-media.vercel.app' }));
 app.use(json());
 
-
+app.use(cors({
+    origin: 'https://edgy-media.vercel.app',
+    methods: 'GET,OPTIONS,PATCH,DELETE,POST,PUT',
+    allowedHeaders: 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version',
+    credentials: true,
+}));
 app.get('/api', (req, res) => {
     res.send('Server Deployed 🥳')
 })
