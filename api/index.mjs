@@ -15,10 +15,6 @@ app.get('/', (req, res) => {
 
 app.get("/airtable", (req, response) => {
     fetch(`https://api.airtable.com/v0/appd8UNly6GmJ3LFX/users`, {
-        headers: {
-            'Authorization': `Bearer keyjBEcUEoMCwO7GA`,
-            'Access-Control-Allow-Origin': '*'
-        }
     })
         .then((response) => response.json())
         .then((result) => {
