@@ -8,12 +8,12 @@
     ],
     "routes": [
         {
-            "src": "/airtable",
-            "dest": "/airtable"
+            "src": "/api/airtable",
+            "dest": "/api/airtable"
         },
         {
-            "src": "/verify-recaptcha",
-            "dest": "/verify-recaptcha"
+            "src": "/api/verify-recaptcha",
+            "dest": "/api/verify-recaptcha"
         },
         {
             "src": "/(.*)",
@@ -22,7 +22,7 @@
     ],
     "headers": [
         {
-            "source": "/airtable",
+            "source": "/api/airtable",
             "headers": [
                 {
                     "key": "Access-Control-Allow-Credentials",
@@ -43,7 +43,7 @@
             ]
         },
         {
-            "source": "/verify-recaptcha",
+            "source": "/api/verify-recaptcha",
             "headers": [
                 {
                     "key": "Access-Control-Allow-Credentials",
@@ -66,8 +66,8 @@
     ],
     "rewrites": [
         {
-            "source": "/(.*)",
-            "destination": "/$1"
+            "source": "/api/(.*)",
+            "destination": "/api/$1"
         }
     ]
 }
