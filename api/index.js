@@ -30,9 +30,9 @@ app.get("/airtable", (req, response) => {
             return console.log(err, 'hu');
         });
 });
-export default function handler(request, response) {
-    return response.end("I'm a Serverless Function!");
-}
+// export default function handler(request, response) {
+//     return response.end("I'm a Serverless Function!");
+// }
 
 app.post('/verify-recaptcha', async (req, res) => {
     const { token } = req.body;
