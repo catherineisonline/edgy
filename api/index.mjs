@@ -7,7 +7,7 @@ const port = 3000; // Choose a port for your server
 app.use(cors());
 app.use(json());
 
-app.get('/api', (req, res) => {
+app.get('/', (req, res) => {
     res.send('Server Deployed 🥳')
 })
 
