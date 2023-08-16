@@ -7,7 +7,7 @@ const port = 3000; // Choose a port for your server
 
 app.use(json());
 app.use(cors()); // Enable CORS for all routes
-
+app.options('*', cors())
 
 app.get('/', (req, res) => {
     res.send('Server Deployed 🥳')
