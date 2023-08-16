@@ -4,14 +4,14 @@ import fetch from 'node-fetch';
 const captchaSecret = process.env.REACT_APP_CAPTCHA_SECRET;
 const app = express();
 const port = 3000; // Choose a port for your server
-
+app.use(cors({ origin: /\.vercel\.com$/ })); // Enable CORS for all routes
 app.use(json());
-app.use(cors()); // Enable CORS for all routes
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*')
-    res.header('Access-Control-Allow-Headers', '*')
-    // next()
-})
+
+// app.use((req, res, next) => {
+//     res.header('Access-Control-Allow-Origin', '*')
+//     res.header('Access-Control-Allow-Headers', '*')
+//     // next()
+// })
 // app.options('*', cors())
 
 app.get('/', (req, res) => {
@@ -19,8 +19,8 @@ app.get('/', (req, res) => {
 })
 
 app.get("/airtable", (req, response) => {
-    response.header("Access-Control-Allow-Origin", "*");
-    response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    // response.header("Access-Control-Allow-Origin", "*");
+    // response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     // next();
     fetch(`https://api.airtable.com/v0/appd8UNly6GmJ3LFX/users`, {
     })
