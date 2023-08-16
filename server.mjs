@@ -11,6 +11,10 @@ const port = 3000; // Choose a port for your server
 app.use(json());
 app.use(cors()); // Enable CORS for all routes
 
+app.get('/', (req, res) => {
+    res.send('Hey this is my API running 🥳')
+})
+
 app.get("/airtable", (req, response) => {
     fetch(`https://api.airtable.com/v0/appd8UNly6GmJ3LFX/users`, {
         headers: {
