@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
         {
-            "src": "*.mjs",
+            "src": "./index.mjs",
             "use": "@vercel/node"
         }
     ],
@@ -10,12 +10,6 @@
         {
             "src": "/(.*)",
             "dest": "/"
-        }
-    ],
-    "rewrites": [
-        {
-            "source": "/(.*)",
-            "destination": "/"
         }
     ]
 }
