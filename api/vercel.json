@@ -8,21 +8,21 @@
     ],
     "routes": [
         {
+            "src": "/api/airtable",
+            "dest": "/api/airtable"
+        },
+        {
+            "src": "/api/verify-recaptcha",
+            "dest": "/api/verify-recaptcha"
+        },
+        {
             "src": "/(.*)",
-            "dest": "/",
-            "methods": [
-                "GET",
-                "POST",
-                "PUT",
-                "PATCH",
-                "DELETE",
-                "OPTIONS"
-            ]
+            "dest": "/"
         }
     ],
     "headers": [
         {
-            "source": "/api/",
+            "source": "/api/airtable",
             "headers": [
                 {
                     "key": "Access-Control-Allow-Credentials",
@@ -30,7 +30,28 @@
                 },
                 {
                     "key": "Access-Control-Allow-Origin",
-                    "value": "*"
+                    "value": "https://edgy-media.vercel.app"
+                },
+                {
+                    "key": "Access-Control-Allow-Methods",
+                    "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
+                },
+                {
+                    "key": "Access-Control-Allow-Headers",
+                    "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+                }
+            ]
+        },
+        {
+            "source": "/api/verify-recaptcha",
+            "headers": [
+                {
+                    "key": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "key": "Access-Control-Allow-Origin",
+                    "value": "https://edgy-media.vercel.app"
                 },
                 {
                     "key": "Access-Control-Allow-Methods",
@@ -46,7 +67,7 @@
     "rewrites": [
         {
             "source": "/api/(.*)",
-            "destination": "/api"
+            "destination": "/api/$1"
         }
     ]
 }
