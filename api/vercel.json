@@ -22,7 +22,7 @@
     ],
     "headers": [
         {
-            "source": "./index.mjs",
+            "source": "/api/(.*)",
             "headers": [
                 {
                     "key": "Access-Control-Allow-Credentials",

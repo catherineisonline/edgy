@@ -4,10 +4,16 @@ import fetch from 'node-fetch';
 const captchaSecret = process.env.REACT_APP_CAPTCHA_SECRET;
 const app = express();
 const port = 3000; // Choose a port for your server
+app.use(
+    cors({
+        origin: '*',
+    })
+)
 // app.use(cors({ origin: 'https://edgy-media.vercel.app', })); // Enable CORS for all routes
 app.use(json());
 
-app.get('/', (req, res) => {
+
+app.get('/api', (req, res) => {
     res.setHeader('Access-Control-Allow-Credentials', true)
     res.setHeader('Access-Control-Allow-Origin', '*')
     // another common pattern
@@ -20,7 +26,7 @@ app.get('/', (req, res) => {
     res.send('Server Deployed 🥳')
 })
 
-app.get("/airtable", (req, response) => {
+app.get("/api/airtable", (req, response) => {
     response.setHeader('Access-Control-Allow-Credentials', true)
     response.setHeader('Access-Control-Allow-Origin', '*')
     // another common pattern
@@ -43,7 +49,7 @@ app.get("/airtable", (req, response) => {
 });
 
 
-app.post('/verify-recaptcha', async (req, res) => {
+app.post('/api/verify-recaptcha', async (req, res) => {
     const { token } = req.body;
     const secret = captchaSecret; // Replace with your own reCAPTCHA secret key
     const uri = `https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${token}`;
