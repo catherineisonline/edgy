@@ -9,7 +9,15 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/"
+            "dest": "/",
+            "methods": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE",
+                "OPTIONS"
+            ]
         }
     ],
     "headers": [
