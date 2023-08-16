@@ -19,6 +19,7 @@ app.get("/airtable", (req, response) => {
     })
         .then((response) => response.json())
         .then((result) => {
+
             return response.json(result);
         })
         .catch((err) => {
