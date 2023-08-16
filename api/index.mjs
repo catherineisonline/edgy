@@ -4,7 +4,7 @@ import fetch from 'node-fetch';
 const captchaSecret = process.env.REACT_APP_CAPTCHA_SECRET;
 const app = express();
 const port = 3000; // Choose a port for your server
-// app.use(cors({ origin: 'https://edgy-media.vercel.app/', })); // Enable CORS for all routes
+app.use(cors({ origin: 'https://edgy-media.vercel.app', })); // Enable CORS for all routes
 app.use(json());
 
 app.get('/', (req, res) => {
