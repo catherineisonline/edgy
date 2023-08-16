@@ -22,7 +22,7 @@
     ],
     "headers": [
         {
-            "source": "https://edgy-server.vercel.app/",
+            "source": "./index.mjs",
             "headers": [
                 {
                     "key": "Access-Control-Allow-Credentials",
