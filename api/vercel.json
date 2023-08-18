@@ -9,20 +9,20 @@
     "routes": [
         {
             "src": "/airtable",
-            "dest": "/api/airtable"
+            "dest": "/airtable"
         },
         {
             "src": "/verify-recaptcha",
-            "dest": "/api/verify-recaptcha"
+            "dest": "/verify-recaptcha"
         },
         {
-            "src": "/(.*)",
+            "src": "/",
             "dest": "/"
         }
     ],
     "headers": [
         {
-            "source": "/api/airtable",
+            "source": "/airtable",
             "headers": [
                 {
                     "key": "Access-Control-Allow-Credentials",
@@ -43,7 +43,7 @@
             ]
         },
         {
-            "source": "/api/verify-recaptcha",
+            "source": "/verify-recaptcha",
             "headers": [
                 {
                     "key": "Access-Control-Allow-Credentials",
@@ -62,12 +62,6 @@
                     "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
                 }
             ]
-        }
-    ],
-    "rewrites": [
-        {
-            "source": "/api/(.*)",
-            "destination": "/api/$1"
         }
     ]
 }
