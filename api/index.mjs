@@ -20,17 +20,37 @@ app.get('/', (req, res) => {
     res.send('Server Deployed 🥳')
 })
 
-app.get("/airtable", async (req, response) => {
-    await fetch(`https://api.airtable.com/v0/appd8UNly6GmJ3LFX/users`, {
-    })
-        .then((response) => response.json())
-        .then((result) => {
-            return response.json(result);
-        })
-        .catch((err) => {
-            return console.log(err);
+// app.get("/airtable", async (req, response) => {
+//     await fetch(`https://api.airtable.com/v0/appd8UNly6GmJ3LFX/users`, {
+//     })
+//         .then((response) => response.json())
+//         .then((result) => {
+//             return response.json(result);
+//         })
+//         .catch((err) => {
+//             return console.log(err);
+//         });
+
+// });
+
+app.get('/airtable', async (req, res) => {
+    const airtableUrl = `https://api.airtable.com/v0/${'appd8UNly6GmJ3LFX'}/users`;
+
+    try {
+        const response = await fetch(airtableUrl, {
+            headers: {
+                Authorization: `Bearer ${'patWkQFULKle9xHtm.9297ed08fd919c395bea868aa349293ec2329c03e389699fcc101c1453fafdc9'}`,
+            },
         });
+
+        const data = await response.json();
+        return res.json(data);
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: 'An error occurred while fetching data from Airtable.' });
+    }
 });
+
 
 
 app.post('/verify-recaptcha', async (req, res) => {
