@@ -2,47 +2,25 @@ import express, { json } from 'express';
 import cors from 'cors'; // Import the cors middleware
 import fetch from 'node-fetch';
 const captchaSecret = process.env.REACT_APP_CAPTCHA_SECRET;
-
-
-
-
-
-
-
 const app = express();
 const port = 3000; // Choose a port for your server
 app.use(cors());
 app.use(json());
 
 app.get('/', (req, res) => {
-    // res.setHeader('Content-Type', 'text/html');
-    // res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
     res.send('Server Deployed 🥳')
 })
 
-// app.get("/airtable", async (req, response) => {
-//     await fetch(`https://api.airtable.com/v0/appd8UNly6GmJ3LFX/users`, {
-//     })
-//         .then((response) => response.json())
-//         .then((result) => {
-//             return response.json(result);
-//         })
-//         .catch((err) => {
-//             return console.log(err);
-//         });
-
-// });
 
 app.get('/airtable', async (req, res) => {
-    const airtableUrl = `https://api.airtable.com/v0/${'appd8UNly6GmJ3LFX'}/users`;
+    const airtableUrl = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_ID}/users`;
 
     try {
         const response = await fetch(airtableUrl, {
             headers: {
-                Authorization: `Bearer ${'patWkQFULKle9xHtm.9297ed08fd919c395bea868aa349293ec2329c03e389699fcc101c1453fafdc9'}`,
+                Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
             },
         });
-
         const data = await response.json();
         return res.json(data);
     } catch (error) {
@@ -79,7 +57,3 @@ app.post('/verify-recaptcha', async (req, res) => {
 });
 
 app.listen(port, () => console.log(`Server is running on http://localhost:${port}`));
-
-
-
-// export default app;
