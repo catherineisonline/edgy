@@ -6,18 +6,10 @@
             "use": "@vercel/node"
         }
     ],
-    "routes": [
+    "rewrites": [
         {
-            "src": "/airtable",
-            "dest": "/airtable"
-        },
-        {
-            "src": "/verify-recaptcha",
-            "dest": "/verify-recaptcha"
-        },
-        {
-            "src": "/",
-            "dest": "/"
+            "source": "/(.*)",
+            "destination": "/index.html"
         }
     ],
     "headers": [
