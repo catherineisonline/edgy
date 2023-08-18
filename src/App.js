@@ -57,37 +57,35 @@ export default function App() {
 
 
   const retrieveDatabase = async (email, password = undefined) => {
-    // try {
-    const response = await fetch(process.env.REACT_APP_AIRTABLE_SERVER_URL);
-    const data = await response.json();
-    //if I didn't provide password argument
-    if (password === undefined) {
-      if (Object.keys(data.records.filter((record) => record.fields.email === email)[0]).length > 0) {
-        const theUser = data.records.filter((record) => record.fields.email === email)[0];
-        setUser({ id: theUser.id, createdTime: moment(theUser.createdTime).utc().format('YYYY-MM-DD'), email: theUser.fields.email, fullname: theUser.fields.fullname, gender: theUser.fields.gender, plan: theUser.fields.plan, password: theUser.fields.password });
-        return true;
+    try {
+      const response = await fetch(process.env.REACT_APP_AIRTABLE_SERVER_URL);
+      const data = await response.json();
+      if (password === undefined) {
+        if (Object.keys(data.records.filter((record) => record.fields.email === email)[0]).length > 0) {
+          const theUser = data.records.filter((record) => record.fields.email === email)[0];
+          setUser({ id: theUser.id, createdTime: moment(theUser.createdTime).utc().format('YYYY-MM-DD'), email: theUser.fields.email, fullname: theUser.fields.fullname, gender: theUser.fields.gender, plan: theUser.fields.plan, password: theUser.fields.password });
+          return true;
+        }
+        else {
+          return false;
+        }
       }
-      else {
-        return false;
+      if (password !== undefined) {
+        const targetUser = data.records.filter((record) => record.fields.email === email)[0];
+        if (targetUser.fields.password === password) {
+          setUser({ id: targetUser.id, createdTime: moment(targetUser.createdTime).utc().format('YYYY-MM-DD'), email: targetUser.fields.email, fullname: targetUser.fields.fullname, gender: targetUser.fields.gender, plan: targetUser.fields.plan, password: targetUser.fields.password });
+          return true;
+        }
+        else {
+          return false;
+        }
       }
-    }
-    if (password !== undefined) {
-      console.log(data)
-      const targetUser = data.records.filter((record) => record.fields.email === email)[0];
-      if (targetUser.fields.password === password) {
-        setUser({ id: targetUser.id, createdTime: moment(targetUser.createdTime).utc().format('YYYY-MM-DD'), email: targetUser.fields.email, fullname: targetUser.fields.fullname, gender: targetUser.fields.gender, plan: targetUser.fields.plan, password: targetUser.fields.password });
-        return true;
-      }
-      else {
-        return false;
-      }
-    }
 
-    // }
-    // catch (err) {
-    //   console.log(err.message)
-    //   return false;
-    // }
+    }
+    catch (err) {
+      console.log(err.message)
+      return false;
+    }
   }
 
   const registerUser = async (data) => {

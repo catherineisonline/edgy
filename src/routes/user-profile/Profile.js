@@ -114,6 +114,7 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
         const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
         const errors = {};
         retrieveDatabase(user.email);
+
         if (!formValue) {
             errors[field] = `${field} field is required`;
         }
