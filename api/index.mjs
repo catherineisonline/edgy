@@ -13,8 +13,8 @@ app.get('/', (req, res) => {
     res.send('Server Deployed 🥳')
 })
 
-app.get("/airtable", (req, response) => {
-    fetch(`https://api.airtable.com/v0/appd8UNly6GmJ3LFX/users`, {
+app.get("/airtable", async (req, response) => {
+    await fetch(`https://api.airtable.com/v0/appd8UNly6GmJ3LFX/users`, {
     })
         .then((response) => response.json())
         .then((result) => {
