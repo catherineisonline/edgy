@@ -25,7 +25,6 @@ app.get("/airtable", async (req, response) => {
     })
         .then((response) => response.json())
         .then((result) => {
-            result.send('I am here - Airtable 🥳')
             return response.json(result);
         })
         .catch((err) => {
