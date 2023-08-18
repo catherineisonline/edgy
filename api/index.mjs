@@ -8,8 +8,8 @@ app.use(cors());
 app.use(json());
 
 app.get('/', (req, res) => {
-    res.setHeader('Content-Type', 'text/html');
-    res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
+    // res.setHeader('Content-Type', 'text/html');
+    // res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
     res.send('Server Deployed 🥳')
 })
 
@@ -18,10 +18,11 @@ app.get("/airtable", async (req, response) => {
     })
         .then((response) => response.json())
         .then((result) => {
+            result.send('I am here - Airtable 🥳')
             return response.json(result);
         })
         .catch((err) => {
-            return console.log(err, 'hu');
+            return console.log(err);
         });
 });
 
