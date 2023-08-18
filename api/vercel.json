@@ -14,6 +14,10 @@
         {
             "src": "/airtable",
             "dest": "index.mjs"
+        },
+        {
+            "src": "/verify-recaptcha",
+            "dest": "index.mjs"
         }
     ]
 }
