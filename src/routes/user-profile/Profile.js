@@ -98,7 +98,12 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
 
     const handelChange = (e) => {
         const { name, value } = e.target;
-        setFormValue({ ...formValue, [name]: value });
+        if (name === "email") {
+            setFormValue({ ...formValue, email: value.toLowerCase() });
+        }
+        else {
+            setFormValue({ ...formValue, [name]: value });
+        }
     }
 
     const deleteAcc = () => {
@@ -113,7 +118,7 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
     const formValidator = (field) => (formValue) => {
         const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
         const errors = {};
-        retrieveDatabase(user.email);
+        retrieveDatabase(user.email.toLocaleLowerCase());
 
         if (!formValue) {
             errors[field] = `${field} field is required`;

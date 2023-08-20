@@ -92,7 +92,7 @@ export default function App() {
     const { email, password, fullname } = data;
     const id = uuidv4();
 
-    const checkUser = await retrieveDatabase(data.email);
+    const checkUser = await retrieveDatabase(data.email.toLocaleLowerCase());
     if (checkUser) {
 
       return false;
@@ -103,7 +103,7 @@ export default function App() {
           {
             "fields": {
               "id": id,
-              "email": email,
+              "email": email.toLocaleLowerCase(),
               "password": password,
               "fullname": fullname,
             }
