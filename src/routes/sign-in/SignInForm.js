@@ -21,7 +21,7 @@ export default function SignInForm({ retrieveDatabase, setLoggedIn }) {
     }
     else {
       //otherwise send info to the server and check if the user exists
-      const retrievedUser = await retrieveDatabase(formValue.email.toLocaleLowerCase(), formValue.password);
+      const retrievedUser = await retrieveDatabase(formValue.email.toLowerCase(), formValue.password);
       if (retrievedUser === false) {
         setRetrievedUser(false);
         setLoading(false);

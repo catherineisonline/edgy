@@ -1,5 +1,5 @@
 import { PencilAltIcon } from "@heroicons/react/outline";
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { ExclamationIcon } from "@heroicons/react/outline";
 import { useNavigate } from "react-router-dom";
 
@@ -14,6 +14,30 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
     const [editGender, setEditGender] = useState(false);
     const [editPassword, setEditPassword] = useState(false);
     const [editPlan, setEditPlan] = useState(false);
+
+
+    // Retrieve user data on page reload
+    useEffect(() => {
+        if (sessionStorage.getItem('user') === null) {
+            const jsonUser = JSON.stringify(user);
+            sessionStorage.setItem('user', jsonUser);
+        }
+        if (sessionStorage.getItem('user') !== null) {
+            const jsonUser = sessionStorage.getItem('user');
+            const user = JSON.parse(jsonUser);
+            retrieveDatabase(user.email, user.password);
+        }
+    }, [retrieveDatabase, user])
+
+
+    //Retrieve user data and update it in the displayed fields
+    const retrieveUser = useCallback((email, password) => {
+        retrieveDatabase(email, password)
+    }, [retrieveDatabase]);
+
+    useEffect(() => {
+        retrieveUser(user.email, user.password);
+    }, [retrieveUser, user.email, user.password]);
 
     const activateEditField = (fieldName) => {
         if (fieldName === 'fullname') {
@@ -50,8 +74,9 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
     }
     const submitForm = (e, validationTarget, fieldName) => {
         e.preventDefault();
+        const validationErrors = validationTarget(formValue[fieldName]);
+        // For any field beside password
         if (fieldName !== 'password') {
-            const validationErrors = validationTarget(formValue[fieldName]);
             if (Object.keys(validationErrors).length > 0) {
                 setFormErrors(validationErrors);
             } else {
@@ -59,10 +84,8 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
                 setFormValue({});
                 setFormErrors({});
                 handleCancel(fieldName);
-
             }
         } else {
-            const validationErrors = validationTarget(formValue);
             if (Object.keys(validationErrors).length > 0) {
                 setFormErrors(validationErrors);
             } else {
@@ -73,6 +96,7 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
             }
         }
     };
+
 
 
     const handleCancel = (target) => {
@@ -118,7 +142,7 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
     const formValidator = (field) => (formValue) => {
         const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
         const errors = {};
-        retrieveDatabase(user.email.toLocaleLowerCase());
+        retrieveDatabase(user.email.toLowerCase());
 
         if (!formValue) {
             errors[field] = `${field} field is required`;

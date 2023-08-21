@@ -55,14 +55,13 @@ export default function App() {
     }
   }, [loggedIn, triggeredLogout]);
 
-
   const retrieveDatabase = async (email, password = undefined) => {
     try {
       const response = await fetch(process.env.REACT_APP_AIRTABLE_SERVER_URL);
       const data = await response.json();
       if (password === undefined) {
-        if (Object.keys(data.records.filter((record) => record.fields.email === email)[0]).length > 0) {
-          const theUser = data.records.filter((record) => record.fields.email === email)[0];
+        if (Object.keys(data.records.filter((record) => record.fields?.email === email)[0]).length > 0) {
+          const theUser = data.records.filter((record) => record.fields?.email === email)[0];
           setUser({ id: theUser.id, createdTime: moment(theUser.createdTime).utc().format('YYYY-MM-DD'), email: theUser.fields.email, fullname: theUser.fields.fullname, gender: theUser.fields.gender, plan: theUser.fields.plan, password: theUser.fields.password });
           return true;
         }
@@ -71,8 +70,8 @@ export default function App() {
         }
       }
       if (password !== undefined) {
-        const targetUser = data.records.filter((record) => record.fields.email === email)[0];
-        if (targetUser.fields.password === password) {
+        const targetUser = data.records.filter((record) => record.fields?.email === email)[0];
+        if (targetUser.fields?.password === password) {
           setUser({ id: targetUser.id, createdTime: moment(targetUser.createdTime).utc().format('YYYY-MM-DD'), email: targetUser.fields.email, fullname: targetUser.fields.fullname, gender: targetUser.fields.gender, plan: targetUser.fields.plan, password: targetUser.fields.password });
           return true;
         }
@@ -92,7 +91,7 @@ export default function App() {
     const { email, password, fullname } = data;
     const id = uuidv4();
 
-    const checkUser = await retrieveDatabase(data.email.toLocaleLowerCase());
+    const checkUser = await retrieveDatabase(data.email.toLowerCase());
     if (checkUser) {
 
       return false;
@@ -103,7 +102,7 @@ export default function App() {
           {
             "fields": {
               "id": id,
-              "email": email.toLocaleLowerCase(),
+              "email": email.toLowerCase(),
               "password": password,
               "fullname": fullname,
             }
@@ -119,7 +118,7 @@ export default function App() {
 
   }
 
-  const updateUser = async (userId, formValue) => {
+  const updateUser = (userId, formValue) => {
     //destructure incoming data
     const key = Object.keys(formValue)[0];
     const value = Object.values(formValue)[0];
@@ -146,6 +145,7 @@ export default function App() {
     );
     setUser({ ...user, [key]: value });
   }
+
 
 
 
