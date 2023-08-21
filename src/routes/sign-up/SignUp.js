@@ -2,7 +2,7 @@ import EdgyIcon from "../../assets/images/edgy-icon.png";
 import { Link } from "react-router-dom";
 import SignUpForm from "./SignUpForm";
 
-export default function SignUp({ user, registerUser, retrieveDatabase }) {
+export default function SignUp({ registerUser }) {
   const ResetLocation = () => window.scrollTo(0, 0);
   return (
     <article className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-gray-900 pt-40 pb-40">
@@ -23,7 +23,7 @@ export default function SignUp({ user, registerUser, retrieveDatabase }) {
             </Link>
           </p>
         </section>
-        <SignUpForm registerUser={registerUser} retrieveDatabase={retrieveDatabase} user={user} />
+        <SignUpForm registerUser={registerUser} />
       </section>
     </article>
   );
