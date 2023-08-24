@@ -12,29 +12,52 @@ export default function ContactForm() {
   const [formError, setFormError] = useState({})
   const [submit, setSubmit] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [captchaError, setCaptchaError] = useState(false);
 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setFormError(validateForm(formValue))
     setLoading(true);
-    let captchaToken = captchaRef.current?.getValue();
-    captchaRef.current?.reset();
-    await verifyCaptcha(captchaToken);
+
     if (Object.keys(validateForm(formValue)).length > 0) {
       setLoading(false);
       return null;
     }
     else {
-      setSubmit(true);
-      setFormValue({
-        firstname: '',
-        lastname: '',
-        email: '',
-        message: '',
-      });
-      setLoading(false);
+
+      let captchaToken = captchaRef.current?.getValue();
+      if (captchaToken.length === 0) {
+        setCaptchaError("ReCaptcha is mandatory")
+        setLoading(false);
+        return;
+      }
       window.scrollTo(0, 0);
+      const verify = await verifyCaptcha(captchaToken);
+      captchaRef.current?.reset();
+      if (verify) {
+        setSubmit(true);
+        setFormValue({
+          firstname: '',
+          lastname: '',
+          email: '',
+          message: '',
+        });
+        setCaptchaError("")
+        setLoading(false);
+      }
+      else {
+        setSubmit(false);
+        setFormValue({
+          firstname: '',
+          lastname: '',
+          email: '',
+          message: '',
+        });
+        setCaptchaError("")
+        setLoading(false);
+      }
+
     }
   }
 
@@ -56,10 +79,7 @@ export default function ContactForm() {
           'Content-Type': 'application/json'
         }
       });
-
-      const data = await response.json();
-
-      if (data.response === 'Successful') {
+      if (response.status === 200) {
         return true;
       }
       else {
@@ -74,11 +94,18 @@ export default function ContactForm() {
   const validateForm = (value) => {
     let errors = {}
     const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+    const numberRegex = /\d/;
     if (!value.firstName) {
       errors.firstName = "Please enter first name!"
     }
+    else if (value.firstName && value.firstName.length < 3) {
+      errors.firstName = "First name is too short"
+    }
     if (!value.lastName) {
       errors.lastName = "Please enter last name!"
+    }
+    else if (value.lastName && value.lastName.length < 3) {
+      errors.lastName = "Last name is too short"
     }
     if (!value.email) {
       errors.email = "Please enter email!"
@@ -89,11 +116,20 @@ export default function ContactForm() {
     if (!value.company) {
       errors.company = "Please enter company!"
     }
+    else if (value.company && value.company.length < 3) {
+      errors.company = "Please enter a valid company name"
+    }
     if (!value.phone) {
-      errors.phone = "Please enter phone!"
+      errors.phone = "Please enter phone number!"
+    }
+    else if (!numberRegex.test(value.phone)) {
+      errors.phone = "Please enter valid phone number!"
     }
     if (!value.textarea) {
       errors.textarea = "Please enter message!"
+    }
+    else if (value.textarea && value.textarea.length < 10) {
+      errors.textarea = "The message should be min. 10 characters"
     }
 
     return errors;
@@ -251,6 +287,7 @@ export default function ContactForm() {
               </section>
             </section>
             <ReCAPTCHA ref={captchaRef} sitekey={captchaKey} />
+            <span className="text-red-400">{captchaError}</span>
             <section className="text-right sm:col-span-2">
               <button
                 type="submit"
