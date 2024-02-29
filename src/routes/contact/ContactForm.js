@@ -17,8 +17,8 @@ export default function ContactForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setFormError(validateForm(formValue))
     setLoading(true);
+    setFormError(validateForm(formValue))
 
     if (Object.keys(validateForm(formValue)).length > 0) {
       setLoading(false);

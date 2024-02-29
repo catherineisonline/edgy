@@ -1,10 +1,12 @@
 import { LockClosedIcon } from "@heroicons/react/solid";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import { useNavigate } from "react-router-dom";
-
+const captchaKey = process.env.REACT_APP_CAPTCHA_KEY;
+const captchaSecret = process.env.REACT_APP_CAPTCHA_SECRET;
+const serverlUrl = process.env.REACT_APP_SERVER_URL;
 
 export default function SignUpForm({ registerUser }) {
-  const navigate = useNavigate();
   const [formValue, setFormValue] = useState({
     email: '',
     fullname: '',
@@ -14,11 +16,14 @@ export default function SignUpForm({ registerUser }) {
   const [errorValue, setErrorValue] = useState({});
   const [userExists, setUserExists] = useState(undefined);
   const [loading, setLoading] = useState(false);
+  const [captchaError, setCaptchaError] = useState(false);
+  const navigate = useNavigate();
+  const captchaRef = useRef();
 
   const submitForm = async (e) => {
     e.preventDefault();
     setLoading(true);
-    //basic validation
+    //validate form before sending to server
     setErrorValue(validateForm(formValue));
     //if error object isn't empty stop the process
     if (Object.keys(validateForm(formValue)).length > 0) {
@@ -27,23 +32,46 @@ export default function SignUpForm({ registerUser }) {
     }
     //otherwise check if user registration on the server returns OK and reset the form
     else {
-      const registerationSuccess = await registerUser(formValue);
-      setFormValue({
-        email: '',
-        fullname: '',
-        password: '',
-        repeatPassword: '',
-      });
-      if (registerationSuccess) {
+      let captchaToken = captchaRef.current?.getValue();
+      if (captchaToken.length === 0) {
+        setCaptchaError("ReCaptcha is mandatory")
         setLoading(false);
-        setUserExists(false);
-        navigate('/sign-in');
-        window.scrollTo(0, 0)
+        return;
+      }
+      window.scrollTo(0, 0);
+      const verify = await verifyCaptcha(captchaToken);
+      captchaRef.current?.reset();
+
+      if (verify) {
+        const registerationSuccess = await registerUser(formValue);
+        setFormValue({
+          email: '',
+          fullname: '',
+          password: '',
+          repeatPassword: '',
+        });
+        if (registerationSuccess) {
+          setLoading(false);
+          setUserExists(false);
+          navigate('/sign-in');
+          window.scrollTo(0, 0)
+        }
+        else {
+          setLoading(false);
+          setUserExists(true);
+        }
       }
       else {
+        setFormValue({
+          firstname: '',
+          lastname: '',
+          email: '',
+          message: '',
+        });
+        setCaptchaError("")
         setLoading(false);
-        setUserExists(true);
       }
+
 
     }
   }
@@ -54,10 +82,34 @@ export default function SignUpForm({ registerUser }) {
     setFormValue({ ...formValue, [name]: value });
   }
 
-
+  const verifyCaptcha = async (captchaToken) => {
+    try {
+      const response = await fetch(serverlUrl, {
+        method: 'POST',
+        body: JSON.stringify({
+          secret: captchaSecret,
+          captchaToken
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      if (response.status === 200) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
+    catch (error) {
+      console.error("Could not verify captcha!", error.message);
+      return false;
+    }
+  }
   const validateForm = (value) => {
     const errors = {};
     const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+    const numberRegex = /\d/;
     if (!value.email) {
       errors.email = "Enter the email"
     }
@@ -81,7 +133,13 @@ export default function SignUpForm({ registerUser }) {
       errors.repeatPassword = "Passwords don't match";
     }
     if (!value.fullname) {
-      errors.fullname = "Enter your full name"
+      errors.fullname = "Enter your name"
+    }
+    else if (value.fullname.length < 4 && value.fullname) {
+      errors.fullname = "Enter a valid name"
+    }
+    else if (numberRegex.test(value.fullname)) {
+      errors.fullname = "Please enter a valid name"
     }
 
     return errors;
@@ -166,6 +224,8 @@ export default function SignUpForm({ registerUser }) {
               />
               <span className="text-red-400">{errorValue.repeatPassword}</span>
             </section>
+            <ReCAPTCHA ref={captchaRef} sitekey={captchaKey} />
+            <span className="text-red-400">{captchaError}</span>
             <button
               type="submit"
               className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
