@@ -39,6 +39,7 @@ export default function SignInForm({ retrieveDatabase, setLoggedIn }) {
 
       if (verify) {
         const retrievedUser = await retrieveDatabase(formValue.email.toLowerCase(), formValue.password);
+
         if (retrievedUser === false) {
           setRetrievedUser(false);
           setLoading(false);
@@ -75,6 +76,7 @@ export default function SignInForm({ retrieveDatabase, setLoggedIn }) {
   }
   const verifyCaptcha = async (captchaToken) => {
     try {
+
       const response = await fetch(serverlUrl, {
         method: 'POST',
         body: JSON.stringify({
