@@ -59,7 +59,6 @@ export default function App() {
   const retrieveDatabase = async (email, password = undefined) => {
     try {
       const response = await fetch(process.env.REACT_APP_AIRTABLE_SERVER_URL);
-      console.log(process.env.REACT_APP_AIRTABLE_SERVER_URL)
       const data = await response.json();
       // if I found the matching email in the database
       if (password === undefined) {
