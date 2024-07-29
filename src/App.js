@@ -27,38 +27,10 @@ import NotFound from "./components/NotFound";
 
 
 export default function App() {
-  // const [user, setUser] = useState({ id: '', createdTime: '', email: '', fullname: '', gender: '', plan: '', password: '' });
   const [user, setUser] = useState(null)
   const [loggedIn, setLoggedIn] = useState(false);
   const [triggeredLogout, setTriggeredLogout] = useState(false);
-// useEffect(() => {
-//   console.log(user)
-// }, [user])
-  // const saveSession = () => {
-  //   if (sessionStorage.getItem('loggedIn') !== null) {
-  //     return;
-  //   }
-  //   if (sessionStorage.getItem('loggedIn') === null) {
-  //     sessionStorage.setItem('loggedIn', true);
-  //   }
-  // };
 
-
-  // //Working with sessions storage every time the website reloads
-  // useEffect(() => {
-  //   //if use logged in AND login session isn't saved AND logout wasn't triggered THEN save the login session
-  //   if (loggedIn && sessionStorage.getItem('loggedIn') === null && !triggeredLogout) {
-  //     saveSession();
-  //   }
-  //   //if user triggered logout AND we have login session in the storage THEN remove this sessions
-  //   if (triggeredLogout && sessionStorage.getItem('loggedIn') !== null) {
-  //     sessionStorage.removeItem('loggedIn');
-  //   }
-  //   //there is login session in the storage AND it wasn't the trigger of the logout THEN retrieve the sessions from the storage
-  //   if (sessionStorage.getItem('loggedIn') !== null && !triggeredLogout) {
-  //     setLoggedIn(sessionStorage.getItem('loggedIn'));
-  //   }
-  // }, [loggedIn, triggeredLogout]);
   useEffect(() => {
     if (loggedIn && sessionStorage.getItem('loggedIn') === null && !triggeredLogout) {
       sessionStorage.setItem('loggedIn', 'true');
@@ -101,16 +73,6 @@ export default function App() {
           return true;
         }
           if (userByEmail.fields.password === password) { 
-        
-            //   setUser({ 
-            //     id: userByEmail.id, 
-            //     createdTime: moment(userByEmail.createdTime).utc().format('YYYY-MM-DD'), 
-            //     email: userByEmail.fields.email, 
-            //     fullname: userByEmail.fields.fullname, 
-            //     gender: userByEmail.fields.gender, 
-            //     plan: userByEmail.fields.plan, 
-            //     password: userByEmail.fields.password 
-            // });
             const userData = { 
               id: userByEmail.id, 
               createdTime: moment(userByEmail.createdTime).utc().format('YYYY-MM-DD'), 
