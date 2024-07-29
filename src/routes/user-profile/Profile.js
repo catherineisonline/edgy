@@ -1,10 +1,10 @@
 import { PencilAltIcon } from "@heroicons/react/outline";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useState } from "react";
 import { ExclamationIcon } from "@heroicons/react/outline";
 import { useNavigate } from "react-router-dom";
 
 
-const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, setTriggeredLogout }) => {
+const Profile = ({ user, updateUser, deleteUser, setLoggedIn, setTriggeredLogout }) => {
     const navigator = useNavigate();
     const [formValue, setFormValue] = useState({});
     const [formErrors, setFormErrors] = useState({});
@@ -16,28 +16,6 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
     const [editPlan, setEditPlan] = useState(false);
 
 
-    // Retrieve user data on page reload
-    // useEffect(() => {
-    //     if (sessionStorage.getItem('user') === null) {
-    //         const jsonUser = JSON.stringify(user);
-    //         sessionStorage.setItem('user', jsonUser);
-    //     }
-    //     if (sessionStorage.getItem('user') !== null) {
-    //         const jsonUser = sessionStorage.getItem('user');
-    //         const user = JSON.parse(jsonUser);
-    //         retrieveDatabase(user.email, user.password);
-    //     }
-    // }, [retrieveDatabase, user])
-
-
-    //Retrieve user data and update it in the displayed fields
-    // const retrieveUser = useCallback((email, password) => {
-    //     retrieveDatabase(email, password)
-    // }, [retrieveDatabase]);
-
-    // useEffect(() => {
-    //     retrieveUser(user.email, user.password);
-    // }, [retrieveUser, user.email, user.password]);
 
     const activateEditField = (fieldName) => {
         if (fieldName === 'fullname') {
@@ -139,46 +117,52 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
     }
 
 
-    const formValidator = (field) => (formValue) => {
+    const formValidator = (field) => (formValueObject) => {
+
         const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
         const errors = {};
-        retrieveDatabase(user.email.toLowerCase());
-
-        if (!formValue) {
+        if (!formValueObject && field !== 'password') {
             errors[field] = `${field} field is required`;
         }
-        else if (field === 'fullname' && formValue.length < 3) {
+        else if (field === 'fullname' && formValueObject.length < 3) {
             errors[field] = `Full name is too short`;
         }
-        else if (field === 'fullname' && formValue === user.fullname) {
+        else if (field === 'fullname' && formValueObject === user.fullname) {
             errors[field] = `Full name is the same`;
         }
-        else if (field === 'email' && !emailRegex.test(formValue)) {
+        else if (field === 'email' && !emailRegex.test(formValueObject)) {
             errors[field] = `Email is not valid`;
         }
-        else if (field === 'email' && formValue === user.email) {
+        else if (field === 'email' && formValueObject === user.email) {
             errors[field] = `Email is the same`;
         }
         if (field === 'password') {
-            if (!formValue.password && !formValue.repeatedPassword) {
+            // Check if both fields are empty
+            if (Object.keys(formValue).length === 0) {
                 errors.password = `Password fields are empty`;
             }
-            else if (!formValue.password) {
+            // Check if password field is empty
+            else if (formValue['password'] === undefined || formValue['password'].length === 0) {
                 errors.password = `Password field is empty`;
             }
-            else if (!formValue.repeatedPassword) {
-                errors.repeatedPassword = `Password field is empty`;
+            // Check if repeated password field is empty
+            else if (formValue['repeatedPassword'] === undefined || formValue['repeatedPassword'].length === 0) {
+                errors.repeatedPassword = `Please repeat the password`;
             }
-            else if (formValue.password.length < 8) {
-                errors.password = `Password should be min. 8 characters`;
-            }
-            else if (formValue.repeatedPassword.length < 8) {
-                errors.repeatedPassword = `Password should be min. 8 characters`;
-            }
-            else if (formValue.password !== formValue.repeatedPassword) {
+            // Check if passwords are different
+            else if (formValue['password'] !== formValue['repeatedPassword']) {
                 errors.password = `Passwords should match`;
             }
-            else if (formValue.password === user.password) {
+            // Check if password is too short
+            else if (formValue['password'] && formValue['password'].length < 8) {
+                errors.password = `Password should be min. 8 characters`;
+            }
+            // Check if repeated password is too short
+            else if (formValue['repeatedPassword'] && formValue['repeatedPassword'].length < 8) {
+                errors.repeatedPassword = `Password should be min. 8 characters`;
+            }
+            // Check if the new password is the same as the old one
+            else if (formValue['password'] === user.password) {
                 errors.password = `New password can't be the same as old`;
             }
         }
@@ -363,7 +347,7 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
                 :
                 null}
 
-            {editPassword ?
+            {editPassword &&
                 <div className="relative z-10 bg-gray-900 shadow">
                     <div className="fixed inset-0 z-10 overflow-y-auto">
                         <div className="flex  min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
@@ -377,48 +361,58 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
                                     </h3>
                                 </div>
                                 <form onSubmit={(e) => submitForm(e, validatePassword, "password")} className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                           
-                                    <div className="w-full relative flex flex-col gap-5">
+                                    <label htmlFor="username" className="sr-only">Username</label>
+                                    <input
+                                        id="username"
+                                        name="username"
+                                        type="text"
+                                        className="sr-only"
+                                        aria-hidden="true"
+                                        autoComplete="username"
+                                    />
+                                    <div className="w-full relative flex flex-col gap-8">
                                         <label htmlFor="password" className="sr-only">
                                             Password
                                         </label>
-                                        <input onChange={handelChange}
+                                        <input
+
+                                            onChange={handelChange}
                                             defaultValue={formValue['password']}
-                                            autoComplete="true"
+                                            autoComplete="new-password"
+
                                             className="appearance-none block w-50 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" id="password" name="password" type="password" placeholder="" />
                                         <span className="text-red-400 block w-max absolute z-10 mt-8 pt-4">{formErrors['password']}</span>
                                         <button
-                                        type="submit"
-                                        className="inline-flex w-full h-max justify-center rounded-md bg-red-600 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500	"
+                                            type="submit"
+                                            className="inline-flex w-full h-max justify-center rounded-md bg-red-600 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500	"
 
-                                    >
-                                        Change password
-                                    </button>
+                                        >
+                                            Change password
+                                        </button>
                                     </div>
-                                    <div className="w-full relative flex flex-col gap-5">
+                                    <div className="w-full relative flex flex-col gap-8">
                                         <label htmlFor="repeatedPassword" className="sr-only">
                                             Repeat password
                                         </label>
-                                        <input onChange={handelChange} autoComplete="true"
+                                        <input onChange={handelChange}
+                                            autoComplete="new-password"
                                             defaultValue={formValue['repeatedPassword']}
                                             className="appearance-none  block w-50 px-3  py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" id="repeatedPassword" name="repeatedPassword" type="password" placeholder="" />
-                                        <span className="text-red-400 block w-max absolute z-10 mt-8 pt-4 mr-0">{formErrors['repeatedPassword']}</span>
+                                        <span className="text-red-400 block w-max absolute z-10 mt-6 pt-4 mr-0">{formErrors['repeatedPassword']}</span>
                                         <button
-                                        type="button"
-                                        onClick={() => handleCancel("password")}
-                                        className=" inline-flex w-full  h-max justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
-                                    >
-                                        Cancel
-                                    </button>
+                                            type="button"
+                                            onClick={() => handleCancel("password")}
+                                            className=" inline-flex w-full  h-max justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+                                        >
+                                            Cancel
+                                        </button>
                                     </div>
 
                                 </form>
                             </div>
                         </div>
                     </div>
-                </div>
-                :
-                null}
+                </div>}
 
         </div>
     )
