@@ -24,6 +24,8 @@ import { v4 as uuidv4 } from 'uuid';
 import Profile from "./routes/user-profile/Profile";
 import NotFound from "./components/NotFound";
 
+
+
 export default function App() {
   const [user, setUser] = useState({ id: '', createdTime: '', email: '', fullname: '', gender: '', plan: '', password: '' });
   const [loggedIn, setLoggedIn] = useState(false);
