@@ -37,26 +37,39 @@ export default function SignInForm({ retrieveDatabase, setLoggedIn }) {
       }
       window.scrollTo(0, 0);
       const verify = await verifyCaptcha(captchaToken);
-      captchaRef.current?.reset();
-      if (verify) {
-        const retrievedUser = await retrieveDatabase(formValue.email.toLowerCase(), formValue.password);
 
-        if (retrievedUser === false) {
+ 
+
+      if (verify) {
+        try {
+        const retrievedUserOK = await retrieveDatabase(formValue.email.toLowerCase(), formValue.password);
+
+        if (retrievedUserOK === false) {
           setRetrievedUser(false);
-          setLoading(false);
           setFormValue({ email: '', password: '' });
-          return;
         }
-        if (retrievedUser === true) {
-          setLoading(false);
+       else {
           navigate(`/profile`);
+          setLoading(false);
           window.scrollTo(0, 0)
-          setLoggedIn(true);
           setRetrievedUser(true);
           setFormValue({ email: '', password: '' });
+          setLoggedIn(true);
         }
       }
+        catch (error) {
+          console.error("Error during user retrieval:", error);
+        } 
+        finally {
+          setLoading(false);
+       
+   
+        }
+      
+      }
       else {
+        captchaRef.current?.reset();
+        setLoggedIn(false);
         setFormValue({
           firstname: '',
           lastname: '',
@@ -77,7 +90,6 @@ export default function SignInForm({ retrieveDatabase, setLoggedIn }) {
   }
   const verifyCaptcha = async (captchaToken) => {
     try {
-
       const response = await fetch(serverlUrl, {
         method: 'POST',
         body: JSON.stringify({
@@ -154,11 +166,12 @@ export default function SignInForm({ retrieveDatabase, setLoggedIn }) {
                 <span className="text-red-400">{errorValue.email}</span>
               </section>
               <section>
-                <label htmlFor="password" className="sr-only">
+                <label htmlFor="password" className="sr-only" autoComplete>
                   Password
                 </label>
                 <input
                   onChange={handleChange}
+                  
                   value={formValue.password}
                   id="password"
                   name="password"
@@ -175,6 +188,7 @@ export default function SignInForm({ retrieveDatabase, setLoggedIn }) {
             <section>
 
               <button
+              disabled={loading}
                 type="submit"
                 className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >

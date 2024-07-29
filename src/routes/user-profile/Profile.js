@@ -17,27 +17,27 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
 
 
     // Retrieve user data on page reload
-    useEffect(() => {
-        if (sessionStorage.getItem('user') === null) {
-            const jsonUser = JSON.stringify(user);
-            sessionStorage.setItem('user', jsonUser);
-        }
-        if (sessionStorage.getItem('user') !== null) {
-            const jsonUser = sessionStorage.getItem('user');
-            const user = JSON.parse(jsonUser);
-            retrieveDatabase(user.email, user.password);
-        }
-    }, [retrieveDatabase, user])
+    // useEffect(() => {
+    //     if (sessionStorage.getItem('user') === null) {
+    //         const jsonUser = JSON.stringify(user);
+    //         sessionStorage.setItem('user', jsonUser);
+    //     }
+    //     if (sessionStorage.getItem('user') !== null) {
+    //         const jsonUser = sessionStorage.getItem('user');
+    //         const user = JSON.parse(jsonUser);
+    //         retrieveDatabase(user.email, user.password);
+    //     }
+    // }, [retrieveDatabase, user])
 
 
     //Retrieve user data and update it in the displayed fields
-    const retrieveUser = useCallback((email, password) => {
-        retrieveDatabase(email, password)
-    }, [retrieveDatabase]);
+    // const retrieveUser = useCallback((email, password) => {
+    //     retrieveDatabase(email, password)
+    // }, [retrieveDatabase]);
 
-    useEffect(() => {
-        retrieveUser(user.email, user.password);
-    }, [retrieveUser, user.email, user.password]);
+    // useEffect(() => {
+    //     retrieveUser(user.email, user.password);
+    // }, [retrieveUser, user.email, user.password]);
 
     const activateEditField = (fieldName) => {
         if (fieldName === 'fullname') {
@@ -209,13 +209,13 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
                                     </label>
                                     <input onChange={handelChange}
                                         defaultValue={formValue['fullname']}
-                                        className="appearance-none relative block w-full px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" id="fullname" name="fullname" type="text" placeholder={user.fullname} />
+                                        className="appearance-none relative block w-50 px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" id="fullname" name="fullname" type="text" placeholder={user.fullname} />
                                     <button
                                         type="submit"
-                                        className="group relative w-full flex justify-center py-1 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
+                                        className="group relative w-full flex justify-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
                                     <button
                                         type="button"
-                                        onClick={() => handleCancel("fullname")} className="group relative w-full flex justify-center py-1 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
+                                        onClick={() => handleCancel("fullname")} className="group relative w-full flex justify-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
 
                                 </form>
                                 <span className="text-red-400">{formErrors['fullname']}</span>
@@ -234,13 +234,13 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
                                     </label>
                                     <input onChange={handelChange}
                                         defaultValue={formValue['email']}
-                                        className="appearance-none relative block w-full px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" id="email" name="email" type="text" placeholder={user.email} />
+                                        className="appearance-none relative block w-50 px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" id="email" name="email" type="text" placeholder={user.email} />
                                     <button
                                         type="submit"
-                                        className="group relative w-full flex justify-center py-1 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
+                                        className="group relative w-full flex justify-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
                                     <button
                                         type="button"
-                                        onClick={() => handleCancel("email")} className="group relative w-full flex justify-center py-1 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
+                                        onClick={() => handleCancel("email")} className="group relative w-full flex justify-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
 
                                 </form>
                                 <span className="text-red-400">{formErrors['email']}</span>
@@ -268,10 +268,10 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
                                 </select>
                                 <button
                                     type="submit"
-                                    className="group relative w-full flex justify-center py-1 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
+                                    className="group relative w-full flex justify-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
                                 <button
                                     type="button"
-                                    onClick={() => handleCancel("gender")} className="group relative w-full flex justify-center py-1 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
+                                    onClick={() => handleCancel("gender")} className="group relative w-full flex justify-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
                             </form>
                             <span className="text-red-400">{formErrors['email']}</span>
                         </section> :
@@ -297,10 +297,10 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
                                 </select>
                                 <button
                                     type="submit"
-                                    className="group relative w-full flex justify-center py-1 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
+                                    className="group relative w-full flex justify-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
                                 <button
                                     type="button"
-                                    onClick={() => handleCancel("plan")} className="group relative w-full flex justify-center py-1 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
+                                    onClick={() => handleCancel("plan")} className="group relative w-full flex justify-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
                             </form>
                             <span className="text-red-400">{formErrors['plan']}</span>
                         </section> :
@@ -316,7 +316,7 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
                 </button>
                 <button
                     onClick={() => activateEditField("password")}
-                    className="inline-block bg-white py-2 px-4 border border-transparent rounded-md text-base font-medium text-indigo-600 hover:bg-indigo-50">
+                    className="inline-block bg-white  py-2 px-4 border border-transparent rounded-md text-base font-medium text-indigo-600 hover:bg-indigo-50">
                     Change password
                 </button>
             </section>
@@ -366,8 +366,8 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
             {editPassword ?
                 <div className="relative z-10 bg-gray-900 shadow">
                     <div className="fixed inset-0 z-10 overflow-y-auto">
-                        <div className="flex  min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-                            <div className="relative flex flex-col gap-4 transform overflow-hidden rounded-lg bg-white  p-12 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-xl ">
+                        <div className="flex  min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
+                            <div className="relative flex flex-col gap-4 transform overflow-hidden rounded-lg bg-white  p-12 text-left shadow-xl transition-all w-10/12 sm:my-2 sm:w-full sm:max-w-xl ">
                                 <div className="sm:flex sm:flex-row  gap-4 items-center	 text-center md:flex-row flex-col">
                                     <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
                                         <ExclamationIcon className="h-6 w-6 text-red-600" aria-hidden="true" />
@@ -376,39 +376,41 @@ const Profile = ({ retrieveDatabase, user, updateUser, deleteUser, setLoggedIn, 
                                         Edit password
                                     </h3>
                                 </div>
-                                <form onSubmit={(e) => submitForm(e, validatePassword, "password")} className="flex flex-row gap-2">
-                                    <div className="w-full relative flex flex-col">
+                                <form onSubmit={(e) => submitForm(e, validatePassword, "password")} className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                           
+                                    <div className="w-full relative flex flex-col gap-5">
                                         <label htmlFor="password" className="sr-only">
                                             Password
                                         </label>
                                         <input onChange={handelChange}
                                             defaultValue={formValue['password']}
-                                            className="appearance-none block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" id="password" name="password" type="password" placeholder="" />
+                                            autoComplete="true"
+                                            className="appearance-none block w-50 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" id="password" name="password" type="password" placeholder="" />
                                         <span className="text-red-400 block w-max absolute z-10 mt-8 pt-4">{formErrors['password']}</span>
-                                    </div>
-                                    <div className="w-full relative flex flex-col">
-                                        <label htmlFor="repeatedPassword" className="sr-only">
-                                            Repeat password
-                                        </label>
-                                        <input onChange={handelChange}
-                                            defaultValue={formValue['repeatedPassword']}
-                                            className="appearance-none  block w-full px-3  py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" id="repeatedPassword" name="repeatedPassword" type="password" placeholder="" />
-                                        <span className="text-red-400 block w-max absolute z-10 mt-8 pt-4 mr-0">{formErrors['repeatedPassword']}</span>
-                                    </div>
-                                    <button
+                                        <button
                                         type="submit"
-                                        className="inline-flex w-full h-max justify-center rounded-md bg-red-600 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3	"
+                                        className="inline-flex w-full h-max justify-center rounded-md bg-red-600 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500	"
 
                                     >
                                         Change password
                                     </button>
-                                    <button
+                                    </div>
+                                    <div className="w-full relative flex flex-col gap-5">
+                                        <label htmlFor="repeatedPassword" className="sr-only">
+                                            Repeat password
+                                        </label>
+                                        <input onChange={handelChange} autoComplete="true"
+                                            defaultValue={formValue['repeatedPassword']}
+                                            className="appearance-none  block w-50 px-3  py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" id="repeatedPassword" name="repeatedPassword" type="password" placeholder="" />
+                                        <span className="text-red-400 block w-max absolute z-10 mt-8 pt-4 mr-0">{formErrors['repeatedPassword']}</span>
+                                        <button
                                         type="button"
                                         onClick={() => handleCancel("password")}
-                                        className="mt-3 inline-flex w-full  h-max justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+                                        className=" inline-flex w-full  h-max justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
                                     >
                                         Cancel
                                     </button>
+                                    </div>
 
                                 </form>
                             </div>
