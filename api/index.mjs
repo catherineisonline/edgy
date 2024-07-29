@@ -36,7 +36,6 @@ app.get('/airtable', async (req, res) => {
         }
 
         const data = await response.json();
-        // return data;
         return res.json(data);
     } catch (error) {
         console.error('Error:', error.message);

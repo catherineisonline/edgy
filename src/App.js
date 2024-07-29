@@ -27,65 +27,111 @@ import NotFound from "./components/NotFound";
 
 
 export default function App() {
-  const [user, setUser] = useState({ id: '', createdTime: '', email: '', fullname: '', gender: '', plan: '', password: '' });
+  // const [user, setUser] = useState({ id: '', createdTime: '', email: '', fullname: '', gender: '', plan: '', password: '' });
+  const [user, setUser] = useState(null)
   const [loggedIn, setLoggedIn] = useState(false);
   const [triggeredLogout, setTriggeredLogout] = useState(false);
+// useEffect(() => {
+//   console.log(user)
+// }, [user])
+  // const saveSession = () => {
+  //   if (sessionStorage.getItem('loggedIn') !== null) {
+  //     return;
+  //   }
+  //   if (sessionStorage.getItem('loggedIn') === null) {
+  //     sessionStorage.setItem('loggedIn', true);
+  //   }
+  // };
 
-  const saveSession = () => {
-    if (sessionStorage.getItem('loggedIn') !== null) {
-      return;
-    }
-    if (sessionStorage.getItem('loggedIn') === null) {
-      sessionStorage.setItem('loggedIn', true);
-    }
-  };
 
-
-  //Working with sessions storage every time the website reloads
+  // //Working with sessions storage every time the website reloads
+  // useEffect(() => {
+  //   //if use logged in AND login session isn't saved AND logout wasn't triggered THEN save the login session
+  //   if (loggedIn && sessionStorage.getItem('loggedIn') === null && !triggeredLogout) {
+  //     saveSession();
+  //   }
+  //   //if user triggered logout AND we have login session in the storage THEN remove this sessions
+  //   if (triggeredLogout && sessionStorage.getItem('loggedIn') !== null) {
+  //     sessionStorage.removeItem('loggedIn');
+  //   }
+  //   //there is login session in the storage AND it wasn't the trigger of the logout THEN retrieve the sessions from the storage
+  //   if (sessionStorage.getItem('loggedIn') !== null && !triggeredLogout) {
+  //     setLoggedIn(sessionStorage.getItem('loggedIn'));
+  //   }
+  // }, [loggedIn, triggeredLogout]);
   useEffect(() => {
-    //if use logged in AND login session isn't saved AND logout wasn't triggered THEN save the login session
     if (loggedIn && sessionStorage.getItem('loggedIn') === null && !triggeredLogout) {
-      saveSession();
+      sessionStorage.setItem('loggedIn', 'true');
     }
-    //if user triggered logout AND we have login session in the storage THEN remove this sessions
     if (triggeredLogout && sessionStorage.getItem('loggedIn') !== null) {
       sessionStorage.removeItem('loggedIn');
+      sessionStorage.removeItem('user');
     }
-    //there is login session in the storage AND it wasn't the trigger of the logout THEN retrieve the sessions from the storage
     if (sessionStorage.getItem('loggedIn') !== null && !triggeredLogout) {
-      setLoggedIn(sessionStorage.getItem('loggedIn'));
+      setLoggedIn(true);
+      const jsonUser = sessionStorage.getItem('user');
+      if (jsonUser) {
+        setUser(JSON.parse(jsonUser));
+      }
     }
   }, [loggedIn, triggeredLogout]);
-
+  
+  useEffect(() => {
+    const jsonUser = sessionStorage.getItem('user');
+    if (jsonUser) {
+      const userData = JSON.parse(jsonUser);
+      setUser(userData);
+      setLoggedIn(true);
+    }
+  }, []);
+  
+  const findUserByEmail = (records, email) => records.find(record => record.fields.email === email);
 
   const retrieveDatabase = async (email, password = undefined) => {
     try {
       const response = await fetch(process.env.REACT_APP_AIRTABLE_SERVER_URL);
-      console.log(process.env.REACT_APP_AIRTABLE_SERVER_URL)
       const data = await response.json();
-      // if I found the matching email in the database
-      if (password === undefined) {
-        // if I found the matching email in the database
-        if (Object.keys(data.records.filter((record) => record.fields.email === email)[0]).length > 0) {
-          const theUser = data.records.filter((record) => record.fields.email === email)[0];
-          setUser({ id: theUser.id, createdTime: moment(theUser.createdTime).utc().format('YYYY-MM-DD'), email: theUser.fields.email, fullname: theUser.fields.fullname, gender: theUser.fields.gender, plan: theUser.fields.plan, password: theUser.fields.password });
+      if (data) {
+
+        const userByEmail = findUserByEmail(data.records, email);
+        if (userByEmail) {
+           // Check if the user is already logged in
+        if (loggedIn && userByEmail.fields.email === user.email) {
+          // User is already logged in, no need to update
           return true;
         }
-        //if I didn't find the matching email on the database
-        else {
-          return false;
-        }
-      }
-      //if I provided password
-      if (password !== undefined) {
-        const targetUser = data.records.filter((record) => record.fields.email === email)[0];
-        if (targetUser.fields.password === password) {
-          setUser({ id: targetUser.id, createdTime: moment(targetUser.createdTime).utc().format('YYYY-MM-DD'), email: targetUser.fields.email, fullname: targetUser.fields.fullname, gender: targetUser.fields.gender, plan: targetUser.fields.plan, password: targetUser.fields.password });
+          if (userByEmail.fields.password === password) { 
+        
+            //   setUser({ 
+            //     id: userByEmail.id, 
+            //     createdTime: moment(userByEmail.createdTime).utc().format('YYYY-MM-DD'), 
+            //     email: userByEmail.fields.email, 
+            //     fullname: userByEmail.fields.fullname, 
+            //     gender: userByEmail.fields.gender, 
+            //     plan: userByEmail.fields.plan, 
+            //     password: userByEmail.fields.password 
+            // });
+            const userData = { 
+              id: userByEmail.id, 
+              createdTime: moment(userByEmail.createdTime).utc().format('YYYY-MM-DD'), 
+              email: userByEmail.fields.email, 
+              fullname: userByEmail.fields.fullname, 
+              gender: userByEmail.fields.gender, 
+              plan: userByEmail.fields.plan, 
+              password: userByEmail.fields.password 
+            };
+            
+            setUser(userData);
+            
+            // Save user data in sessionStorage
+            sessionStorage.setItem('user', JSON.stringify(userData));
+            
+      
           return true;
+          }
         }
-        else {
-          return false;
-        }
+        return false;
+        
       }
 
     }
@@ -150,6 +196,7 @@ export default function App() {
 
     );
     setUser({ ...user, [key]: value });
+    sessionStorage.setItem('user', JSON.stringify({ ...user, [key]: value }));
   }
 
 
