@@ -7,7 +7,7 @@ const REACT_APP_CAPTCHA_SECRET = process.env.REACT_APP_CAPTCHA_SECRET;
 const REACT_APP_AIRTABLE_ID = process.env.REACT_APP_AIRTABLE_ID;
 const REACT_APP_AIRTABLE_KEY = process.env.REACT_APP_AIRTABLE_KEY;
 const app = express();
-const port = 3000; // Choose a port for your server
+const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(json());
 
