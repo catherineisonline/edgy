@@ -2,6 +2,8 @@ import { LockClosedIcon } from "@heroicons/react/solid";
 import React, { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useNavigate } from "react-router-dom";
+
+
 const captchaKey = process.env.REACT_APP_CAPTCHA_KEY;
 const captchaSecret = process.env.REACT_APP_CAPTCHA_SECRET;
 const serverlUrl = process.env.REACT_APP_SERVER_URL;
@@ -36,7 +38,6 @@ export default function SignInForm({ retrieveDatabase, setLoggedIn }) {
       window.scrollTo(0, 0);
       const verify = await verifyCaptcha(captchaToken);
       captchaRef.current?.reset();
-
       if (verify) {
         const retrievedUser = await retrieveDatabase(formValue.email.toLowerCase(), formValue.password);
 

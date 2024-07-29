@@ -2,6 +2,7 @@ import { LockClosedIcon } from "@heroicons/react/solid";
 import React, { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useNavigate } from "react-router-dom";
+
 const captchaKey = process.env.REACT_APP_CAPTCHA_KEY;
 const captchaSecret = process.env.REACT_APP_CAPTCHA_SECRET;
 const serverlUrl = process.env.REACT_APP_SERVER_URL;
