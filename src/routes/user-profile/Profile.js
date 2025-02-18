@@ -196,10 +196,10 @@ const Profile = ({ user, updateUser, deleteUser, setLoggedIn, setTriggeredLogout
                                         className="appearance-none relative block w-50 px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" id="fullname" name="fullname" type="text" placeholder={user.fullname} />
                                     <button
                                         type="submit"
-                                        className="group relative w-full flex justify-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
+                                        className="group relative w-full flex justify-center items-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
                                     <button
                                         type="button"
-                                        onClick={() => handleCancel("fullname")} className="group relative w-full flex justify-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
+                                        onClick={() => handleCancel("fullname")} className="group relative w-full flex justify-center items-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
 
                                 </form>
                                 <span className="text-red-400">{formErrors['fullname']}</span>
@@ -221,10 +221,10 @@ const Profile = ({ user, updateUser, deleteUser, setLoggedIn, setTriggeredLogout
                                         className="appearance-none relative block w-50 px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" id="email" name="email" type="text" placeholder={user.email} />
                                     <button
                                         type="submit"
-                                        className="group relative w-full flex justify-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
+                                        className="group relative w-full flex justify-center items-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
                                     <button
                                         type="button"
-                                        onClick={() => handleCancel("email")} className="group relative w-full flex justify-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
+                                        onClick={() => handleCancel("email")} className="group relative w-full flex justify-center items-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
 
                                 </form>
                                 <span className="text-red-400">{formErrors['email']}</span>
@@ -252,10 +252,10 @@ const Profile = ({ user, updateUser, deleteUser, setLoggedIn, setTriggeredLogout
                                 </select>
                                 <button
                                     type="submit"
-                                    className="group relative w-full flex justify-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
+                                    className="group relative w-full flex justify-center items-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
                                 <button
                                     type="button"
-                                    onClick={() => handleCancel("gender")} className="group relative w-full flex justify-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
+                                    onClick={() => handleCancel("gender")} className="group relative w-full flex justify-center items-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
                             </form>
                             <span className="text-red-400">{formErrors['email']}</span>
                         </section> :
@@ -281,10 +281,10 @@ const Profile = ({ user, updateUser, deleteUser, setLoggedIn, setTriggeredLogout
                                 </select>
                                 <button
                                     type="submit"
-                                    className="group relative w-full flex justify-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
+                                    className="group relative w-full flex justify-center items-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
                                 <button
                                     type="button"
-                                    onClick={() => handleCancel("plan")} className="group relative w-full flex justify-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
+                                    onClick={() => handleCancel("plan")} className="group relative w-full flex justify-center items-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
                             </form>
                             <span className="text-red-400">{formErrors['plan']}</span>
                         </section> :
