@@ -8,10 +8,6 @@
     ],
     "routes": [
         {
-            "src": "/airtable/update-user",
-            "dest": "index.mjs"
-        },
-        {
             "src": "/airtable",
             "dest": "index.mjs"
         },

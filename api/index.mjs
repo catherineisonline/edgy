@@ -50,7 +50,7 @@ app.get("/airtable", async (req, res) => {
       .json({ error: "An error occurred while fetching data from Airtable." });
   }
 });
-app.post("/airtable/update-user", async (req, res) => {
+app.post("/airtable", async (req, res) => {
   const { userId, formValue } = req.body;
   const key = Object.keys(formValue)[0];
   const value = Object.values(formValue)[0];

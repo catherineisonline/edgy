@@ -153,16 +153,13 @@ export default function App() {
     }
 
     try {
-      const response = await fetch(
-        `${process.env.REACT_APP_AIRTABLE_SERVER_URL}/update-user`,
-        {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify({ userId, formValue }),
-        }
-      );
+      const response = await fetch(process.env.REACT_APP_AIRTABLE_SERVER_URL, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({ userId, formValue }),
+      });
       const result = await response.json();
       if (!result.success) return { success: false, reason: result.reason };
 
