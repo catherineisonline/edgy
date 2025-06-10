@@ -9,7 +9,14 @@ const REACT_APP_AIRTABLE_ID = process.env.REACT_APP_AIRTABLE_ID;
 const REACT_APP_AIRTABLE_KEY = process.env.REACT_APP_AIRTABLE_KEY;
 const app = express();
 const port = process.env.PORT || 3000;
-app.use(cors());
+
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 app.use(json());
 
 app.get("/", (req, res) => {
