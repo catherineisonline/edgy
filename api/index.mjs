@@ -2,7 +2,7 @@ import express, { json } from "express";
 import cors from "cors"; // Import the cors middleware
 import fetch from "node-fetch";
 import dotenv from "dotenv";
-import edgyBase from "../src/airtable/airtable";
+import edgyBase from "./airtable/airtable";
 dotenv.config();
 const REACT_APP_CAPTCHA_SECRET = process.env.REACT_APP_CAPTCHA_SECRET;
 const REACT_APP_AIRTABLE_ID = process.env.REACT_APP_AIRTABLE_ID;
