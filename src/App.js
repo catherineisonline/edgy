@@ -20,163 +20,181 @@ import BlogPost from "./routes/blog-post/BlogPost";
 import edgyBase from "./airtable/airtable";
 import { useEffect, useState } from "react";
 //uuid
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 import Profile from "./routes/user-profile/Profile";
 import NotFound from "./components/NotFound";
 
-
-
 export default function App() {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState(null);
   const [loggedIn, setLoggedIn] = useState(false);
   const [triggeredLogout, setTriggeredLogout] = useState(false);
 
   useEffect(() => {
-    if (loggedIn && sessionStorage.getItem('loggedIn') === null && !triggeredLogout) {
-      sessionStorage.setItem('loggedIn', 'true');
+    if (
+      loggedIn &&
+      sessionStorage.getItem("loggedIn") === null &&
+      !triggeredLogout
+    ) {
+      sessionStorage.setItem("loggedIn", "true");
     }
-    if (triggeredLogout && sessionStorage.getItem('loggedIn') !== null) {
-      sessionStorage.removeItem('loggedIn');
-      sessionStorage.removeItem('user');
+    if (triggeredLogout && sessionStorage.getItem("loggedIn") !== null) {
+      sessionStorage.removeItem("loggedIn");
+      sessionStorage.removeItem("user");
     }
-    if (sessionStorage.getItem('loggedIn') !== null && !triggeredLogout) {
+    if (sessionStorage.getItem("loggedIn") !== null && !triggeredLogout) {
       setLoggedIn(true);
-      const jsonUser = sessionStorage.getItem('user');
+      const jsonUser = sessionStorage.getItem("user");
       if (jsonUser) {
         setUser(JSON.parse(jsonUser));
       }
     }
   }, [loggedIn, triggeredLogout]);
-  
+
   useEffect(() => {
-    const jsonUser = sessionStorage.getItem('user');
+    const jsonUser = sessionStorage.getItem("user");
     if (jsonUser) {
       const userData = JSON.parse(jsonUser);
       setUser(userData);
       setLoggedIn(true);
     }
   }, []);
-  
-  const findUserByEmail = (records, email) => records.find(record => record.fields.email === email);
+
+  const findUserByEmail = (records, email) =>
+    records.find((record) => record.fields.email === email);
 
   const retrieveDatabase = async (email, password = undefined) => {
     try {
       const response = await fetch(process.env.REACT_APP_AIRTABLE_SERVER_URL);
       const data = await response.json();
-      if (data) {
 
+      if (data) {
         const userByEmail = findUserByEmail(data.records, email);
         if (userByEmail) {
-           // Check if the user is already logged in
-        if (loggedIn && userByEmail.fields.email === user.email) {
-          // User is already logged in, no need to update
-          return true;
-        }
-          if (userByEmail.fields.password === password) { 
-            const userData = { 
-              id: userByEmail.id, 
-              createdTime: moment(userByEmail.createdTime).utc().format('YYYY-MM-DD'), 
-              email: userByEmail.fields.email, 
-              fullname: userByEmail.fields.fullname, 
-              gender: userByEmail.fields.gender, 
-              plan: userByEmail.fields.plan, 
-              password: userByEmail.fields.password 
-            };
-            
-            setUser(userData);
-            
-            // Save user data in sessionStorage
-            sessionStorage.setItem('user', JSON.stringify(userData));
-            
-      
-          return true;
+          // Check if the user is already logged in
+          if (loggedIn && userByEmail.fields.email === user.email) {
+            // User is already logged in, no need to update
+            return true;
           }
-        }
-        return false;
-        
-      }
+          if (userByEmail.fields.password === password) {
+            const userData = {
+              id: userByEmail.id,
+              createdTime: moment(userByEmail.createdTime)
+                .utc()
+                .format("YYYY-MM-DD"),
+              email: userByEmail.fields.email,
+              fullname: userByEmail.fields.fullname,
+              gender: userByEmail.fields.gender,
+              plan: userByEmail.fields.plan,
+              password: userByEmail.fields.password,
+            };
 
-    }
-    catch (err) {
+            setUser(userData);
+
+            // Save user data in sessionStorage
+            sessionStorage.setItem("user", JSON.stringify(userData));
+
+            return true;
+          }
+          return true;
+        } else {
+          return false;
+        }
+      }
+    } catch (err) {
       return false;
     }
-  }
-
+  };
+  const userEmailExists = async (email) => {
+    try {
+      const user = await retrieveDatabase(email.toLowerCase());
+      return !!user;
+    } catch (error) {
+      console.log("Failed to check user existence:", error);
+      return false;
+    }
+  };
   const registerUser = async (data) => {
     const { email, password, fullname } = data;
     const id = uuidv4();
-    const checkUser = await retrieveDatabase(data.email.toLowerCase());
+    const checkUser = await userEmailExists(data.email);
 
     if (checkUser) {
       return false;
-    }
-    if (checkUser === false) {
+    } else {
       try {
-        edgyBase('users').create([
+        edgyBase("users").create([
           {
-            "fields": {
-              "id": id,
-              "email": email.toLowerCase(),
-              "password": password,
-              "fullname": fullname,
-            }
+            fields: {
+              id: id,
+              email: email.toLowerCase(),
+              password: password,
+              fullname: fullname,
+            },
           },
-        ]
-        );
+        ]);
         return true;
-      }
-      catch (error) {
+      } catch (error) {
         console.error(error);
       }
     }
+  };
 
-  }
-
-  const updateUser = (userId, formValue) => {
+  const updateUser = async (userId, formValue) => {
     //destructure incoming data
     const key = Object.keys(formValue)[0];
     const value = Object.values(formValue)[0];
     const form = {
       [key]: value,
+    };
+
+    if (key === "email") {
+      let checkUser = await userEmailExists(value);
+      if (checkUser) return { success: false, reason: "email" };
     }
-    //Update user info
-    edgyBase('users').update([
-      {
-        "id": userId,
-        "fields": form
-      }
-    ]
-      , function (error) {
-        if (error) {
-          console.log(`Message: ${error.message} | Code: ${error.statusCode}`);
-          return;
-        }
-        else {
-          return true;
-        }
-      }
 
-    );
-    setUser({ ...user, [key]: value });
-    sessionStorage.setItem('user', JSON.stringify({ ...user, [key]: value }));
-  }
-
-
-
+    try {
+      await new Promise((resolve, reject) => {
+        edgyBase("users").update(
+          [
+            {
+              id: userId,
+              fields: form,
+            },
+          ],
+          function (error) {
+            if (error) {
+              reject(error);
+            } else {
+              resolve();
+            }
+          }
+        );
+      });
+      setUser({ ...user, [key]: value });
+      sessionStorage.setItem("user", JSON.stringify({ ...user, [key]: value }));
+      return { success: true };
+    } catch (error) {
+      return { success: false, reason: error };
+    }
+  };
 
   const deleteUser = (userId) => {
-    edgyBase('users').destroy([userId], function (err, deletedRecords) {
+    edgyBase("users").destroy([userId], function (err, deletedRecords) {
       if (err) {
         console.error(err);
         return;
       }
     });
     setLoggedIn(false);
-  }
+  };
 
   return (
     <Router>
-      <Navigation loggedIn={loggedIn} setLoggedIn={setLoggedIn} setTriggeredLogout={setTriggeredLogout} />
+      <Navigation
+        loggedIn={loggedIn}
+        setLoggedIn={setLoggedIn}
+        setTriggeredLogout={setTriggeredLogout}
+      />
       <Routes>
         <Route path="/" element={<Landing loggedIn={loggedIn} />} />
         <Route path="/contact" element={<Contact />} />
@@ -189,12 +207,68 @@ export default function App() {
         <Route path="/refunds" element={<Refunds />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/jobs" element={<Jobs />} />
-        <Route path="/sign-in" element={loggedIn ? <Profile retrieveDatabase={retrieveDatabase} user={user} updateUser={updateUser} deleteUser={deleteUser} setLoggedIn={setLoggedIn} setTriggeredLogout={setTriggeredLogout} /> : <SignIn retrieveDatabase={retrieveDatabase} user={user} setLoggedIn={setLoggedIn} />} />
-        <Route path="/sign-up" element={loggedIn ? <Profile retrieveDatabase={retrieveDatabase} user={user} updateUser={updateUser} deleteUser={deleteUser} setLoggedIn={setLoggedIn} setTriggeredLogout={setTriggeredLogout} /> : <SignUp retrieveDatabase={retrieveDatabase} user={user} registerUser={registerUser} />} />
-        <Route path="/profile" element={loggedIn ? <Profile retrieveDatabase={retrieveDatabase} user={user} updateUser={updateUser} deleteUser={deleteUser} setLoggedIn={setLoggedIn} setTriggeredLogout={setTriggeredLogout} /> : <NotFound />} />
-        <Route path='*' element={<NotFound />} />
+        <Route
+          path="/sign-in"
+          element={
+            loggedIn ? (
+              <Profile
+                retrieveDatabase={retrieveDatabase}
+                user={user}
+                updateUser={updateUser}
+                deleteUser={deleteUser}
+                setLoggedIn={setLoggedIn}
+                setTriggeredLogout={setTriggeredLogout}
+              />
+            ) : (
+              <SignIn
+                retrieveDatabase={retrieveDatabase}
+                user={user}
+                setLoggedIn={setLoggedIn}
+              />
+            )
+          }
+        />
+        <Route
+          path="/sign-up"
+          element={
+            loggedIn ? (
+              <Profile
+                retrieveDatabase={retrieveDatabase}
+                user={user}
+                updateUser={updateUser}
+                deleteUser={deleteUser}
+                setLoggedIn={setLoggedIn}
+                setTriggeredLogout={setTriggeredLogout}
+              />
+            ) : (
+              <SignUp
+                retrieveDatabase={retrieveDatabase}
+                user={user}
+                registerUser={registerUser}
+              />
+            )
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            loggedIn ? (
+              <Profile
+                retrieveDatabase={retrieveDatabase}
+                user={user}
+                updateUser={updateUser}
+                deleteUser={deleteUser}
+                setLoggedIn={setLoggedIn}
+                setTriggeredLogout={setTriggeredLogout}
+              />
+            ) : (
+              <NotFound />
+            )
+          }
+        />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </Router>
-  )
+  );
 }
