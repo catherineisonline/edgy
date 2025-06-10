@@ -2,7 +2,7 @@ import express, { json } from "express";
 import cors from "cors"; // Import the cors middleware
 import fetch from "node-fetch";
 import dotenv from "dotenv";
-import edgyBase from "./airtable/airtable";
+import edgyBase_backend from "./airtable/airtable";
 dotenv.config();
 const REACT_APP_CAPTCHA_SECRET = process.env.REACT_APP_CAPTCHA_SECRET;
 const REACT_APP_AIRTABLE_ID = process.env.REACT_APP_AIRTABLE_ID;
@@ -56,7 +56,7 @@ app.post("/airtable", async (req, res) => {
   const value = Object.values(formValue)[0];
   const form = { [key]: value };
   try {
-    await edgyBase("users").update([
+    await edgyBase_backend("users").update([
       {
         id: userId,
         fields: form,
