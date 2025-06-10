@@ -156,7 +156,7 @@ export default function App() {
       const response = await fetch(
         `${process.env.REACT_APP_AIRTABLE_SERVER_URL}/update-user`,
         {
-          method: "PATCH",
+          method: "POST",
           headers: {
             "content-type": "application/json",
           },
