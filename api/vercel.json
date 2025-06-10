@@ -16,6 +16,10 @@
             "dest": "index.mjs"
         },
         {
+            "src": "/airtable/update-user",
+            "dest": "index.mjs"
+        },
+        {
             "src": "/verify-recaptcha",
             "dest": "index.mjs"
         }
