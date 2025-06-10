@@ -8,7 +8,7 @@
     ],
     "routes": [
         {
-            "src": "/(.*)",
+            "src": "/airtable/update-user",
             "dest": "index.mjs"
         },
         {
@@ -16,11 +16,11 @@
             "dest": "index.mjs"
         },
         {
-            "src": "/airtable/update-user",
+            "src": "/verify-recaptcha",
             "dest": "index.mjs"
         },
         {
-            "src": "/verify-recaptcha",
+            "src": "/(.*)",
             "dest": "index.mjs"
         }
     ]
