@@ -143,9 +143,9 @@ export default function App() {
     //destructure incoming data
     const key = Object.keys(formValue)[0];
     const value = Object.values(formValue)[0];
-    const form = {
-      [key]: value,
-    };
+    // const form = {
+    //   [key]: value,
+    // };
 
     if (key === "email") {
       let checkUser = await userEmailExists(value);
@@ -160,7 +160,7 @@ export default function App() {
           headers: {
             "content-type": "application/json",
           },
-          body: JSON.stringify(form),
+          body: JSON.stringify({ userId, formValue }),
         }
       );
       const result = await response.json();
