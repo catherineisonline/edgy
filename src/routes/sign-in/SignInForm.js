@@ -29,50 +29,49 @@ export default function SignInForm({ retrieveDatabase, setLoggedIn }) {
     //otherwise check if user registration on the server returns OK and reset the form
     else {
       let captchaToken = captchaRef.current?.getValue();
-      // if (captchaToken.length === 0) {
-      //   setCaptchaError("ReCaptcha is mandatory");
-      //   setLoading(false);
-      //   return;
-      // }
+      if (captchaToken.length === 0) {
+        setCaptchaError("ReCaptcha is mandatory");
+        setLoading(false);
+        return;
+      }
       window.scrollTo(0, 0);
-      // const verify = await verifyCaptcha(captchaToken);
+      const verify = await verifyCaptcha(captchaToken);
 
-      // if (verify) {
-      try {
-        const retrievedUserOK = await retrieveDatabase(
-          formValue.email.toLowerCase(),
-          formValue.password
-        );
+      if (verify) {
+        try {
+          const retrievedUserOK = await retrieveDatabase(
+            formValue.email.toLowerCase(),
+            formValue.password
+          );
 
-        if (retrievedUserOK === false) {
-          setRetrievedUser(false);
-          setFormValue({ email: "", password: "" });
-        } else {
-          navigate(`/profile`);
+          if (retrievedUserOK === false) {
+            setRetrievedUser(false);
+            setFormValue({ email: "", password: "" });
+          } else {
+            navigate(`/profile`);
+            setLoading(false);
+            window.scrollTo(0, 0);
+            setRetrievedUser(true);
+            setFormValue({ email: "", password: "" });
+            setLoggedIn(true);
+          }
+        } catch (error) {
+          console.error("Error during user retrieval:", error);
+        } finally {
           setLoading(false);
-          window.scrollTo(0, 0);
-          setRetrievedUser(true);
-          setFormValue({ email: "", password: "" });
-          setLoggedIn(true);
         }
-      } catch (error) {
-        console.error("Error during user retrieval:", error);
-      } finally {
+      } else {
+        captchaRef.current?.reset();
+        setLoggedIn(false);
+        setFormValue({
+          firstname: "",
+          lastname: "",
+          email: "",
+          message: "",
+        });
+        setCaptchaError("");
         setLoading(false);
       }
-      // }
-      //  else {
-      captchaRef.current?.reset();
-      setLoggedIn(false);
-      setFormValue({
-        firstname: "",
-        lastname: "",
-        email: "",
-        message: "",
-      });
-      setCaptchaError("");
-      setLoading(false);
-      // }
     }
   };
 
@@ -183,7 +182,7 @@ export default function SignInForm({ retrieveDatabase, setLoggedIn }) {
               <span className="text-red-400">{errorValue.password}</span>
             </section>
           </section>
-          {/* <ReCAPTCHA ref={captchaRef} sitekey={captchaKey} /> */}
+          <ReCAPTCHA ref={captchaRef} sitekey={captchaKey} />
           <span className="text-red-400">{captchaError}</span>
           <section>
             <button
