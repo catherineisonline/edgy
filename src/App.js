@@ -153,23 +153,36 @@ export default function App() {
     }
 
     try {
-      await new Promise((resolve, reject) => {
-        edgyBase("users").update(
-          [
-            {
-              id: userId,
-              fields: form,
-            },
-          ],
-          function (error) {
-            if (error) {
-              reject(error);
-            } else {
-              resolve();
-            }
-          }
-        );
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_AIRTABLE_SERVER_URL}/update-user`,
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(form),
+        }
+      );
+      const result = await response.json();
+      if (!result.success) return { success: false, reason: result.reason };
+
+      // await new Promise((resolve, reject) => {
+      //   edgyBase("users").update(
+      //     [
+      //       {
+      //         id: userId,
+      //         fields: form,
+      //       },
+      //     ],
+      //     function (error) {
+      //       if (error) {
+      //         reject(error);
+      //       } else {
+      //         resolve();
+      //       }
+      //     }
+      //   );
+      // });
       setUser({ ...user, [key]: value });
       sessionStorage.setItem("user", JSON.stringify({ ...user, [key]: value }));
       return { success: true };
