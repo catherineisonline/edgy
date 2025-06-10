@@ -1,18 +1,16 @@
 import express, { json } from "express";
-import cors from "cors"; // Import the cors middleware
+import cors from "cors";
 import fetch from "node-fetch";
 import dotenv from "dotenv";
-// import edgyBase_backend from "./airtable/airtable.js";
 import Airtable from "airtable";
 
 const apiKey = process.env.REACT_APP_AIRTABLE_KEY;
 const baseId = process.env.REACT_APP_AIRTABLE_ID;
-
-const edgyBase_backend = new Airtable({ apiKey: apiKey }).base(baseId);
-dotenv.config();
 const REACT_APP_CAPTCHA_SECRET = process.env.REACT_APP_CAPTCHA_SECRET;
 const REACT_APP_AIRTABLE_ID = process.env.REACT_APP_AIRTABLE_ID;
 const REACT_APP_AIRTABLE_KEY = process.env.REACT_APP_AIRTABLE_KEY;
+const edgyBase_backend = new Airtable({ apiKey: apiKey }).base(baseId);
+dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
 
