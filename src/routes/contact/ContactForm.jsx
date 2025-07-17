@@ -1,9 +1,9 @@
 import React, { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
-const captchaKey = import.meta.env.REACT_APP_CAPTCHA_KEY;
-const captchaSecret = import.meta.env.REACT_APP_CAPTCHA_SECRET;
-const serverlUrl = import.meta.env.REACT_APP_SERVER_URL;
+const captchaKey = import.meta.env.VITE_CAPTCHA_KEY;
+const captchaSecret = import.meta.env.VITE_CAPTCHA_SECRET;
+const serverlUrl = import.meta.env.VITE_SERVER_URL;
 
 export default function ContactForm() {
   const captchaRef = useRef();

@@ -1,27 +1,25 @@
-/* This example requires Tailwind CSS v2.0+ */
-import { CheckIcon } from '@heroicons/react/outline'
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 const StandardFeatures = [
-  'Organic Follower Growth: Gain real, engaged followers through genuine interactions and personalized strategies, helping you build a loyal community.',
+  "Organic Follower Growth: Gain real, engaged followers through genuine interactions and personalized strategies, helping you build a loyal community.",
   "Content Optimization: Receive tailored content recommendations to enhance your feed's visual appeal and captivate your target audience.",
   "Hashtag Research: Unlock the potential of strategic hashtags to boost your posts' discoverability and increase your reach",
-]
+];
 const PremiumFeatures = [
   "Community Engagement: Our team proactively engages with your followers, responding to comments, and fostering genuine connections on your behalf.",
   "Monthly Progress Report: Stay updated on your Instagram growth journey with a comprehensive monthly progress report, showcasing key metrics and insights.",
   "Customized Strategy: Receive a tailor-made growth strategy designed specifically for your niche and target audience.",
   "Influencer Outreach: Tap into our network of influencers for collaborations and shout-outs to gain exposure to a broader audience.",
   "Story Management: Maximize the potential of Instagram Stories with engaging content and highlights to captivate your followers.",
-]
+];
 const BusinessFeatures = [
   "Competitor Analysis: Gain insights into your competitors' performance to identify opportunities and stay ahead of the curve.",
   "Post Optimization Suggestions: Receive recommendations for optimizing your post timings and content to maximize engagement.",
   "Exclusive Early Access: Get exclusive early access to new features and updates before they're rolled out to other plans.",
-]
+];
 
 export default function Pricing({ loggedIn }) {
-  const ResetLocation = () => window.scrollTo(0, 0)
+  const ResetLocation = () => window.scrollTo(0, 0);
   return (
     <article className="bg-gray-900">
       <section className="pt-12 px-4 sm:px-6 lg:px-8 lg:pt-20 bg-gray-900">
@@ -51,8 +49,7 @@ export default function Pricing({ loggedIn }) {
                       <section>
                         <h3
                           className="text-center text-2xl font-medium text-gray-900"
-                          id="tier-hobby"
-                        >
+                          id="tier-hobby">
                           Standard
                         </h3>
                         <section className="mt-4 flex items-center justify-center">
@@ -73,10 +70,19 @@ export default function Pricing({ loggedIn }) {
                         {StandardFeatures.map((feature) => (
                           <li key={feature} className="flex items-start">
                             <section className="flex-shrink-0">
-                              <CheckIcon
-                                className="flex-shrink-0 h-6 w-6 text-green-500"
-                                aria-hidden="true"
-                              />
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="flex-shrink-0 h-6 w-6 text-green-500">
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="m4.5 12.75 6 6 9-13.5"
+                                />
+                              </svg>
                             </section>
                             <p className="ml-3 text-base font-medium text-gray-500">
                               {feature}
@@ -90,8 +96,7 @@ export default function Pricing({ loggedIn }) {
                             onClick={ResetLocation}
                             to={loggedIn ? "/profile" : "/sign-up"}
                             className="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-[color:var(--primary-font-color)] hover:bg-gray-50"
-                            aria-describedby="tier-hobby"
-                          >
+                            aria-describedby="tier-hobby">
                             Get Started
                           </Link>
                         </section>
@@ -117,8 +122,7 @@ export default function Pricing({ loggedIn }) {
                     <section>
                       <h3
                         className="text-center text-3xl font-semibold text-gray-900 sm:-mx-6"
-                        id="tier-growth"
-                      >
+                        id="tier-growth">
                         Premium
                       </h3>
                       <section className="mt-4 flex items-center justify-center">
@@ -139,10 +143,20 @@ export default function Pricing({ loggedIn }) {
                       {PremiumFeatures.map((feature) => (
                         <li key={feature} className="flex items-start">
                           <section className="flex-shrink-0">
-                            <CheckIcon
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              strokeWidth={1.5}
+                              stroke="currentColor"
                               className="flex-shrink-0 h-6 w-6 text-green-500"
-                              aria-hidden="true"
-                            />
+                              aria-hidden="true">
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="m4.5 12.75 6 6 9-13.5"
+                              />
+                            </svg>
                           </section>
                           <p className="ml-3 text-base font-medium text-gray-500">
                             {feature}
@@ -156,8 +170,7 @@ export default function Pricing({ loggedIn }) {
                           onClick={ResetLocation}
                           to={loggedIn ? "/profile" : "/sign-up"}
                           className="block w-full text-center rounded-lg border border-transparent bg-indigo-600 px-6 py-4 text-xl leading-6 font-medium text-white hover:bg-indigo-700"
-                          aria-describedby="tier-growth"
-                        >
+                          aria-describedby="tier-growth">
                           Get Started
                         </Link>
                       </section>
@@ -172,8 +185,7 @@ export default function Pricing({ loggedIn }) {
                       <section>
                         <h3
                           className="text-center text-2xl font-medium text-gray-900"
-                          id="tier-scale"
-                        >
+                          id="tier-scale">
                           Business
                         </h3>
                         <section className="mt-4 flex items-center justify-center">
@@ -194,10 +206,20 @@ export default function Pricing({ loggedIn }) {
                         {BusinessFeatures.map((feature) => (
                           <li key={feature} className="flex items-start">
                             <section className="flex-shrink-0">
-                              <CheckIcon
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
                                 className="flex-shrink-0 h-6 w-6 text-green-500"
-                                aria-hidden="true"
-                              />
+                                aria-hidden="true">
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="m4.5 12.75 6 6 9-13.5"
+                                />
+                              </svg>
                             </section>
                             <p className="ml-3 text-base font-medium text-gray-500">
                               {feature}
@@ -211,8 +233,7 @@ export default function Pricing({ loggedIn }) {
                             onClick={ResetLocation}
                             to={loggedIn ? "/profile" : "/sign-up"}
                             className="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-[color:var(--primary-font-color)] hover:bg-gray-50"
-                            aria-describedby="tier-scale"
-                          >
+                            aria-describedby="tier-scale">
                             Get Started
                           </Link>
                         </section>
@@ -226,5 +247,5 @@ export default function Pricing({ loggedIn }) {
         </section>
       </section>
     </article>
-  )
+  );
 }

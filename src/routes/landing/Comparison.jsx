@@ -1,5 +1,4 @@
 import { Fragment } from "react";
-import { CheckIcon, MinusIcon } from "@heroicons/react/solid";
 import { pricingTiers } from "../../data/pricingTiers";
 import { pricingSections } from "../../data/pricingSections";
 import { Link } from "react-router-dom";
@@ -28,7 +27,9 @@ export default function Comparison({ loggedIn }) {
                   </span>
                 </p>
                 <p className="mt-4 text-sm text-gray-500">{tier.description}</p>
-                <Link to={loggedIn ? "/profile" : "/sign-up"} className="block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">
+                <Link
+                  to={loggedIn ? "/profile" : "/sign-up"}
+                  className="block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">
                   Buy {tier.name}
                 </Link>
               </section>
@@ -52,12 +53,10 @@ export default function Comparison({ loggedIn }) {
                     {section.features.map((feature) => (
                       <tr
                         key={feature.name}
-                        className="border-t border-gray-200"
-                      >
+                        className="border-t border-gray-200">
                         <th
                           className="py-5 px-4 text-sm font-normal text-gray-500 text-left"
-                          scope="row"
-                        >
+                          scope="row">
                           {feature.name}
                         </th>
                         <td className="py-5 pr-4">
@@ -68,15 +67,29 @@ export default function Comparison({ loggedIn }) {
                           ) : (
                             <>
                               {feature.tiers[tier.name] === true ? (
-                                <CheckIcon
-                                  className="ml-auto h-5 w-5 text-green-500"
-                                  aria-hidden="true"
-                                />
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 24 24"
+                                  fill="currentColor"
+                                  className="ml-auto h-5 w-5 text-green-500">
+                                  <path
+                                    fillRule="evenodd"
+                                    d="M19.916 4.626a.75.75 0 0 1 .208 1.04l-9 13.5a.75.75 0 0 1-1.154.114l-6-6a.75.75 0 0 1 1.06-1.06l5.353 5.353 8.493-12.74a.75.75 0 0 1 1.04-.207Z"
+                                    clipRule="evenodd"
+                                  />
+                                </svg>
                               ) : (
-                                <MinusIcon
-                                  className="ml-auto h-5 w-5 text-gray-400"
-                                  aria-hidden="true"
-                                />
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 24 24"
+                                  fill="currentColor"
+                                  className="ml-auto h-5 w-5 text-gray-400">
+                                  <path
+                                    fillRule="evenodd"
+                                    d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z"
+                                    clipRule="evenodd"
+                                  />
+                                </svg>
                               )}
 
                               <span className="sr-only">
@@ -97,9 +110,11 @@ export default function Comparison({ loggedIn }) {
                 className={classNames(
                   tierIdx < pricingTiers.length - 1 ? "py-5 border-b" : "pt-5",
                   "border-t border-gray-200 px-4"
-                )}
-              >
-                <Link onClick={() => window.scrollTo(0, 0)} to={loggedIn ? "/profile" : "/sign-up"} className="block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">
+                )}>
+                <Link
+                  onClick={() => window.scrollTo(0, 0)}
+                  to={loggedIn ? "/profile" : "/sign-up"}
+                  className="block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">
                   Buy {tier.name}
                 </Link>
               </section>
@@ -113,8 +128,7 @@ export default function Comparison({ loggedIn }) {
               <tr>
                 <th
                   className="pb-4 px-6 text-sm font-medium text-gray-900 text-left"
-                  scope="col"
-                >
+                  scope="col">
                   <span className="sr-only">Feature by</span>
                   <span>Plans</span>
                 </th>
@@ -122,8 +136,7 @@ export default function Comparison({ loggedIn }) {
                   <th
                     key={tier.name}
                     className="w-1/4 pb-4 px-6 text-lg leading-6 font-medium text-gray-900 text-left"
-                    scope="col"
-                  >
+                    scope="col">
                     {tier.name}
                   </th>
                 ))}
@@ -133,8 +146,7 @@ export default function Comparison({ loggedIn }) {
               <tr>
                 <th
                   className="py-8 px-6 text-sm font-medium text-gray-900 text-left align-top"
-                  scope="row"
-                >
+                  scope="row">
                   Pricing
                 </th>
                 {pricingTiers.map((tier) => (
@@ -151,7 +163,10 @@ export default function Comparison({ loggedIn }) {
                       <p className="mt-4 mb-16 text-sm text-gray-500">
                         {tier.description}
                       </p>
-                      <Link onClick={() => window.scrollTo(0, 0)} to={loggedIn ? "/profile" : "/sign-up"} className="block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">
+                      <Link
+                        onClick={() => window.scrollTo(0, 0)}
+                        to={loggedIn ? "/profile" : "/sign-up"}
+                        className="block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">
                         Buy {tier.name}
                       </Link>
                     </section>
@@ -164,8 +179,7 @@ export default function Comparison({ loggedIn }) {
                     <th
                       className="bg-gray-50 py-3 pl-6 text-sm font-medium text-gray-900 text-left"
                       colSpan={4}
-                      scope="colgroup"
-                    >
+                      scope="colgroup">
                       {section.name}
                     </th>
                   </tr>
@@ -173,8 +187,7 @@ export default function Comparison({ loggedIn }) {
                     <tr key={feature.name}>
                       <th
                         className="py-5 px-6 text-sm font-normal text-gray-500 text-left"
-                        scope="row"
-                      >
+                        scope="row">
                         {feature.name}
                       </th>
                       {pricingTiers.map((tier) => (
@@ -186,15 +199,29 @@ export default function Comparison({ loggedIn }) {
                           ) : (
                             <>
                               {feature.tiers[tier.name] === true ? (
-                                <CheckIcon
-                                  className="h-5 w-5 text-green-500"
-                                  aria-hidden="true"
-                                />
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 24 24"
+                                  fill="currentColor"
+                                  className="h-5 w-5 text-green-500">
+                                  <path
+                                    fillRule="evenodd"
+                                    d="M19.916 4.626a.75.75 0 0 1 .208 1.04l-9 13.5a.75.75 0 0 1-1.154.114l-6-6a.75.75 0 0 1 1.06-1.06l5.353 5.353 8.493-12.74a.75.75 0 0 1 1.04-.207Z"
+                                    clipRule="evenodd"
+                                  />
+                                </svg>
                               ) : (
-                                <MinusIcon
-                                  className="h-5 w-5 text-gray-400"
-                                  aria-hidden="true"
-                                />
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 24 24"
+                                  fill="currentColor"
+                                  className="h-5 w-5 text-gray-400">
+                                  <path
+                                    fillRule="evenodd"
+                                    d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z"
+                                    clipRule="evenodd"
+                                  />
+                                </svg>
                               )}
 
                               <span className="sr-only">
@@ -219,7 +246,9 @@ export default function Comparison({ loggedIn }) {
                 </th>
                 {pricingTiers.map((tier) => (
                   <td key={tier.name} className="pt-5 px-6">
-                    <Link to={loggedIn ? "/profile" : "/sign-up"} className="block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">
+                    <Link
+                      to={loggedIn ? "/profile" : "/sign-up"}
+                      className="block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">
                       Buy {tier.name}
                     </Link>
                   </td>
