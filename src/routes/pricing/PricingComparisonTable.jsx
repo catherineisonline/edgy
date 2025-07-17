@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 export default function PricingComparisonTable({ loggedIn }) {
   return (
     <section className="max-w-2xl mx-auto bg-white py-16 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-      {/* xs to lg */}
       <section className="space-y-24 lg:hidden">
         {pricingTiers.map((tier) => (
           <section key={tier.name}>
@@ -110,7 +109,6 @@ export default function PricingComparisonTable({ loggedIn }) {
         ))}
       </section>
 
-      {/* lg+ */}
       <section className="hidden lg:block">
         <table className="w-full h-px table-fixed">
           <caption className="sr-only">Pricing plan comparison</caption>

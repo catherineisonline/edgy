@@ -54,9 +54,6 @@ const Profile = ({
   const submitForm = async (e, validationTarget, fieldName) => {
     e.preventDefault();
     const validationErrors = validationTarget(formValue[fieldName]);
-
-    // For any field beside password
-
     if (Object.keys(validationErrors).length > 0) {
       setFormErrors(validationErrors);
     } else {
@@ -131,41 +128,28 @@ const Profile = ({
       errors[field] = `Email is the same`;
     }
     if (field === "password") {
-      // Check if both fields are empty
       if (Object.keys(formValue).length === 0) {
         errors.password = `Password fields are empty`;
-      }
-      // Check if password field is empty
-      else if (
+      } else if (
         formValue["password"] === undefined ||
         formValue["password"].length === 0
       ) {
         errors.password = `Password field is empty`;
-      }
-      // Check if repeated password field is empty
-      else if (
+      } else if (
         formValue["repeatedPassword"] === undefined ||
         formValue["repeatedPassword"].length === 0
       ) {
         errors.repeatedPassword = `Please repeat the password`;
-      }
-      // Check if passwords are different
-      else if (formValue["password"] !== formValue["repeatedPassword"]) {
+      } else if (formValue["password"] !== formValue["repeatedPassword"]) {
         errors.password = `Passwords should match`;
-      }
-      // Check if password is too short
-      else if (formValue["password"] && formValue["password"].length < 8) {
+      } else if (formValue["password"] && formValue["password"].length < 8) {
         errors.password = `Password should be min. 8 characters`;
-      }
-      // Check if repeated password is too short
-      else if (
+      } else if (
         formValue["repeatedPassword"] &&
         formValue["repeatedPassword"].length < 8
       ) {
         errors.repeatedPassword = `Password should be min. 8 characters`;
-      }
-      // Check if the new password is the same as the old one
-      else if (formValue["password"] === user.password) {
+      } else if (formValue["password"] === user.password) {
         errors.password = `New password can't be the same as old`;
       }
     }
@@ -205,7 +189,7 @@ const Profile = ({
                   <input
                     onChange={handelChange}
                     defaultValue={formValue["fullname"]}
-                    className="appearance-none relative block w-50 px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    className="appearance-none relative block w-50 px-3 py-1 border border-gray-300 placeholder-gray-500 text-white rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                     id="fullname"
                     name="fullname"
                     type="text"
@@ -213,13 +197,13 @@ const Profile = ({
                   />
                   <button
                     type="submit"
-                    className="group relative w-full flex justify-center items-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    className="cursor-pointer group relative w-full flex justify-center items-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                     Save
                   </button>
                   <button
                     type="button"
                     onClick={() => handleCancel("fullname")}
-                    className="group relative w-full flex justify-center items-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    className="cursor-pointer group relative w-full flex justify-center items-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                     Cancel
                   </button>
                 </form>
@@ -235,7 +219,7 @@ const Profile = ({
                   strokeWidth={1.5}
                   stroke="currentColor"
                   onClick={() => activateEditField("fullname")}
-                  className="w-4 h-auto text-white">
+                  className="w-4 h-auto text-white cursor-pointer">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -260,7 +244,7 @@ const Profile = ({
                   <input
                     onChange={handelChange}
                     defaultValue={formValue["email"]}
-                    className="appearance-none relative block w-50 px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    className="appearance-none relative block w-50 px-3 py-1 border border-gray-300 placeholder-gray-500 text-white rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                     id="email"
                     name="email"
                     type="text"
@@ -268,13 +252,13 @@ const Profile = ({
                   />
                   <button
                     type="submit"
-                    className="group relative w-full flex justify-center items-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    className="cursor-pointer group relative w-full flex justify-center items-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                     Save
                   </button>
                   <button
                     type="button"
                     onClick={() => handleCancel("email")}
-                    className="group relative w-full flex justify-center items-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    className="cursor-pointer group relative w-full flex justify-center items-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                     Cancel
                   </button>
                 </form>
@@ -290,7 +274,7 @@ const Profile = ({
                   strokeWidth={1.5}
                   stroke="currentColor"
                   onClick={() => activateEditField("email")}
-                  className="w-4 h-auto text-white">
+                  className="w-4 h-auto text-white cursor-pointer">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -314,7 +298,7 @@ const Profile = ({
                     onChange={handelChange}
                     id="gender"
                     name="gender"
-                    className=" w-max cursor-pointer relative block px-1 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    className=" w-max cursor-pointer relative block px-1 py-1 border border-gray-300 placeholder-gray-500 text-white rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                     defaultValue={user.gender}>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
@@ -322,13 +306,13 @@ const Profile = ({
                   </select>
                   <button
                     type="submit"
-                    className="group relative w-full flex justify-center items-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    className="cursor-pointer group relative w-full flex justify-center items-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                     Save
                   </button>
                   <button
                     type="button"
                     onClick={() => handleCancel("gender")}
-                    className="group relative w-full flex justify-center items-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    className="cursor-pointer group relative w-full flex justify-center items-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                     Cancel
                   </button>
                 </form>
@@ -344,7 +328,7 @@ const Profile = ({
                   strokeWidth={1.5}
                   stroke="currentColor"
                   onClick={() => activateEditField("gender")}
-                  className="w-4 h-auto text-white">
+                  className="w-4 h-auto text-white cursor-pointer">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -368,7 +352,7 @@ const Profile = ({
                     onChange={handelChange}
                     id="plan"
                     name="plan"
-                    className=" w-max cursor-pointer relative block px-1 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    className=" w-max cursor-pointer relative block px-1 py-1 border border-gray-300 placeholder-gray-500 text-white rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                     defaultValue={user.gender}>
                     <option value="Standard">Standard</option>
                     <option value="Premium">Premium</option>
@@ -377,13 +361,13 @@ const Profile = ({
                   </select>
                   <button
                     type="submit"
-                    className="group relative w-full flex justify-center items-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    className="cursor-pointer group relative w-full flex justify-center items-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                     Save
                   </button>
                   <button
                     type="button"
                     onClick={() => handleCancel("plan")}
-                    className="group relative w-full flex justify-center items-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    className="cursor-pointer group relative w-full flex justify-center items-center py-1 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                     Cancel
                   </button>
                 </form>
@@ -399,7 +383,7 @@ const Profile = ({
                   strokeWidth={1.5}
                   stroke="currentColor"
                   onClick={() => activateEditField("plan")}
-                  className="w-4 h-auto text-white">
+                  className="w-4 h-auto text-white cursor-pointer">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -416,161 +400,150 @@ const Profile = ({
           onClick={() => {
             setDeleteRequest(true);
           }}
-          className="inline-block bg-indigo-500 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75">
+          className="cursor-pointer inline-block bg-indigo-500 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75">
           Delete account
         </button>
         <button
           onClick={() => activateEditField("password")}
-          className="inline-block bg-white  py-2 px-4 border border-transparent rounded-md text-base font-medium text-indigo-600 hover:bg-indigo-50">
+          className="cursor-pointer inline-block bg-white  py-2 px-4 border border-transparent rounded-md text-base font-medium text-indigo-600 hover:bg-indigo-50">
           Change password
         </button>
       </section>
-      {deleteRequest ? (
-        <div className="relative z-10 bg-gray-900 shadow">
-          <div className="fixed inset-0 z-10 overflow-y-auto">
-            <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-              <div className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
-                <div className="sm:flex sm:items-start">
-                  <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="h-6 w-6 text-red-600"
-                      aria-hidden="true">
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"
-                      />
-                    </svg>
-                  </div>
-                  <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-                    <h3 className="text-base font-semibold leading-6 text-gray-900">
-                      Delete account
-                    </h3>
-                    <div className="mt-2">
-                      <p className="text-sm text-gray-500">
-                        Are you sure you want to delete your account? Deleting
-                        it will result in the permanent removal of all your data
-                        and the complete closure of the account. Please note
-                        that this action is irreversible.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
-                  <button
-                    onClick={() => deleteAcc()}
-                    type="button"
-                    className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto">
-                    Delete
-                  </button>
-                  <button
-                    onClick={() => setDeleteRequest(false)}
-                    className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto">
-                    Cancel
-                  </button>
-                </div>
+      {deleteRequest && (
+        <div className="fixed inset-0 z-10 flex items-center justify-center overflow-y-auto bg-gray-900/80 p-4">
+          <div className="w-full max-w-lg rounded-lg bg-white p-6 shadow-xl transition-all">
+            <div className="flex items-start gap-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-100">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="h-6 w-6 text-red-600"
+                  aria-hidden="true">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"
+                  />
+                </svg>
               </div>
+
+              <div className="text-left">
+                <h3 className="text-base font-semibold text-gray-900">
+                  Delete account
+                </h3>
+                <p className="mt-2 text-sm text-gray-500">
+                  Are you sure you want to delete your account? Deleting it will
+                  result in the permanent removal of all your data and the
+                  complete closure of the account. Please note that this action
+                  is irreversible.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-6 flex justify-end gap-3">
+              <button
+                onClick={deleteAcc}
+                type="button"
+                className="cursor-pointer rounded-md bg-red-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500">
+                Delete
+              </button>
+              <button
+                onClick={() => setDeleteRequest(false)}
+                className="cursor-pointer rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-50">
+                Cancel
+              </button>
             </div>
           </div>
         </div>
-      ) : null}
+      )}
 
       {editPassword && (
-        <div className="relative z-10 bg-gray-900 shadow">
-          <div className="fixed inset-0 z-10 overflow-y-auto">
-            <div className="flex  min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
-              <div className="relative flex flex-col gap-4 transform overflow-hidden rounded-lg bg-white  p-12 text-left shadow-xl transition-all w-10/12 sm:my-2 sm:w-full sm:max-w-xl ">
-                <div className="sm:flex sm:flex-row  gap-4 items-center	 text-center md:flex-row flex-col">
-                  <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="h-6 w-6 text-red-600"
-                      aria-hidden="true">
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-base font-semibold leading-6 text-gray-900">
-                    Edit password
-                  </h3>
-                </div>
-                <form
-                  onSubmit={(e) => submitForm(e, validatePassword, "password")}
-                  className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <label htmlFor="username" className="sr-only">
-                    Username
-                  </label>
-                  <input
-                    id="username"
-                    name="username"
-                    type="text"
-                    className="sr-only"
-                    aria-hidden="true"
-                    autoComplete="username"
+        <div className="fixed inset-0 z-10 flex items-center justify-center overflow-y-auto bg-gray-900/80 p-4">
+          <form
+            onSubmit={(e) => submitForm(e, validatePassword, "password")}
+            className="flex flex-col gap-6 w-full max-w-xl rounded-lg bg-white p-8 shadow-xl">
+            <div className="flex items-center gap-4 text-center">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100">
+                <svg
+                  className="h-6 w-6 text-red-600"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={1.5}>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"
                   />
-                  <div className="w-full relative flex flex-col gap-8">
-                    <label htmlFor="password" className="sr-only">
-                      Password
-                    </label>
-                    <input
-                      onChange={handelChange}
-                      defaultValue={formValue["password"]}
-                      autoComplete="new-password"
-                      className="appearance-none block w-50 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                      id="password"
-                      name="password"
-                      type="password"
-                      placeholder=""
-                    />
-                    <span className="text-red-400 block w-max absolute z-10 mt-8 pt-4">
-                      {formErrors["password"]}
-                    </span>
-                    <button
-                      type="submit"
-                      className="inline-flex w-full h-max justify-center rounded-md bg-red-600 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500	">
-                      Change password
-                    </button>
-                  </div>
-                  <div className="w-full relative flex flex-col gap-8">
-                    <label htmlFor="repeatedPassword" className="sr-only">
-                      Repeat password
-                    </label>
-                    <input
-                      onChange={handelChange}
-                      autoComplete="new-password"
-                      defaultValue={formValue["repeatedPassword"]}
-                      className="appearance-none  block w-50 px-3  py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                      id="repeatedPassword"
-                      name="repeatedPassword"
-                      type="password"
-                      placeholder=""
-                    />
-                    <span className="text-red-400 block w-max absolute z-10 mt-6 pt-4 mr-0">
-                      {formErrors["repeatedPassword"]}
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() => handleCancel("password")}
-                      className=" inline-flex w-full  h-max justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto">
-                      Cancel
-                    </button>
-                  </div>
-                </form>
+                </svg>
               </div>
+              <h3 className="text-xl font-semibold text-gray-900">
+                Edit password
+              </h3>
             </div>
-          </div>
+
+            <input
+              id="username"
+              name="username"
+              type="text"
+              className="sr-only"
+              autoComplete="username"
+              aria-hidden="true"
+            />
+
+            <label className="relative w-full">
+              <span className="block text-sm font-medium text-gray-700">
+                New password
+              </span>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                autoComplete="new-password"
+                defaultValue={formValue["password"]}
+                onChange={handelChange}
+                className="mt-1 w-full rounded border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+              />
+              <span className="absolute mt-1 text-sm text-red-400">
+                {formErrors["password"]}
+              </span>
+            </label>
+
+            <label className="relative w-full">
+              <span className="block text-sm font-medium text-gray-700">
+                Repeat password
+              </span>
+              <input
+                id="repeatedPassword"
+                name="repeatedPassword"
+                type="password"
+                autoComplete="new-password"
+                defaultValue={formValue["repeatedPassword"]}
+                onChange={handelChange}
+                className="mt-1 w-full rounded border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+              />
+              <span className="absolute mt-1 text-sm text-red-400">
+                {formErrors["repeatedPassword"]}
+              </span>
+            </label>
+
+            <div className="flex gap-4 justify-end">
+              <button
+                type="button"
+                onClick={() => handleCancel("password")}
+                className="cursor-pointer rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-700 shadow-sm hover:bg-gray-50">
+                Cancel
+              </button>
+              <button
+                type="submit"
+                className="cursor-pointer rounded-md bg-red-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500">
+                Change password
+              </button>
+            </div>
+          </form>
         </div>
       )}
     </div>

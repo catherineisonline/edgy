@@ -18,13 +18,16 @@ export default function SignIn({ retrieveDatabase, user, setLoggedIn }) {
             <Link
               onClick={ResetLocation}
               to="/sign-up"
-              className="font-medium text-[color:var(--primary-font-color)] hover:text-[color:var(--primary-font-color-hover)]"
-            >
+              className="font-medium text-[color:var(--primary-font-color)] hover:text-[color:var(--primary-font-color-hover)]">
               sign up
             </Link>
           </p>
         </section>
-        <SignInForm retrieveDatabase={retrieveDatabase} user={user} setLoggedIn={setLoggedIn} />
+        <SignInForm
+          retrieveDatabase={retrieveDatabase}
+          user={user}
+          setLoggedIn={setLoggedIn}
+        />
       </section>
     </article>
   );
