@@ -1,6 +1,4 @@
-import { PencilAltIcon } from "@heroicons/react/outline";
-import React, { useState } from "react";
-import { ExclamationIcon } from "@heroicons/react/outline";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Profile = ({
@@ -230,10 +228,20 @@ const Profile = ({
             ) : (
               <dd className="flex flex-row gap-2 mt-1 text-sm leading-6 text-gray-400 sm:col-span-2 sm:mt-0">
                 {user.fullname}{" "}
-                <PencilAltIcon
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
                   onClick={() => activateEditField("fullname")}
-                  className="w-4 h-auto text-white"
-                />
+                  className="w-4 h-auto text-white">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                  />
+                </svg>
               </dd>
             )}
           </div>
@@ -275,10 +283,20 @@ const Profile = ({
             ) : (
               <dd className="flex flex-row gap-2 mt-1 text-sm leading-6 text-gray-400 sm:col-span-2 sm:mt-0">
                 {user.email}{" "}
-                <PencilAltIcon
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
                   onClick={() => activateEditField("email")}
-                  className="w-4 h-auto text-white"
-                />
+                  className="w-4 h-auto text-white">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                  />
+                </svg>
               </dd>
             )}
           </div>
@@ -319,10 +337,20 @@ const Profile = ({
             ) : (
               <dd className="flex flex-row gap-2 mt-1 text-sm leading-6 text-gray-400 sm:col-span-2 sm:mt-0">
                 {user.gender?.length > 0 ? user.gender : "Not selected"}{" "}
-                <PencilAltIcon
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
                   onClick={() => activateEditField("gender")}
-                  className="w-4 h-auto text-white"
-                />
+                  className="w-4 h-auto text-white">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                  />
+                </svg>
               </dd>
             )}
           </div>
@@ -364,10 +392,20 @@ const Profile = ({
             ) : (
               <dd className="flex flex-row gap-2 mt-1 text-sm leading-6 text-gray-400 sm:col-span-2 sm:mt-0">
                 {user.plan?.length > 0 ? user.plan : "Not selected"}{" "}
-                <PencilAltIcon
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
                   onClick={() => activateEditField("plan")}
-                  className="w-4 h-auto text-white"
-                />
+                  className="w-4 h-auto text-white">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                  />
+                </svg>
               </dd>
             )}
           </div>
@@ -394,10 +432,20 @@ const Profile = ({
               <div className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
                 <div className="sm:flex sm:items-start">
                   <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
-                    <ExclamationIcon
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
                       className="h-6 w-6 text-red-600"
-                      aria-hidden="true"
-                    />
+                      aria-hidden="true">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"
+                      />
+                    </svg>
                   </div>
                   <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
                     <h3 className="text-base font-semibold leading-6 text-gray-900">
@@ -439,10 +487,20 @@ const Profile = ({
               <div className="relative flex flex-col gap-4 transform overflow-hidden rounded-lg bg-white  p-12 text-left shadow-xl transition-all w-10/12 sm:my-2 sm:w-full sm:max-w-xl ">
                 <div className="sm:flex sm:flex-row  gap-4 items-center	 text-center md:flex-row flex-col">
                   <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
-                    <ExclamationIcon
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
                       className="h-6 w-6 text-red-600"
-                      aria-hidden="true"
-                    />
+                      aria-hidden="true">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"
+                      />
+                    </svg>
                   </div>
                   <h3 className="text-base font-semibold leading-6 text-gray-900">
                     Edit password

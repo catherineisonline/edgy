@@ -1,64 +1,34 @@
 {
   "name": "edgy",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "private": true,
-  "dependencies": {
-    "@craco/craco": "^7.0.0",
-    "@headlessui/react": "^1.5.0",
-    "@heroicons/react": "^1.0.6",
-    "@tailwindcss/forms": "^0.5.0",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^12.1.4",
-    "@testing-library/user-event": "^13.5.0",
-    "airtable": "^0.12.1",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.18.2",
-    "i": "^0.3.7",
-    "moment": "^2.29.4",
-    "node-fetch": "^3.3.2",
-    "npm": "^8.19.2",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-google-recaptcha": "^3.1.0",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.0",
-    "tailwind-forms": "^1.0.6",
-    "uuid": "^9.0.0",
-    "web-vitals": "^2.1.4"
-  },
-  "homepage": "/",
+  "type": "module",
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
-    "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build -r https://github.com/catherineisonline/edgy",
-    "server": "node api/index.mjs"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "server": "node api/index.mjs",
+    "check-deps": "npm-check"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@headlessui/react": "^1.5.0",
+    "@tailwindcss/vite": "^4.1.11",
+    "airtable": "^0.12.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^4.18.2",
+    "moment": "^2.30.1",
+    "node-fetch": "^3.3.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-google-recaptcha": "^3.1.0",
+    "react-router-dom": "^7.7.0",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
-    "@types/uuid": "^9.0.2",
-    "autoprefixer": "^10.4.4",
-    "gh-pages": "^3.2.3",
-    "postcss": "^8.4.12",
-    "tailwindcss": "^3.0.23"
+    "@types/uuid": "^10.0.0",
+    "@vitejs/plugin-react": "^4.6.0",
+    "npm-check": "^6.0.1",
+    "vite": "^7.0.5"
   }
 }

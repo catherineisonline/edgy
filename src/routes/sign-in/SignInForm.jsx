@@ -1,11 +1,10 @@
-import { LockClosedIcon } from "@heroicons/react/solid";
 import React, { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useNavigate } from "react-router-dom";
 
-const captchaKey = process.env.REACT_APP_CAPTCHA_KEY;
-const captchaSecret = process.env.REACT_APP_CAPTCHA_SECRET;
-const serverlUrl = process.env.REACT_APP_SERVER_URL;
+const captchaKey = import.meta.env.VITE_CAPTCHA_KEY;
+const captchaSecret = import.meta.env.VITE_CAPTCHA_SECRET;
+const serverlUrl = import.meta.env.VITE_SERVER_URL;
 
 export default function SignInForm({ retrieveDatabase, setLoggedIn }) {
   const [formValue, setFormValue] = useState({ email: "", password: "" });
@@ -190,10 +189,18 @@ export default function SignInForm({ retrieveDatabase, setLoggedIn }) {
               type="submit"
               className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
               <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-                <LockClosedIcon
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
                   className="h-5 w-5 text-[color:var(--primary-font-color)] group-hover:text-[color:var(--primary-font-color-hover)]"
-                  aria-hidden="true"
-                />
+                  aria-hidden="true">
+                  <path
+                    fillRule="evenodd"
+                    d="M12 1.5a5.25 5.25 0 0 0-5.25 5.25v3a3 3 0 0 0-3 3v6.75a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3v-6.75a3 3 0 0 0-3-3v-3c0-2.9-2.35-5.25-5.25-5.25Zm3.75 8.25v-3a3.75 3.75 0 1 0-7.5 0v3h7.5Z"
+                    clipRule="evenodd"
+                  />
+                </svg>
               </span>
               Sign in
             </button>

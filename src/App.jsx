@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-//Components
 import moment from "moment";
 import Navigation from "./components/navigation/Navigation";
 import Landing from "./routes/landing/Landing";
@@ -16,10 +15,8 @@ import Jobs from "./routes/jobs/Jobs";
 import SignIn from "./routes/sign-in/SignIn";
 import SignUp from "./routes/sign-up/SignUp";
 import BlogPost from "./routes/blog-post/BlogPost";
-//Airtable
 import edgyBase from "./airtable/airtable";
 import { useEffect, useState } from "react";
-//uuid
 import { v4 as uuidv4 } from "uuid";
 import Profile from "./routes/user-profile/Profile";
 import NotFound from "./components/NotFound";
@@ -64,15 +61,13 @@ export default function App() {
 
   const retrieveDatabase = async (email, password = undefined) => {
     try {
-      const response = await fetch(process.env.REACT_APP_AIRTABLE_SERVER_URL);
+      const response = await fetch(import.meta.env.VITE_AIRTABLE_SERVER_URL);
       const data = await response.json();
 
       if (data) {
         const userByEmail = findUserByEmail(data.records, email);
         if (userByEmail) {
-          // Check if the user is already logged in
           if (loggedIn && userByEmail.fields.email === user.email) {
-            // User is already logged in, no need to update
             return true;
           }
           if (userByEmail.fields.password === password) {
@@ -89,8 +84,6 @@ export default function App() {
             };
 
             setUser(userData);
-
-            // Save user data in sessionStorage
             sessionStorage.setItem("user", JSON.stringify(userData));
 
             return true;
@@ -140,20 +133,15 @@ export default function App() {
   };
 
   const updateUser = async (userId, formValue) => {
-    //destructure incoming data
     const key = Object.keys(formValue)[0];
     const value = Object.values(formValue)[0];
-    // const form = {
-    //   [key]: value,
-    // };
-
     if (key === "email") {
       let checkUser = await userEmailExists(value);
       if (checkUser) return { success: false, reason: "email" };
     }
 
     try {
-      const response = await fetch(process.env.REACT_APP_AIRTABLE_SERVER_URL, {
+      const response = await fetch(import.meta.env.VITE_AIRTABLE_SERVER_URL, {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -163,23 +151,6 @@ export default function App() {
       const result = await response.json();
       if (!result.success) return { success: false, reason: result.reason };
 
-      // await new Promise((resolve, reject) => {
-      //   edgyBase("users").update(
-      //     [
-      //       {
-      //         id: userId,
-      //         fields: form,
-      //       },
-      //     ],
-      //     function (error) {
-      //       if (error) {
-      //         reject(error);
-      //       } else {
-      //         resolve();
-      //       }
-      //     }
-      //   );
-      // });
       setUser({ ...user, [key]: value });
       sessionStorage.setItem("user", JSON.stringify({ ...user, [key]: value }));
       return { success: true };
