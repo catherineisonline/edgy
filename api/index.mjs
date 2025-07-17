@@ -4,15 +4,17 @@ import fetch from "node-fetch";
 import dotenv from "dotenv";
 import Airtable from "airtable";
 
-const apiKey = process.env.REACT_APP_AIRTABLE_KEY;
-const baseId = process.env.REACT_APP_AIRTABLE_ID;
-const REACT_APP_CAPTCHA_SECRET = process.env.REACT_APP_CAPTCHA_SECRET;
-const REACT_APP_AIRTABLE_ID = process.env.REACT_APP_AIRTABLE_ID;
-const REACT_APP_AIRTABLE_KEY = process.env.REACT_APP_AIRTABLE_KEY;
-const edgyBase_backend = new Airtable({ apiKey: apiKey }).base(baseId);
-dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
+
+dotenv.config({ path: ".env.backend" });
+const AIRTABLE_KEY = process.env.AIRTABLE_KEY;
+const AIRTABLE_ID = process.env.AIRTABLE_ID;
+const CAPTCHA_SECRET = process.env.CAPTCHA_SECRET;
+
+const edgyBase_backend = new Airtable({ apiKey: AIRTABLE_KEY }).base(
+  AIRTABLE_ID
+);
 
 app.use(
   cors({
@@ -28,13 +30,13 @@ app.get("/", (req, res) => {
 });
 
 app.get("/airtable", async (req, res) => {
-  const airtableUrl = `https://api.airtable.com/v0/${REACT_APP_AIRTABLE_ID}/users`;
+  const airtableUrl = `https://api.airtable.com/v0/${AIRTABLE_ID}/users`;
 
   try {
     const response = await fetch(airtableUrl, {
       method: "GET",
       headers: {
-        Authorization: `Bearer ${REACT_APP_AIRTABLE_KEY}`,
+        Authorization: `Bearer ${AIRTABLE_KEY}`,
         "Content-Type": "application/json",
       },
     });
@@ -74,25 +76,20 @@ app.post("/airtable", async (req, res) => {
 
 app.post("/verify-recaptcha", async (req, res) => {
   const { token } = req.body;
-  const secret = REACT_APP_CAPTCHA_SECRET; // Replace with your own reCAPTCHA secret key
-  const uri = `https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${token}`;
+  const uri = `https://www.google.com/recaptcha/api/siteverify?secret=${CAPTCHA_SECRET}&response=${token}`;
 
   fetch(uri, {
     method: "post",
   })
     .then((response) => response.json())
     .then((google_response) => {
-      // google as a response
       if (google_response.success === true) {
-        //   if captcha is verified
         return res.send({ response: "Successful" });
       } else {
-        // if captcha is not verified
         return res.send({ response: "Failed" });
       }
     })
     .catch((error) => {
-      // Some error while verify captcha
       return res.json({ error });
     });
 });

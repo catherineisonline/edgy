@@ -3,9 +3,9 @@ import React, { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useNavigate } from "react-router-dom";
 
-const captchaKey = process.env.REACT_APP_CAPTCHA_KEY;
-const captchaSecret = process.env.REACT_APP_CAPTCHA_SECRET;
-const serverlUrl = process.env.REACT_APP_SERVER_URL;
+const captchaKey = import.meta.env.REACT_APP_CAPTCHA_KEY;
+const captchaSecret = import.meta.env.REACT_APP_CAPTCHA_SECRET;
+const serverlUrl = import.meta.env.REACT_APP_SERVER_URL;
 
 export default function SignInForm({ retrieveDatabase, setLoggedIn }) {
   const [formValue, setFormValue] = useState({ email: "", password: "" });
