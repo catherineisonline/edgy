@@ -1,6 +1,6 @@
 ![Edgy](https://github.com/catherineisonline/edgy/blob/main/public/project-preview.png?raw=true)
 
-# [Edgy](https://edgy-media.vercel.app/) - #1 Instagram Growth Agency
+# Edgy - #1 Instagram Growth Agency
 
 [![GitHub license](https://img.shields.io/github/license/catherineisonline/edgy)](https://github.com/catherineisonline/edgy/blob/main/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/catherineisonline/edgy)](https://github.com/catherineisonline/edgy/issues)

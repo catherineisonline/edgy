@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
-import Linkedin from '../../assets/socials/linkedin-pink.svg'
-import Github from '../../assets/socials/github-pink.svg'
-import Portfolio from '../../assets/socials/portfolio.png'
+import Linkedin from "../../assets/socials/linkedin-pink.svg";
+import Github from "../../assets/socials/github-pink.svg";
+import Portfolio from "../../assets/socials/portfolio.png";
 
 const navigation = {
   solutions: [
@@ -28,17 +28,17 @@ const navigation = {
     {
       name: "Github",
       href: "https://github.com/catherineisonline/edgy",
-      icon: Github
+      icon: Github,
     },
     {
       name: "Portfolio",
       href: "https://ekaterine-mitagvaria.vercel.app/",
-      icon: Portfolio
+      icon: Portfolio,
     },
     {
       name: "Linkedin",
       href: "https://www.linkedin.com/in/catherinemitagvaria/",
-      icon: Linkedin
+      icon: Linkedin,
     },
   ],
 };
@@ -65,8 +65,7 @@ export default function Footer() {
                       <NavLink
                         onClick={ResetLocation}
                         to={item.href}
-                        className="text-base text-gray-300 hover:text-white"
-                      >
+                        className="text-base text-gray-300 hover:text-white">
                         {item.name}
                       </NavLink>
                     </li>
@@ -83,8 +82,7 @@ export default function Footer() {
                       <NavLink
                         onClick={ResetLocation}
                         to={item.href}
-                        className="text-base text-gray-300 hover:text-white"
-                      >
+                        className="text-base text-gray-300 hover:text-white">
                         {item.name}
                       </NavLink>
                     </li>
@@ -103,8 +101,7 @@ export default function Footer() {
                       <NavLink
                         onClick={ResetLocation}
                         to={item.href}
-                        className="text-base text-gray-300 hover:text-white"
-                      >
+                        className="text-base text-gray-300 hover:text-white">
                         {item.name}
                       </NavLink>
                     </li>
@@ -121,8 +118,7 @@ export default function Footer() {
                       <NavLink
                         onClick={ResetLocation}
                         to={item.href}
-                        className="text-base text-gray-300 hover:text-white"
-                      >
+                        className="text-base text-gray-300 hover:text-white">
                         {item.name}
                       </NavLink>
                     </li>
@@ -141,15 +137,20 @@ export default function Footer() {
                 href={item.href}
                 target="_blank"
                 rel="noreferrer"
-                className="text-gray-400 hover:text-gray-300"
-              >
+                className="text-gray-400 hover:text-gray-300">
                 <span className="sr-only">{item.name}</span>
-                <img className="h-6 w-6" aria-hidden="true" src={item.icon} alt={item.icon} />
+                <img
+                  className="h-6 w-6"
+                  aria-hidden="true"
+                  src={item.icon}
+                  alt={item.icon}
+                />
               </a>
             ))}
           </section>
           <p className="mt-8 text-base text-gray-400 md:mt-0 md:order-1">
-            &copy; <span>{new Date().getFullYear()}</span> Edgy, Inc. All rights reserved.
+            &copy; <span>{new Date().getFullYear()}</span> Edgy, Inc. All rights
+            reserved.
           </p>
         </section>
       </section>

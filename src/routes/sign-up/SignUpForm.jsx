@@ -23,15 +23,11 @@ export default function SignUpForm({ registerUser }) {
   const submitForm = async (e) => {
     e.preventDefault();
     setLoading(true);
-    //validate form before sending to server
     setErrorValue(validateForm(formValue));
-    //if error object isn't empty stop the process
     if (Object.keys(validateForm(formValue)).length > 0) {
       setLoading(false);
       return null;
-    }
-    //otherwise check if user registration on the server returns OK and reset the form
-    else {
+    } else {
       let captchaToken = captchaRef.current?.getValue();
       if (captchaToken.length === 0) {
         setCaptchaError("ReCaptcha is mandatory");
@@ -177,7 +173,7 @@ export default function SignUpForm({ registerUser }) {
               name="fullname"
               type="text"
               autoComplete="full-name"
-              className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+              className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-white rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
               placeholder="Full name"
             />
             <span className="text-red-400">{errorValue.fullname}</span>
@@ -193,7 +189,7 @@ export default function SignUpForm({ registerUser }) {
               name="email"
               type="email"
               autoComplete="email"
-              className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+              className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-white rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
               placeholder="Email address"
             />
             <span className="text-red-400">{errorValue.email}</span>
@@ -209,7 +205,7 @@ export default function SignUpForm({ registerUser }) {
               name="password"
               type="password"
               autoComplete="current-password"
-              className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+              className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-white rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
               placeholder="Password"
             />
             <span className="text-red-400">{errorValue.password}</span>
@@ -225,7 +221,7 @@ export default function SignUpForm({ registerUser }) {
               name="repeatPassword"
               type="password"
               autoComplete="current-password"
-              className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+              className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-white rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
               placeholder="Reapeat password"
             />
             <span className="text-red-400">{errorValue.repeatPassword}</span>
@@ -234,7 +230,7 @@ export default function SignUpForm({ registerUser }) {
           <span className="text-red-400">{captchaError}</span>
           <button
             type="submit"
-            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer">
             <span className="absolute left-0 inset-y-0 flex items-center pl-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
